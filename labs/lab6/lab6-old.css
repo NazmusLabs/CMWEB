@@ -1,0 +1,199 @@
+/* CSS Document for CMWEB110 - Version 6.20.429.0
+By Nazmus Shakib Khandaker*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: lavender;
+	background-color: #1E1E1E;
+	
+	font: normal 24px "Helvetica", "Arial", "sans-serif";
+	line-height: 1.6em;
+}
+
+h1{
+	color: lightskyblue;
+	padding: 40px 0px 0px 0px;
+	line-height: 1.3em
+}
+
+h2{
+	color: lightskyblue;
+	padding: 40px 0px 0px 0px;
+}
+
+p{
+	padding: 20px 0;
+}
+
+ul{
+	padding: 0px 0px 20px 40px
+}
+
+br{
+	padding: 20px 0px
+}
+
+a:link{
+	color: lightskyblue;
+	text-decoration: none;
+}
+
+a:visited{
+
+}
+
+a:hover{
+	text-decoration: underline
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+table, th, td{
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+tr:nth-child(even){
+	background-color: lavender;
+}
+
+/* Classes */
+
+.content-section-grey{
+	background-color: #b5b5b5;
+	color: #252526;
+	
+	padding: 0px 0px;
+}
+
+.content-section-grey h1{
+	color: #252526;
+}
+
+.content-section-grey h2{
+	color: #252526;
+}
+
+.content-section-grey a:link{
+	color: #252526;
+}
+.content-section-grey a:visited{
+	color: #252526
+}
+
+.content-section-light{
+	background-color: #eeeef2;
+	color: #252526;
+	
+	padding: 40px 0px;
+}
+
+.content-section-light h1{
+	color: #252526;
+}
+
+.content-section-light h2{
+	color: #252526;
+}
+
+.content-section-light a:link{
+	color: firebrick;
+}
+
+.content-section-light a:visited{
+	color: firebrick;
+}
+
+.container{
+	margin:auto;
+	width: 80%;
+	
+}
+
+.container-wide{
+	margin:auto;
+	width: 90%;
+	padding: 40px;
+}
+
+.container-center{
+	text-align: center;
+}
+
+table.table-lavender{
+	border: 1px solid rebeccapurple;
+}
+
+table.table-lavender tr, td{
+	border: 1px solid rebeccapurple;
+}
+
+table.table-lime{
+	border: 1px solid limegreen;
+}
+
+table.table-lime tr, td{
+	border: 1px solid limegreen;
+}
+
+.cell-lavender{
+	background-color: rebeccapurple;
+	color: lavender;
+}
+
+.cell-picure{
+	background-image: url(../../assets/images/background2.png);
+	color: white;
+}
+
+.button{
+	background-color:#333333;
+	color: #FFFFFF;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 75px;
+	box-shadow: 1px 1px 3px #292929;
+}
+
+.button:hover{
+	background-color:firebrick;
+	color: #FFFFFF;
+}
+
+#Bismillah{
+	color: #555555;
+	font-style: italic
+}
+
+#license{
+	
+}
+
+/* Classes */
+
+
+.menu{
+	font-family: Helvetica, Arial;
+	font-size: 24px;
+	line-height: 1.3em;
+	margin: 0;
+	
+	background-color: #A4A4A4;
+	
+	border-top: 3px red solid;
+	padding: 0px 40px;
+	
+}
+
+.menu ul{
+	list-style:none;
+}
+
+/*Last Updated on May 7, 2020*/

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<!--
+Webpage created by Nazmus Shakib Khandaker
+Originally created on May 10, 2020
+Last Updated on May 24, 2020
+Version 8.20.510.1
+-->
+
+<head>
+    <title>Lab 8</title>
+	
+    <meta charset="UTF-8">
+	<meta name="description" content="Eighth Lab assignment for CMWEB110 at Illinois Central College"/>
+	<meta name="author" content="Nazmus Shakib Khandaker (nk308@lab.icc.edu)"/>
+	
+	<link rel="stylesheet" type="text/css" href="lab8.css">
+</head>
+	
+<body>
+	
+<!--==========================
+	 START OF HEADER SECION A
+	==========================-->
+	<div>
+		
+		<!--//////////////////////
+		  START of Container H.A1
+		////////////////////////-->
+		<div class="container-wide">
+			
+			<!--H.A1 Float 1 -->
+			<div class="header-box" style="text-align:left">
+
+				<!--Site Logo-->
+				<a href="../../index.html">
+					<img src="../../assets/images/nazmuslabs-header-light.png"
+						 alt="NazmusLabs Banner Logo"
+						 title="NazmusLabs Banner Logo (Dark)"
+						 class="resize-85-percent" >
+				</a>
+				<!--/Site Logo-->
+				
+			</div>
+			<!--/H.A1 Float 1-->
+			
+			<!--H.A1 Float 2-->
+			<div class="header-box">
+				<h5>Talking about desktop wallpapers...</h5>
+				<p>...and demonstrating the css float property for CMWEB110 Lab 8.</p>
+			</div>
+			<div class="clearfix"></div>
+			<!--/H.A1 Float 2-->
+
+		</div>
+		<!--////////////////////
+		  END of Container H.A1
+		///////////////////////-->
+		
+	</div>
+<!--========================
+	 END OF HEADER SECION A
+	========================-->
+
+	
+<!--===========================
+	 START OF CONTENT SECION A
+	===========================-->
+	
+	<div class="content-section-light">
+		
+		<!--//////////////////////
+		  START of Container C.A1
+		////////////////////////-->
+		<div class="container">
+			<h1>Story of the Windows 10's Wallpaper and a Bit About Floats</h1>
+
+			<!--Bismillah-->
+			<p id="Bismillah">
+				In the name of Allah, the Most Gracious, the most Merciful.
+			</p>
+			<!--/Bismillah-->
+			
+			<!----------------------
+			  START of Page Content
+			------------------------>
+			<div class="page-content">
+
+				<!--START of C.A1 GROUP 1-->
+				<p>This page is all about floats. I describe a bit about floats, what their purposes are, and some caveats to watch out for when working with floats. But wait, there's more!</p>
+				
+				<!--C.A1 image 1-->
+				<p style="text-align: center">
+					<img src="../../assets/images/nazmuslabs-header.png"
+						 alt="NazmusLabs Banner Logo"
+						 title="NazmusLabs Banner Logo (Dark)"
+						 class="resize-100-percent">
+					<br/>
+					<caption>A banner styled logo I designed in photoshop</caption>
+				</p>
+				<!--/C.A1 image 1-->
+				
+				<p>Do you know the fascinating story behind the iconic wallpaper that you might be familiar with in Windows 10 PCs? I made a YouTube video discussing just that; how it came to be, and how it has changed in the first five years of Windows 10's release.</p>
+				
+				<p style="text-align: center" >
+					<!--YouTube Video-->
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/2IjOjp8BUqo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<!--/YouTube Video-->
+				</p>
+				
+				<p>So, grab some popcorn, sit back, and enjoy the video! Oh, and feel free to like (or dislike) the video and/or leave a comment on the video; doing so helps my channel and also lets me know what my audience likes so I can continue tweaking my future content, Insha'Allah (God Willing).</p>
+				
+				<p>Now, let's talk about floats.</p>
+				<!--END of C.A1.1 GROUP 1-->
+
+			</div>
+			<!--------------------
+			  END of Page Content
+			---------------------->
+			
+			<!-------------------------
+			  START of Sidebar Content
+			--------------------------->
+			<div class="sidebar">
+				<!--START of Sidebar Menu-->
+				<div class="menu-embossed">
+					<p>Go straight to any of the following items</p>
+
+					<!--Sidebar Menu U-List 1-->
+					<ul>
+						<li><a href="../lab1/lab1.html">Lab 1</a></li>
+						<li><a href="../lab2/lab2.html">Lab 2</a></li>
+						<li><a href="../lab3/lab3.html">Lab 3</a></li>
+						<li><a href="../lab4/lab4.html">Lab 4</a></li>
+						<li><a href="../lab6/lab6.html">Lab 6</a></li>
+						<li><a href="../lab7/lab7.html">Lab 7</a></li>
+						<li><a href="../lab9/lab9.html">Lab 9</a></li>
+					</ul>
+					<!--/Sidebar Menu U-List 1-->
+
+					<p>
+						<a style="Color:#fff; text-decoration: none;" class="button-ornate" href="../../index.html">
+							↩ Home
+						</a>
+					</p>
+				</div>	
+				<!--END of Sidebar Menu-->
+			</div>
+			<!-----------------------
+			  END of Sidebar Content
+			------------------------->
+			
+			<div class="clearfix"></div>
+		</div>
+		<!--///////////////////
+		 End of Container C.A1
+		//////////////////////-->
+		
+		<!--//////////////////////
+		  START of Container C.A2
+		/////////////////////////-->
+		<div class="container">
+			
+			<!--START of C.A2 GROUP 1-->
+			<h2>So, Why Use Floats?</h2>
+			<p>Floats are part of a larger shift in web development that was taking place in full shift by the mid-2000s. Float works in conjunction with the div tag. You see, before CSS, the only way to organize your webpage in any other format other than a sequence of headers and paragraphs one after another was to use tables. Initially, tables met the web layout needs of the time, but as websites became more complex, the need for a more flexable approach to laying out a web page was becoming clear. That is where float comes in.</p>
+			
+			<h3>The Div Element</h3>
+			<p>We can use opening and closing "div" tags to create a div element. The div element allows us to divide (as the tag name suggests) our web page into sections. And on their own, these divisions will follow one after another, from top to bottom, as is the case for all elements of an un-styled HTML document. However, when combined with CSS and its float property, we begin to see the power and flexibility of using CSS to lay out a web page.</p>
+			
+			<p><strong>P.S.</strong> With CSS handling the web layout, we now use tables for what they were originally intended to do: create standard tables to present data.</p>
+			
+			<h3>The Width Property</h3>
+			<p>By default, the content of an HTML element (such as those inside the div tags) will span to cover the entire width of its container, from top to bottom and left to right. (I am defining container as the parent HTML element or, if no parent tags exist, the browser window itself.)</p>
+			
+			<p>With CSS, however, we can change this. By setting a percentage value of the width and height style properties of an HTML element, we can have the content of the tag span only the given percent of the container’s width and height. So, for example, if we set the width value of an HTML element to be 80%, it would mean that 80% of the width of the container would be filled with the content (text, picture, etc.) while the remaining 20% of the width would be empty space. By default, the content of the HTML element is centered, with 10% of the empty space going to the left of the content and the 10% of the empty space going to the right of the content. But what if we want to have the content be left-aligned, with the entire 20% of the empty space being on right of it? To do this, we use the float property.</p>
+			
+			<h3>The Float Property</h3>
+			<p>Using float, we can tell the content of an HTML element to be left-aligned, center-aligned, or right-aligned. We can set the width property of  a div element to be 50%, for instance, and set the float property to be left-aligned. This would make it such that the left half of the container is full of the content while the right half of the container is empty space. Now, here’s where it gets interesting. We can now float the following HTML element, which, by default, displays below our current div element. By the setting element to have a width of 50% and its float property set to left-aligned, we can place this next element to the <em>right</em> of our div element.</p>
+			
+			<p><strong>Important:</strong> We must remember <em>reset</em> the layout at the end of the floating elements; otherwise, it can really mess up the layout of the following element(s). This can be done using the "clear" property with the value set to "both". I create a class called ".clearfix" that includes the clear property set to "both". After all the floating elements, we need to create one more div element with no content in between the tags and set the class for that div element to the ".clearfix" aforementioned ".clearfix" class. This essentially ensures all following HTML elements will return to the standard sequential layout. We must do this after each time we float elements.</p>
+			
+			<h4>Examples of Using Float</h4>
+			<p>You can see this in action if you look at the source code of this page and the corresponding CSS document. On the header of this web page, we have the “NazmusLabs” logo on the left and some text on the right. The logo is contained in a div with a width of 50% and float property of left-aligned. The text is contained in a following div element whose width is 50% and float set to left-aligned.</p>
+			
+			<p>Let’s look at another example in this page’s source code. Above is a side-bar on the right. On the left of that side bar, there are some blocks of text, an image, and an embedded video from my YouTube channel. The side-bar is in a div element that is floating right, with a width of 30% and the content on the left (the text, image, and video) is in a div element that is floating left, with a width of 70%.</p>
+			
+			<p>For our third example, below is a example of a "testimonial-style" web layout you can create using floats. Notice that we can show three (or more) images side by side without using tables.</p>
+			<!--END OF C.A2 GROUP 1-->
+			
+		</div>
+		<!--///////////////////
+		 End of Container C.A2
+		///////////////////////-->
+		
+		<!--//////////////////////
+		  START of Container C.A3
+		/////////////////////////-->
+		<div class="container-wide" style="text-align: center;" >
+			<h1>Example: Testimonials Layout</h1>
+			<div class="horizontal-gap"></div>
+			
+			<!--C.A3 Float 1-->
+			<div class="tripple-float">
+				<img src="../../assets/images/Nazmus20_circle.png" alt="NazmusLabs Twitter Profile Picture" class="resize-50-percent">
+				<h2>Twitter (@NazmusLabs)</h2>
+				<p>Find me on Twitter! My opinions change through knowledge and experience. My tweets are my own and doesn't reflect the views of any of my associates.</p>
+			</div>
+			<!--/C.A3 Float 1-->
+			
+			<!--C.A3 Float 2-->
+			<div class="tripple-float">
+				<img src="../../assets/images/Nazmus10_circle.png" alt="NazmusLabs YouTube Profile Picture" class="resize-50-percent">
+				<h2>YouTube (NazmusLabs)</h2>
+				<p>Visit my YouTube channel where we talk about technology, gaming, rapid transit, and a lot more!</p>
+			</div>
+			<!--/C.A3 Float 2-->
+			
+			<!--C.A3 Float 3-->
+			<div class="tripple-float">
+				<img src="../../assets/images/github_circle.png" alt="NazmusLabs YouTube Profile Picture" class="resize-50-percent">
+				<h2>GitHub (@NazmusLabs)</h2>
+				<p>Let's build software together! Visit my GitHub profile to see what I'm working on. You can also get in touch with me through GitHub, Insha'Allah (God Willing).</p>
+			</div>
+			<!--/C.A3 Float 3-->
+			
+			<div class="clearfix"></div>
+			
+			<!--C.A3 Float 4-->
+			<div class="tripple-float">
+				<p><a href="http://twitter.com/nazmuslabs" target="_blank">See more on Twitter</a></p>
+			</div>
+			<!--/C.A3 Float 4-->
+			
+			<!--C.A3 Float 5-->
+			<div class="tripple-float">
+				<p><a href="http://youtube.com/nazmuslabsvideos" target="_blank">See more on YouTube</a></p>
+			</div>
+			<!--/C.A3 Float 5-->
+			
+			<!--C.A3 Float 6-->
+			<div class="tripple-float">
+				<p><a href="http://github.com/nazmuslabs" target="_blank">See more on GiHub</a></p>
+			</div>
+			<!--/C.A3 Float 6-->
+			
+			<div class="clearfix"></div>
+			
+		</div>
+		<!--///////////////////
+		 End of Container C.A3
+		//////////////////////-->
+		
+		<!--//////////////////////
+		  START of Container C.A4
+		/////////////////////////-->
+		<div class="container">
+			<!--START of C.A4 GROUP 1-->
+			<h3>Further Reading</h3>
+			<p>Here are some additional articles that talk about CSS and web page layout using floats.</p>
+
+			<!--C.A4 U-List 1-->
+			<ul>
+				<li><a href="https://css-tricks.com/look-back-history-css/" target="_blank">A Look Back at the History of CSS - CSS-Tricks</a></li>
+				<li><a href="https://css-tricks.com/all-about-floats/" target="_blank">All About Floats - CSS-Tricks</a></li>
+				<li><a href="https://www.html5in24hours.com/using-css-float/" target="_blank">Guided Tutorial on Using the CSS Float Property</a></li>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float" target="_blank">See the MDN Developer Documentation for Float</a></li>
+			</ul>
+			<!--/C.A4 U-List 1-->
+
+			<h3>Thanks for visiting!</h3>
+			<!--End of C.A4 GROUP 1-->
+		</div>
+		<!--///////////////////
+		 End of Container C.A4
+		//////////////////////-->
+		
+	</div>
+<!--=========================
+	 END OF CONTENT SECION A
+	=========================-->
+	
+	
+<!--==========================
+	 START OF FOOTER SECION A
+	==========================-->
+	<div class="content-section-grey">
+		
+		<!--//////////////////////
+		  START of Container F.A1
+		////////////////////////-->
+		<div class="container-wide">
+			
+			<!--START of Fotter Menu-->
+			<div class="menu">
+				
+				<!--Footer Menu Float 1-->
+				<div class="double-float">
+					<p>
+						<a style="Color:#fff; text-decoration: none" class="button-ornate" href="../../index.html">
+							↩ CMWEB 110 Home
+						</a>
+					</p>
+				</div>
+				<!--/Footer Menu Float 1-->
+				
+				<!--Footer Menu Float 2-->
+				<div class="double-float">
+					<p style="font-weight: bolder; text-align: right; padding-right: 1em; word-spacing: 1.5em">
+						<a href="../lab1/lab1.html" style="word-spacing: normal;" >Lab 1</a>
+						<a href="../lab2/lab2.html" style="word-spacing: normal;" >Lab 2</a>
+						<a href="../lab3/lab3.html" style="word-spacing: normal;" >Lab 3</a>
+						<a href="../lab4/lab4.html" style="word-spacing: normal;" >Lab 4</a>
+						<a href="../lab6/lab6.html" style="word-spacing: normal;" >Lab 6</a>
+						<a href="../lab7/lab7.html" style="word-spacing: normal;" >Lab 7</a>
+						<a href="../lab9/lab9.html" style="word-spacing: normal;" >Lab 9</a>
+					</p>
+				</div>
+				<!--/Footer Menu Float 2-->
+				
+				<div class="clearfix"></div>
+    		</div>
+			<!--END of Footer Menu-->
+			
+			<div class="horizontal-gap"></div>
+			
+			<div class="tripple-float">
+				<h3>Get in Touch</h3>
+				<p><a href="http://youtube.com/nazmuslabsvideos" target="_blank">See my latest videos on YouTube.</a><br/>
+				
+				<a href="http://twitter.com/nazmuslabs" target="_blank">Check out my Twitter feed @NazmusLabs</a></p>
+			</div>
+			<div class="tripple-float">
+				<h3>Get the Code</h3>
+				<p>Coming soon Insha'Allah</p>
+			</div>
+			<div class="tripple-float">
+				<h3>Send Feedback</h3>
+				<p>Need to get in touch with me? Just shoot me an email either at my college email address (nk308@lab.icc.edu) or at my personal email (nazmus@outlook.com).</p>
+			</div>
+			<div class="clearfix"></div>
+			
+		</div>
+		<!--////////////////////
+		  END of Container F.A1
+		//////////////////////-->
+		
+	</div>
+<!--========================
+	 END OF FOOTER SECION A
+	========================-->
+	
+	
+<!--==========================
+	 START OF FOOTER SECION B
+	==========================-->
+	<div>
+		
+		<!--//////////////////////
+		  START of Container F.B1
+		////////////////////////-->
+		<div class="container-wide">
+			
+			<!--Licence Info -->
+			<p id="license">
+				<a rel="license" href=
+				   "http://creativecommons.org/licenses/by-sa/4.0/">
+					<img alt="Creative Commons
+						License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+				<br />This work is licensed under a
+				<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+				Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+			</p>
+			<!--/Licence Info -->
+			
+			<!--Copyright Info -->
+			<p>© 2020 Nazmus Shakib Khandaker and NazmusLabs. Some rights reserved.</p>
+			<!--/Copyright Info -->
+			
+		</div>
+		<!--////////////////////
+		  END of Container F.B1
+		//////////////////////-->
+		
+	</div>
+<!--========================
+	 END OF FOOTER SECION B
+	========================-->
+</body>
+
+</html>

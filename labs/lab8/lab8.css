@@ -1,0 +1,335 @@
+/* CSS Document for CMWEB110 - Version 8.20.510.1
+By Nazmus Shakib Khandaker*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* CSS */
+
+body {
+	color: lavender;
+	background-color: #1E1E1E;
+	
+	font: normal 24px "Helvetica", "Arial", "sans-serif";
+	line-height: 1.6em;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: lightskyblue;
+	padding: 20px 0;
+	line-height: 1.3em;
+}
+
+
+p{
+	padding: 0px 0px 40px 0px;
+}
+
+ul{
+	padding: 0px 0px 20px 40px
+}
+
+br{
+	padding: 20px 0px
+}
+
+a:link{
+	color: lightskyblue;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline
+}
+
+table{
+	color: #542872;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+table, th, td{
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+/* CSS > CLASSES */
+
+/* CSS > CLASSES > Floats */
+.clearfix{
+	clear: both;
+}
+
+.header-box{
+	float:left;
+	width:50%;
+	box-sizing: border-box;
+}
+
+.header-box h1, .header-box h2, .header-box h3, .header-box h4, .header-box h5, .header-box h6, p{
+	padding: 3px 0;
+}
+
+.page-content{
+	float: left;
+	width: 70%;
+	box-sizing: border-box;
+	padding-right: 1em;
+}
+
+.double-float{
+	width: 50%;
+	float: left;
+	
+	box-sizing: border-box
+}
+
+.tripple-float{
+	width: 33.33%;
+	float: left;
+	
+	box-sizing: border-box;
+}
+
+.sidebar{
+	float: right;
+	width: 30%;
+	box-sizing: border-box;
+	
+}
+
+/* CSS > CLASSES > Containers */
+.content-section-grey{
+	background-color: #b5b5b5;
+	color: #252526;
+	
+	padding: 0px 0px;
+}
+
+.content-section-grey h1, .content-section-grey h2, .content-section-grey h3, .content-section-grey h4, .content-section-grey h5, .content-section-grey ht6{
+	color: #252526;
+	padding: 20px 0;
+	line-height: 1.3em;
+}
+
+.content-section-grey p{
+	padding: 0px 0px 40px 0px;
+}
+
+.content-section-grey a:link{
+	color: #252526;
+}
+
+.content-section-grey a:visited{
+	color: #252526
+}
+
+.content-section-light{
+	background-color: #eeeef2;
+	color: #252526;
+	
+	padding: 40px 0px;
+}
+
+.content-section-light h1, .content-section-light h2, .content-section-light h3, .content-section-light h4, .content-section-light h5, .content-section-light h6{
+	color: #252526;
+	padding: 20px 0;
+	line-height: 1.3em;
+}
+
+.content-section-light p {
+	padding: 0px 0px 40px 0px;
+}
+
+.content-section-light a:link{
+	color: firebrick;
+}
+
+.content-section-light a:visited{
+	color: firebrick;
+}
+
+.container{
+	margin: auto;
+	width: 80%;
+}
+
+.container-wide{
+	margin: auto;
+	width: 90%;
+	padding: 1.6em;
+}
+
+.container-center{
+	text-align: center;
+}
+
+/* CSS > CLASSES > Images */
+.resize-25-percent{
+	width: 25%;
+	height: auto;
+}
+
+.resize-50-percent{
+	width: 50%;
+	height: auto;
+}
+
+.resize-75-percent{
+	width: 75%;
+	height: auto;
+}
+
+.resize-85-percent{
+	width: 85%;
+	height: auto;
+}
+
+.resize-95-percent{
+	width: 95%;
+	height: auto;
+}
+
+.resize-100-percent{
+	width: 100%;
+	height: auto;
+}
+
+/* CSS > CLASSES > Tables */
+.table-lavender table, .table-lavender tr, .table-lavender td{
+	border: 1px solid black;
+	border-width: 1.5px;
+}
+
+.table-lavender tr:nth-child(even){
+	background-color: lavender;
+}
+
+.table-lime table, .table-lime tr, .table-lime td{
+	border: 1px solid rebeccapurple;
+	border-width: thick
+}
+
+.table-lime tr:nth-child(odd){
+	background-color: #EFFFBF;
+}
+
+.table-lime tr:nth-child(even){
+	background-color: #FBFFF2;
+}
+
+.cell-lavender{
+	background-color: rebeccapurple;
+	color: lavender;
+}
+
+.cell-picure{
+	color: white;
+	text-shadow: 1px 1px 3px #292929;
+	background-image: url(../../assets/images/background2.png);
+}
+
+/* CSS > CLASSES > UI */
+.button, .button-ornate{
+	background-color:#333333;
+	color: #FFFFFF;
+	padding: .6em 1.6em;
+	border: none;
+	border-radius: 0;
+	margin: 1em 1em 1em 0em;
+}
+
+.button:hover, .button-ornate:hover{
+	background-color:firebrick;
+	color: #FFFFFF;
+}
+
+.button-ornate{
+	border-radius: 75px;
+	box-shadow: 1px 1px 3px #292929;
+	
+	text-shadow: 1px 1px 3px #292929;
+}
+
+.horizontal-gap{
+	padding: 0.6em 0em;
+}
+
+.menu, .menu-embossed{
+	font-family: Helvetica, Arial;
+	font-size: 18px;
+	line-height: 1.3em;
+	margin: 0;
+	padding: 20px 20px;
+	
+	background-color: lightgray;
+	border-top: 3px red solid;
+}
+
+.menu p, .menu-embossed p{
+	padding: 20px 0
+}
+
+.menu a:hover, .menu-embossed a:hover{
+	color: red;
+	text-decoration: none;
+}
+
+.menu ul, .menu-embossed ul{
+	list-style:none;
+}
+
+.menu li, .menu-embossed li{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-bottom: solid thin;
+	border-color: #252526;
+}
+
+.menu-embossed{
+	box-shadow: 1px 1px 8px #7F7F7F;
+}
+
+
+/* CSS > CLASSES > Forms */
+.feedback-form{
+	padding: 20px;
+	font-size: 18px;
+	
+}
+
+.feedback-form .form-group{
+	padding-bottom: .625em;
+	
+}
+
+.feedback-form label{
+	padding-bottom: 1.6em;
+	margin-right: 2em;
+	margin-left: .5em;
+}
+
+.feedback-form input[type="text"], input[type="email"], textarea{
+	padding: .8em;
+	width: 100%;
+	display: block;
+}
+
+.feedback-form textarea{
+	height: 6em;
+}
+
+/* CSS > IDs */
+#Bismillah{
+	color: #555555;
+	font-style: italic
+}
+
+#license{
+	
+}
+
+/*Last Updated on May 24, 2020*/

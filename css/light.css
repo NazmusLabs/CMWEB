@@ -1,0 +1,29 @@
+/* CSS Document */
+
+body {
+	color: #252526;
+	background-color: #eeeef2;
+	font-family: Helvetica, Arial;
+	font-size: 24px;
+}
+
+a{
+	color: #252526;
+	text-decoration: none
+}
+
+p {
+	color: #252526
+}
+
+li{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-bottom: solid thin;
+	border-color: slategrey;
+	margin: 0% 90% 0% 0%;
+}
+
+.container{
+	padding: 1em;
+}
