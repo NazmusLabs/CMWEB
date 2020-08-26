@@ -1,5 +1,7 @@
-/* CSS Document for CMWEB110 - Version 12.20.523.200
+/* CSS Document for CMWEB110 - Version 12.20.523.300
 By Nazmus Shakib Khandaker*/
+
+/*In the name of Allah, the Most Gracious, the Most Merciful*/
 
 *{
 	margin: 0;
@@ -363,7 +365,7 @@ table, th, td{
 	color: dimgrey;
 	
 	padding: .6em;
-	margin: 0;
+	margin-right: 1em;
 }
 
 .button-ornate{
@@ -520,4 +522,4 @@ table, th, td{
 	
 }
 
-/*Last Updated on May 23, 2020*/
+/*Last Updated on August 27, 2020*/

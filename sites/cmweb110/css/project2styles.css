@@ -1,4 +1,4 @@
-/* CSS Document for CMWEB110 - Version 12.20.523.200
+/* CSS Document for CMWEB110 - Version 12.20.523.0
 By Nazmus Shakib Khandaker*/
 
 *{
@@ -363,7 +363,7 @@ table, th, td{
 	color: dimgrey;
 	
 	padding: .6em;
-	margin: 0;
+	margin-right: 1em;
 }
 
 .button-ornate{
