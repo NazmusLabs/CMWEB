@@ -8,6 +8,8 @@ By Nazmus Shakib Khandaker*/
 	padding: 0;
 }
 
+/* CSS */
+
 body {
 	color: #252526;
 	background-color: #eeeef2;
@@ -54,6 +56,35 @@ hr{
 	padding: 20px 0px;
 }
 
+table{
+	color: #542872;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%; 
+}
+
+table, th, td{
+	border-collapse: collapse;
+	padding: 10px;
+	
+	vertical-align: top;
+}
+
 .container{
 	padding: 1em;
+}
+
+/* CSS > CLASSES > Tables */
+.table-lavender table, .table-lavender tr, .table-lavender td{
+	border: 1px solid black;
+	border-width: 1.5px;
+}
+
+.table-lavender tr:nth-child(even){
+	background-color: lavender;
+}
+
+.cell-lavender{
+	background-color: rebeccapurple;
+	color: lavender;
 }
