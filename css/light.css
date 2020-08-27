@@ -70,8 +70,27 @@ table, th, td{
 	vertical-align: top;
 }
 
-.container{
+/* CSS > CLASSES > Containers */
+
+.container, .container-section-dark, .container-section-grey{
 	padding: 1em;
+}
+
+.container-section-dark{
+	color: #eeeef2;
+	background-color: #252526;
+}
+
+.container-section-dark p{
+	color: #eeeef2;
+}
+
+.container-section-dark a{
+	color: lavenderblush;
+}
+
+.container-section-grey{
+	background-color: #b5b5b5;
 }
 
 /* CSS > CLASSES > Tables */
