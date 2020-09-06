@@ -1,13 +1,26 @@
-/* CSS Document for CMWEB110 - Version 12.20.523.0
+/* CSS Document for CMWEB110 - Version 13.20.905.0
 By Nazmus Shakib Khandaker*/
+
+/*In the name of Allah, the Most Gracious, the Most Merciful*/
+
+/* Reset Styles */
 
 *{
 	margin: 0;
 	padding: 0;
 }
 
-/* CSS */
+/* Custom Styles Start *;
 
+/* CSS > */
+
+/* CSS > General > */
+br{
+	padding: 20px 0px
+}
+
+
+/* CSS > TEXT */
 body {
 	color: lavender;
 	background-color: #1E1E1E;
@@ -16,41 +29,58 @@ body {
 	line-height: 1.6em;
 }
 
+/* CSS > TEXT > Headings */
 h1, h2, h3, h4, h5, h6{
 	color: lightskyblue;
 	padding: 20px 0;
 	line-height: 1.3em;
 }
 
-
+/* CSS > TEXT > Paragraph */
 p{
 	padding: 0px 0px 40px 0px;
 }
 
+/* CSS  TEXT > Hyperlinks */
+a{color: lightskyblue;}
+a:link{
+	color: lightskyblue;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline
+}
+
+
+/* CSS > Listsd > */
+li{margin: 0px 0px 10px 20px;}
+
+/* CSS > Lists > Unordered Lists */
 ul{
 	padding: 0px 0px 20px 40px;
 	list-style-type: square;
 }
 
+/* CSS > Lists > Ordered Lists */
 ol{
 	padding: 0px 0px 20px 40px;
+	/*list-style: lower-roman;*/
+		/* Enable this option above to use roman numerals instead of arabic ones in ordered lists by default. */
 }
 
-br{
-	padding: 20px 0px
+/* CSS > Lists > Definitions */
+dl{
+	padding: 0px 0px 10px 20px;
+}
+dt{
+	padding: 0px 0px 0px 0px;
+}
+dd{
+	padding: 0px 0px 10px 20px;
 }
 
-a{color: lightskyblue;}
 
-a:link{
-	color: lightskyblue;
-	text-decoration: none;
-}
-
-a:hover{
-	text-decoration: underline
-}
-
+/* CSS > Tables > */
 table{
 	color: #542872;
 	margin-left: auto;
@@ -63,8 +93,8 @@ table, th, td{
 	padding: 10px;
 }
 
-/* CSS > CLASSES > General */
 
+/* CSS > CLASSES > */
 .wilma{
 	text-align: center;
 	text-shadow: 1px 1px 1px dimgrey;
@@ -88,38 +118,44 @@ table, th, td{
 	color: rebeccapurple;
 }
 
+/* CSS > CLASSES > Layout > */
 .center-align{
 	text-align: center;
 }
-
 .left-align{
 	text-align: left;
 }
-
 .right-align{
 	text-align: right;
 }
 
+.pad-right{
+	margin: 0px 0px 0px 30px /* Indents he wole paragraph when used in the p tag. To indent just the first line of any paragraphs, type (without the quotes) "&nbsp;&nbsp;&nbsp;&nbsp;" just before the first word of the paragraph in your HTML document instead. */
+}
 .horizontal-gap{
-	padding: 0.6em 0em;
+	margin: 0.6em 0em;
 }
 
-/* CSS > CLASSES > Floats */
+/* CSS > CLASSES > Layouts > Floats > */
 .clearfix{
-	clear: both;
+	clear: both; /* Purpose for this is to remove any existing float configurations beyond the given point in the HTML document this class is used. Note: this does not stop one from creating new floats at alater point in the document.*/
 }
-
 .header-box{
 	float:left;
 	width:50%;
 	box-sizing: border-box;
 }
-
 .header-box h1, .header-box h2, .header-box h3, .header-box h4, .header-box h5, .header-box h6, p{
 	padding: 3px 0;
 }
 
-.page-content{
+.sidebar{
+	float: right;
+	width: 30%;
+	box-sizing: border-box;
+	
+}
+.page-Intro{				/* This sits directly on the left of the aforementioned "Sidebar" */
 	float: left;
 	width: 70%;
 	box-sizing: border-box;
@@ -134,7 +170,6 @@ table, th, td{
 	box-sizing: border-box;
 	overflow: hidden;
 }
-
 .tripple-float{
 	width: 33.33%;
 	float: left;
@@ -143,19 +178,14 @@ table, th, td{
 	overflow: hidden;
 }
 
-.sidebar{
-	float: right;
-	width: 30%;
-	box-sizing: border-box;
-	
-}
-
+/* CSS > CLASSES > Layouts > Floats > Conditions */
 @media(max-width: 600px){
+	/* THe purpose of this is to accomidate smaller devices, large zoom size, or small screen space in general. At any time the web page goes below 600 pixels, floats are disabled or reduced to ensure maximum readability */
 	.header-box{
 		width: 100%;
 		float: none;
 	}
-	.page-content{
+	.page-intro{
 		width: 100%;
 		float: none;
 	}
@@ -174,7 +204,7 @@ table, th, td{
 	
 }
 
-/* CSS > CLASSES > Containers */
+/* CSS > CLASSES > Layout > Containers */
 .content-section-grey{
 	background-color: #b5b5b5;
 	color: #252526;
@@ -524,5 +554,11 @@ table, th, td{
 #license{
 	
 }
+/* Custom Styles End */
+/*
+/*
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved
 
-/*Last Updated on August 27, 2020*/
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+/*
+/*Last Updated on September 3, 2020*/
