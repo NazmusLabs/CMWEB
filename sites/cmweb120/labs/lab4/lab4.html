@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<!--
+So, you are here to view the source code for this page, huh?
+Well, I'm glad you did; make yourself at home and explore at your leasure..
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+-->
+
+<html lang="en">	<!-- 🌐 START OF HTML DOCUMENT 🌐-->
+
+<head>
+    <title>Lab 4 - CSS Layout</title>
+	
+    <meta charset="UTF-8">
+	<meta name="description" content="Nazmus's Student Site Webpage for CMWEB at Illinois Central College"/>
+	<meta name="author" content="Nazmus Shakib Khandaker (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)"/>
+	
+	<meta name="version" content="13.0.20.909 (Update 2)"/>
+	<meta name="created" content="September 5, 2020"/>
+	<meta name="updated" content="September 9, 2020"/>
+	<link rel="stylesheet" type="text/css" href="lab4.css">
+</head>
+	
+
+	
+<body>
+	
+<!--==============================
+	 🚥 START OF HEADER SECION 🚥
+	==============================-->
+	<div>
+		
+		<!--///////////////////////
+		  📥 START of Container 📥
+		  ////////////////////////-->
+		<div class="container-wide">
+			
+			<!--Float 1 -->
+			<div class="header-box">
+
+				<!--Site Logo-->
+				<a href="../../index.html" class="left-align">
+					<img src="../../assets/graphics/logo-header.png"
+						 alt="NazmusLabs Logo"
+						 title="NazmusLabs Logo"
+						 class="resize-85-percent">
+				</a>
+				<!--/ Site Logo-->
+				
+			</div>
+			<!--/ Float 1-->
+			
+			<!--Float 2-->
+			<div class="header-box">
+				<h5>What is a navigation bar...</h5>
+				<p>...but a simple unordered list in HTML</p>
+			</div>
+			<div class="clearfix"></div>
+			<!--/ Float 2-->
+
+		</div>
+		<!--/////////////////////
+		  📤 END of Container 📤
+		  //////////////////////-->
+		
+	</div>
+<!--============================
+	 🚥 END OF HEADER SECION 🚥
+	============================-->
+
+<!--=========================
+	 🧭 START OF MENU BAR 🧭
+	=========================-->
+	<div>
+		
+		<!--///////////////////////
+		  📥 START of Container 📥
+		  ////////////////////////-->
+		<!--👆🏻 Main Menu-->
+		<div class="nav-bar">
+			<!--🔗 Nav-bar Menu Items-->
+			<div class="container-nav">
+				<ul class="right-align">
+					<li><a class="menu-button" href="../../index.html"><span class="button-text-decoration">Home</span></a></li>
+					<li class="menu-button-disabled">Projects</li>
+					<li class="menu-button-disabled">Labs</li>
+					<li><a class="menu-button" href="../../about.html"><span class="button-text-decoration">About</span></a></li>
+					<li class="menu-button-disabled">|</li>
+					<li><a class="menu-button" href="https://github.com/nazmuslabs" target="_blank"><span class="button-text-decoration">GitHub</span></a></li>
+				</ul>
+				<!--/🔗 Nav-bar Menu Items-->
+			</div>
+		<!--/👆🏻 Main menu-->
+		</div>
+		<!--/////////////////////
+		  📤 END of Container 📤
+		  //////////////////////-->
+		
+	</div>
+<!--=======================
+	 🧭 END OF MENU BAR 🧭
+	=======================-->
+	
+<!--===========================
+	 🎀 START OF FEATURED 🎀
+	===========================-->
+	
+	<div id="featured"><h1>Lab 4 - CMWEB 120 - NazmusLabs</h1></div>
+	
+<!--=========================
+	  🎀 END OF FEATURED 🎀
+	=========================-->
+	
+	
+<!--===============================
+	 📜 START OF CONTENT SECION 📜
+	===============================-->
+	<div class="content-section-light">
+
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container">
+		<h1>CSS Layout & The Navigation Bar</h1>
+
+		<!--Bismillah-->
+		<p id="Bismillah">
+			In the name of Allah, the Most Gracious, the most Merciful.
+		</p>
+		<!--/Bismillah-->
+
+		<!--//////////////////////
+		   💡 START of Sidebar 💡
+		  ////////////////////////-->
+		<div class="sidebar">
+			<!--🔍 Search Box - [DISABLED CODE]
+			<div>
+				<script async src="https://cse.google.com/cse.js?cx=011282160671876409027:ptdgqqdcffz"></script>
+				<div class="gcse-search"></div>
+			</div>
+			<--/🔍 Search Box [DISABLED CODE]-->
+
+			<!--👆🏻 Sidebar Menu-->
+			<div class="menu-vertical">
+				<h2>CMWEB Explorer</h2>
+
+				<!--🔗 Menu Items-->
+				<ul>
+					<li><a href="../lab1/lab1.html"><small>CMWEB 120 Lab 1</small></a></li>
+					<li><a href="../lab2/lab2.html"><small>CMWEB 120 Lab 2</small></a></li>
+					<li><a href="../lab3/lab3.html"><small>CMWEB 120 Lab 3</small></a></li>
+					<li><a href="../lab5/lab5.html"><small>CMWEB 120 Lab 5</small></a></li>
+				</ul>
+				<!--/🔗 Menu Items-->
+
+				<p>
+					<a class="button-ornate" href="../../index.html">
+						<span class="button-text-decoration">↩ CMWEB Home</span>
+					</a>
+				</p>
+			</div>	
+			<!--/👆🏻 Sidebar Menu-->
+		</div>
+		<!--///////////////////////////
+		  💡 END of Sidebar Content 💡
+		  ////////////////////////////-->
+
+
+		<!--///////////////////////////
+		   📖 START of Main Content 📖
+		  ////////////////////////////-->
+
+		<!--📢 Content Intro-->
+		<div class="page-intro">
+			<img src="assets/graphics/circles.svg"
+				 alt="Circular patterns."
+				 class="tripple-float" >
+
+			<p>One of the great things about CSS is the ability to create layouts for a web page without needing to rely on tables. During the early days of the web, webmasters (😉) made extensive use of tables to design their web pages. Tables offered rows, columns, and cells, providing theneeded divisions that were needed used to organize blocks of texts, site navigation hyperlinks, and images.</p>
+			
+			<p>But tables were designed primarily to represent data in an HTML document, and they are still one of the best ways to use them today. On the other hand, tables aren't the best nor most flexible for organizing complex HTML web pages.</p>
+			
+			<p>I will use this lab to demonstrate (insha'Allah) how we can use the <em>div</em> element to seperate blocks of text in an HTML document and then use CSS to position and resize these blocks to begain laying out our web page. CSS allows us to do everything that we could do using tables and much more.</p>
+			
+		<!--/📢 Content Intro-->
+		</div>
+
+
+		<!--📑 Main Content 📑-->
+
+		<h2>Creating a Navigation Bar</h2>
+
+		<img src="assets/graphics/brush.svg"
+			 alt="Brush with orange paint."
+			 class="image-wrap-right" >
+		
+		<p>Fundamentally, the typical navigation bar (menu bar) we see on many websites is simply an unordered list as far as HTML is concerned. This applies to both horizontal and vertical navigation menus. It is CSS that specifies how to display that unordered list. Let's take a look at this in action.</p>
+		
+		<p>Here we have a simple list containing links to three different web pages.</p>
+		
+		<ul class="fred">
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">About CSS on MDN</a></li>
+			<li><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS on Wikipedia</a></li>
+			<li><a href="https://css-tricks.com/css4/
+				" target="_blank">Where is CSS 4 on CSS Tricks</a></li>
+		</ul>
+		
+		<p style="padding-top: 1em">Next, we have a copy of the same list below, but this time, I have it set to use the "nav-bar-demo" class that I created in the external CSS file corresponding to this lab. <em>(Hint: press Ctrl+U to view the source, and then click the link near the top to open the lab4.css file.)</em> Additionally, to provide a second example, I have styled a second copy of the list using the "nav-bar" class that I use for the main site navigation for the entire CMWEB 120 student site. Notice that in this second example,  I have also assigned each of the individual list items to use the "menu-button" class so that they have this cool hover effect.</p>
+		
+		<ul class="nav-bar-demo">
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">About CSS on MDN</a></li>
+			<li><a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS on Wikipedia</a></li>
+			<li><a href="https://css-tricks.com/css4/" target="_blank">Where is CSS 4 on CSS Tricks</a></li>
+		</ul>
+		
+		<div  class="nav-bar" style="padding: 0.5em">
+			<ul class="right-align">
+				<li><a class="menu-button" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><span class="button-text-decoration">About CSS on MDN</span></a></li>
+				<li><a class="menu-button" href="https://en.wikipedia.org/wiki/CSS" target="_blank"><span class="button-text-decoration">CSS on Wikipedia</span></a></li>
+				<li><a class="menu-button" href="https://css-tricks.com/css4/" target="_blank"><span class="button-text-decoration">Where is CSS 4 on CSS Tricks</span></a></li>
+			</ul>
+		</div>
+		
+		<p style="padding-top: 1.5em">As we can see from the examples above, CSS allows us to make the same simple HTML element—in this case, an unordered list—look completely different.</p>
+		
+		<h2>Divs and Floats</h2>
+		<p>Another way tables allowed webmasters to organize their webpage content was by dividing sections of text or images into separate blocks. For example, one might use a table to simulate a multi-column paragraph. Today, we use the "div" HTML element to separate blocks of HTML content.</p>
+		
+		<p>By default, blocked off sections of content in an HTML document are represented sequentially from top to bottom. So, the one "div" element, for example, containing some text will display underneath another div containing an image that directly precedes it. We can use the "float" property in CSS to change how and where the individual blocks of HTML content display.</p>
+		
+		<div class="double-float" style="background-color: lightgrey; border: dashed;">
+			<h2>CSS Properties</h2>
+			<p>Some CSS properties for webpage layouts:</p>
+			<ul>
+				<li><strong>Property:</strong> "display"; <strong><em>Possible Values:</em></strong> "<em>block, contents, flex, flow-root, grid</em>"</li>
+				<li><strong>Property:</strong> "padding"; <strong><em>Possible Values:</em></strong> Up to four attributes, going clickwise; can be in px, em, or another unit. <em>"padding-top (value) padding-right (value) padding-bottom (value) padding-left (value)"</em></li>
+				<li><strong>Property:</strong> "margin"; <strong><em>Possible Values:</em></strong> Same format as padding. <em>"margin-top (value) margin-right (value) margin-bottom (value) margin-left (value)"</em></li>
+				<li><strong>Property:</strong> "float"; <strong><em>Possible Values:</em></strong> "<em>left, right, inline-start, inline-end, none</em>"</li>
+				<li><strong>Property:</strong> "box-sizing"; <strong><em>Possible Values:</em></strong> "<em>content-box, border-box</em>"</li>
+			</ul>
+		</div>
+
+		<div class="double-float">
+			<h2>The Importance of Responsive Design</h2>
+			<p>Having a responsive design is essential on many levels. The number one reason to use responsive design is due to the multitude of devices we use to browse the web, which can range from a four-inch iPhone SE to a 32-inch 4k desktop monitor. (Technically, yes, we do have 80 inch TVs that can browse the web, but they typically do not have the resolution a high end, a 32-inch monitor would have). A responsive website allows the content to flow fluidly such that they fit the screen's width without needing to resort to horizontal scrolling.</p>
+			<p><em><strong>P.S.</strong> This website has some responsive elements. If you zoom in on your browser far enough, you may notice that the sidebar navigation menu reflows to the center of the page.</em></p>
+		</div>
+		
+		<div class="clearfix" style="padding-bottom: 1em"></div>
+		
+		<h2>More on Responsive Design</h2>
+		
+		<p>When smartphones were starting to become mainstream computing devices, many websites would have a separate mobile version of their website independent of their desktop counterparts. These mobile sites were designed to work well with smaller screens but often lacked the features of the desktop versions. Today, however, most webpages are responsive, which helps ensure that both the mobile and desktop users can experience the same website and features while still enjoying a layout optimized for their screen.</p>
+		
+		<h3>Accessibility for the Visually Impaired</h3>
+		
+		<p>There is, however, a second but less discussed reason to have responsive designs, one that affects me and many others directly. I am visually impaired, which means that for me to be able to see the text on a web page clearly at 100% zoom on a 1080p 27-inch screen, I need to bring my eyes close to one inch to the monitor. Before responsive designs became common, zooming in on the browser meant I had to scroll back and forth using the horizontal scrollbar, making it difficult to view websites at zoom levels of 150% to 300%, which typically is what I require to read comfortably. With designs that are responsive, however, I can zoom in on the browser to more than 300%. With content reflowing perfectly, I can enjoy a "mobile" view even on larger PC displays, enabling me to read the content comfortably without needing to pan back and forth horizontally or bring my eyes right in front of the screen. So by making your website responsive, you are ensuring that it is more accessible for visually impaired people like me!</p>
+		
+		<!--/📑 Main Content 📑-->
+
+		<!--🎁 Bonus Content 🎁-->
+		<h2>External Links</h2>
+
+		<!--🔗 External Links-->
+		<ul>
+			<li><a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a></li>
+			<li><a href="https://www.w3schools.com/cssref/default.asp" target="_blank">W3Schools reference page for CSS</a></li>
+			<li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+		</ul>
+		<!--/🔗 External Links-->
+
+		<h3>Thanks for visiting!</h3>
+		<!--/🎁 Bonus Content 🎁-->
+		
+		<em><small>Featured image credit: "Red flower with green leaves" by <a href="https://unsplash.com/@chiara_art" target="_blank">Chiara Polo</a> on <a href="https://unsplash.com/photos/6x8mBPAIBrk" target="_blank">Unsplash</a>.</small></em>
+		
+
+		<!--//////////////////////////
+		   📖 END of Main Content 📖
+		  ///////////////////////////-->
+		
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+
+	</div>
+<!--=============================
+	 📜 END OF CONTENT SECION 📜
+	=============================-->
+	
+	<div class="clearfix"></div>
+	
+<!--=================================
+	 🚧 START OF FOOTER SECION A 🚧
+	=================================-->
+	<div class="content-section-grey">
+		
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container-wide">
+
+		<!--👆🏻 Footer Menu-->
+		<div class="menu-horizontal">
+
+			<!--Float 1-->
+			<div class="double-float">
+				<p>
+					<a class="button-ornate" href="../../index.html">
+						<span class="button-text-decoration">↩ CMWEB 120 Home</span>
+					</a>
+				</p>
+			</div>
+			<!--/ Float 1-->
+
+			<!--Float 2-->
+			<div class="double-float">
+				<!--🔗 Footer Menu items-->
+				<ul>
+					<li><a href="../index.html">Projects</a></li>
+					<li><a href="../../labs/index.html">Labs</a></li>
+					<li><a href="../../about.html">About</a></li>
+					<li>|</li>
+					<li><a href ="http://github.com/nazmuslabs" target="_blank">GitHub</a></li>
+				</ul>
+				<!--/🔗 Footer Menu Items-->
+			</div>
+
+			<!--/ Float 2-->
+
+			<div class="clearfix"></div>
+		</div>
+		<!--/👆🏻 Footer Menu-->
+
+		<div class="horizontal-gap"></div>
+
+
+		<!--📞 Contact Options-->
+		<div class="tripple-float">
+			<h3>Get in Touch</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<div class="tripple-float">
+			<h3>Get the Code</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<div class="tripple-float">
+			<h3>Send Feedback</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<!--/📞 Contact Options-->
+		<div class="clearfix"></div>
+
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+		
+	</div>
+<!--==============================
+	 🚧 END OF FOOTER SECION A 🚧
+	==============================-->
+	
+	
+<!--================================
+	 📄 START OF FOOTER SECION B 📄
+	================================-->
+	<div>
+		
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container-wide">
+
+		<!--Licence Info -->
+		<p id="license">
+			<a rel="license" href=
+			   "http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+				<img alt="Creative Commons
+					License" style="border-width:0"
+					src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+			<br />This work is licensed under a
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+			Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+		</p>
+		<!--/ Licence Info -->
+
+		<!--Copyright Info -->
+		<p><small>&copy; 2020 Nazmus Shakib Khandaker and NazmusLabs. Some rights reserved.</small></p>
+		<!--/ Copyright Info -->
+
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+		
+	</div>
+	
+<!--==============================
+	 📄 END OF FOOTER SECION B 📄
+	==============================-->
+	
+</body>
+	
+</html>				<!--🌐 End of HTML Document 🌐-->
+
+<!--
+Thanks for stopping by the back-stage!
+
+Written and Designed by Nazmus Shakib Khandaker
+Version 14.0.20.1113
+
+Originally created on September 3, 2020
+Updated on November 13, 2020
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+*/
+
+/*Last Updated on September 9, 2020*/
+
+-->

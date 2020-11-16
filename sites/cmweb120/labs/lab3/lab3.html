@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<!--
+So, you are here to view the source code for this page, huh?
+Well, I'm glad you did; make yourself at home and explore at your leasure..
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+-->
+
+<html lang="en">	<!-- 🌐 START OF HTML DOCUMENT 🌐-->
+
+<head>
+    <title>Lab 3 - CSS Resources</title>
+	
+    <meta charset="UTF-8">
+	<meta name="description" content="Nazmus's Student Site Webpage for CMWEB at Illinois Central College"/>
+	<meta name="author" content="Nazmus Shakib Khandaker (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)"/>
+	
+	<meta name="version" content="13.0.20.909 (Update 2)"/>
+	<meta name="created" content="September 5, 2020"/>
+	<meta name="updated" content="September 9, 2020"/>
+	<style type="text/css">
+		@import url("lab3.css");
+		body{
+			background-color: #2A1737; color: lightpink;
+		}
+		.content-section-light h1{
+			font: bold 48px "Times New Roman"
+		}
+		.content-section-light h2{
+			font: bold 36px "Arial"
+		}
+		
+		.content-section-light h1, .content-section-light h2, .content-section-light h3{
+			text-align: center;
+			color: rebeccapurple;
+		}
+
+		.content-section-light a{
+			color: darkviolet;
+		}
+		.content-section-light{
+			background-color: lavender;
+		}
+		.content-section-grey{
+			background-color: #DBB9F1;
+		}
+		.nav-bar{
+			background-color: #381D42;
+		}
+		.menu-button:hover{
+			background-color:#743C89;
+		}
+		.menu-vertical, .menu-horizontal{
+			border-color: darkslateblue;
+		}
+		.button:hover, .button-ornate:hover{
+			background-color:deepskyblue;
+		}
+		.menu-horizontal a:hover, .menu-vertical a:hover{
+			color: blue;
+		}
+	</style>
+	<!--Following line of HTML disabled for this lab only.
+	<link rel="stylesheet" type="text/css" href="lab3.css">
+	-->
+</head>
+	
+
+	
+<body>
+	
+<!--==============================
+	 🚥 START OF HEADER SECION 🚥
+	==============================-->
+	<div>
+		
+		<!--///////////////////////
+		  📥 START of Container 📥
+		  ////////////////////////-->
+		<div class="container-wide">
+			
+			<!--Float 1 -->
+			<div class="header-box">
+
+				<!--Site Logo-->
+				<a href="../../index.html" class="left-align">
+					<img src="../../assets/graphics/logo-header.png"
+						 alt="NazmusLabs Logo"
+						 title="NazmusLabs Logo"
+						 class="resize-85-percent">
+				</a>
+				<!--/ Site Logo-->
+				
+			</div>
+			<!--/ Float 1-->
+			
+			<!--Float 2-->
+			<div class="header-box">
+				<h5>To embed or not to embed...</h5>
+				<p>...That is the question when working with CSS.</p>
+			</div>
+			<div class="clearfix"></div>
+			<!--/ Float 2-->
+
+		</div>
+		<!--/////////////////////
+		  📤 END of Container 📤
+		  //////////////////////-->
+		
+	</div>
+<!--============================
+	 🚥 END OF HEADER SECION 🚥
+	============================-->
+
+<!--=========================
+	 🧭 START OF MENU BAR 🧭
+	=========================-->
+	<div>
+		
+		<!--///////////////////////
+		  📥 START of Container 📥
+		  ////////////////////////-->
+		<!--👆🏻 Main Menu-->
+		<div class="nav-bar">
+			<!--🔗 Nav-bar Menu Items-->
+			<div class="container-nav">
+				<ul class="right-align">
+					<li><a class="menu-button" href="../../index.html"><span class="button-text-decoration">Home</span></a></li>
+					<li class="menu-button-disabled">Projects</li>
+					<li class="menu-button-disabled">Labs</li>
+					<li><a class="menu-button" href="../../about.html"><span class="button-text-decoration">About</span></a></li>
+					<li class="menu-button-disabled">|</li>
+					<li><a class="menu-button" href="https://github.com/nazmuslabs" target="_blank"><span class="button-text-decoration">GitHub</span></a></li>
+				</ul>
+				<!--/🔗 Nav-bar Menu Items-->
+			</div>
+		<!--/👆🏻 Main menu-->
+		</div>
+		<!--/////////////////////
+		  📤 END of Container 📤
+		  //////////////////////-->
+		
+	</div>
+<!--=======================
+	 🧭 END OF MENU BAR 🧭
+	=======================-->
+	
+<!--===========================
+	 🎀 START OF FEATURED 🎀
+	===========================-->
+	
+	<div id="featured"><h1>Cascading Style Sheets</h1></div>
+	
+<!--=========================
+	  🎀 END OF FEATURED 🎀
+	=========================-->
+	
+	
+<!--===============================
+	 📜 START OF CONTENT SECION 📜
+	===============================-->
+	<div class="content-section-light">
+
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container">
+		<h1>Lab 3 - CMWEB 120 - NazmusLabs</h1>
+
+		<!--Bismillah-->
+		<p id="Bismillah" style="text-align: center;">
+			In the name of Allah, the Most Gracious, the most Merciful.
+		</p>
+		<!--/Bismillah-->
+
+		<!--//////////////////////
+		   💡 START of Sidebar 💡
+		  ////////////////////////-->
+		<div class="sidebar">
+			<!--🔍 Search Box - [DISABLED CODE]
+			<div>
+				<script async src="https://cse.google.com/cse.js?cx=011282160671876409027:ptdgqqdcffz"></script>
+				<div class="gcse-search"></div>
+			</div>
+			<--/🔍 Search Box [DISABLED CODE]-->
+
+			<!--👆🏻 Sidebar Menu-->
+			<div class="menu-vertical">
+				<h2>CMWEB Explorer</h2>
+
+				<!--🔗 Menu Items-->
+				<ul>
+					<li><a href="../cmweb120/index.html"><small>CMWEB 120 Student Site</small></a></li>
+					<li><a href="../cmweb241/index.html"><small>CMWEB 241 Student Site</small></a></li>
+					<li><a href="../lab1/lab1.html"><small>CMWEB 120 Lab 1</small></a></li>
+					<li><a href="../lab2/lab2.html"><small>CMWEB 120 Lab 2</small></a></li>
+					<li><a href="../lab4/lab4.html"><small>CMWEB 120 Lab 4</small></a></li>
+				</ul>
+				<!--/🔗 Menu Items-->
+
+				<p>
+					<a class="button-ornate" href="../../index.html">
+						<span class="button-text-decoration">↩ CMWEB Home</span>
+					</a>
+				</p>
+			</div>	
+			<!--/👆🏻 Sidebar Menu-->
+		</div>
+		<!--///////////////////////////
+		  💡 END of Sidebar Content 💡
+		  ////////////////////////////-->
+
+
+		<!--///////////////////////////
+		   📖 START of Main Content 📖
+		  ////////////////////////////-->
+
+		<!--📢 Content Intro-->
+		<div class="page-intro">
+			<img src="assets/graphics/circles.svg"
+				 alt="Circular patterns."
+				 class="tripple-float" >
+
+			<p>Cascading Style Sheets, or CSS, allows one to specify how the different elements in a markup (in our case HTML) should render. There are three ways to integrate CSS in an HTML document. The simplest way to do this so is by using what is known as an "inline styling"; this involves inserting CSS directly in the element one wishes to style. For a more global approach, however, we can use either an embedded style or an external stylesheet.</p>
+		<!--/📢 Content Intro-->
+		</div>
+
+
+		<!--📑 Main Content 📑-->
+
+		<h2>Embedded vs External</h2>
+
+		<p>Both embedded and external stylesheets enable us to globally apply the same style to multiple occurrences of an element in the HTML document. The former involves including CSS in the header of an HTML document to which the styling is applied. The latter is when the HTML document in question references a separate file containing the CSS. These external files have a ".css" extension. This lab demonstrates all of these methods.</p>
+		
+		<p>In the header of this HTML page (Ctrl + U to view source), we can see that an external stylesheet, lab3.css, is imported, below which we have additional CSS. These extra lines of CSS are embedded styles, and it overrides any conflicts found in the external file because the import line comes before the embedded CSS. Additionally, some of the paragraphs below have inline stiling that changes their font size and color.</p>
+		
+		<p>In our case, for instance, the external CSS declares that the h1 and h2 elements are left-aligned and colored consistently with the rest of the text.  However, the CSS embedded specify the same h1 and h2 tags to be center-aligned and colored in a shade of purple.</p>
+		
+		<h2>The CSS Resources I Reference</h2>
+		
+		<img src="assets/graphics/purple-brush.svg"
+			 alt="Brush with purple paint."
+			 class="image-wrap-right" >
+		
+		<p>The following are some of the resources I often go back to when working with CSS.</p>
+		<ul>
+			<li><a href="https://www.youtube.com/user/TechGuyWeb" target="_blank">Traversy Media on YouTube</a></li>
+			<li><a href="https://www.w3schools.com/cssref/default.asp" target="_blank">CSS Reference page on W3Schools</a></li>
+			<li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+			<li><a href="https://www.amazon.com/Learning-Web-Design-Beginners-JavaScript/dp/1449319270" target="_blank">"Learning HTML 5th Edition" written by Jennifer Niederst Robbins and Published by O'Reilly</a></li>
+			<li><a href="../../../cmweb110">My previous CMWEB 110 Labs</a></li>
+		</ul>
+		
+		<h3>Web Resources</h3>
+		
+		<p style="font-size: medium; color: rebeccapurple">Traversy Media is a fantastic YouTube channel, especially for those who are new to web development like I was when I started this program here at Illinois Central College. This channel covers a wide breadth of web-developer related topics, including HTML, CSS, JS, and PHP. Their CSS playlist is an excellent resource for learning to do creative things with CSS.</p>
+		
+		<p style="font-size: medium; color: rebeccapurple">The CSS Reference page from W3School is the place to go to look up all of the properties and their values that are part of the latest CSS specification. It is a place where I go for documentation on anything unfamiliar I come across as I design my pages.</p>
+		
+		<p style="font-size: medium; color: rebeccapurple">CSS Tricks is a website I have used several times in my CMWEB 110 course and one that I continue to use in the CMWEB 120 course. This resource provides a wide variety of tips and guidelines for writing good CSS. It also contains articles that explain why some CSS quirks are the way they are.</p>
+		
+		<h3>Other Resources</h3>
+		
+		<p>The textbook for the CMWEB 120 course serves more than as a one-time read as I learn more about HTML and CSS. This book includes charts and tables that lay out various information that I frequently need to go back to, as having all of the basic properties memorized is impractical.</p>
+		
+		<p>Whenever I have trouble recalling how I did a certain thing CSS or HTML previously, I go back to one of my earlier labs, especially those from CMWEB 110. Doing so helps me remember exactly how I implemented some of the more fundamental aspects of CSS because many of those labs are simpler in nature and often would be the first time I used that specific element or property.</p>
+		
+
+		<!--/📑 Main Content 📑-->
+
+		<!--🎁 Bonus Content 🎁-->
+		
+		<!--No bonus content for this lab :( -->
+
+		<h3>Thanks for visiting!</h3>
+		<!--/🎁 Bonus Content 🎁-->
+	
+		<em><small>Featured image credit: Purple Fan by <a href="https://unsplash.com/@yogidan2012" target="_blank">Daniele Levis Pelusi </a> on <a href="https://unsplash.com/photos/WEylkRkkd24" target="_blank">Unsplash</a>.</small></em>
+		
+
+		<!--//////////////////////////
+		   📖 END of Main Content 📖
+		  ///////////////////////////-->
+		
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+
+	</div>
+<!--=============================
+	 📜 END OF CONTENT SECION 📜
+	=============================-->
+	
+	<div class="clearfix"></div>
+	
+<!--=================================
+	 🚧 START OF FOOTER SECION A 🚧
+	=================================-->
+	<div class="content-section-grey">
+		
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container-wide">
+
+		<!--👆🏻 Footer Menu-->
+		<div class="menu-horizontal">
+
+			<!--Float 1-->
+			<div class="double-float">
+				<p>
+					<a class="button-ornate" href="../../index.html">
+						<span class="button-text-decoration">↩ CMWEB 120 Home</span>
+					</a>
+				</p>
+			</div>
+			<!--/ Float 1-->
+
+			<!--Float 2-->
+			<div class="double-float">
+				<!--🔗 Footer Menu items-->
+				<ul>
+					<li><a href="../index.html">Projects</a></li>
+					<li><a href="../../labs/index.html">Labs</a></li>
+					<li><a href="../../about.html">About</a></li>
+					<li>|</li>
+					<li><a href ="http://github.com/nazmuslabs" target="_blank">GitHub</a></li>
+				</ul>
+				<!--/🔗 Footer Menu Items-->
+			</div>
+
+			<!--/ Float 2-->
+
+			<div class="clearfix"></div>
+		</div>
+		<!--/👆🏻 Footer Menu-->
+
+		<div class="horizontal-gap"></div>
+
+
+		<!--📞 Contact Options-->
+		<div class="tripple-float">
+			<h3>Get in Touch</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<div class="tripple-float">
+			<h3>Get the Code</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<div class="tripple-float">
+			<h3>Send Feedback</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<!--/📞 Contact Options-->
+		<div class="clearfix"></div>
+
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+		
+	</div>
+<!--==============================
+	 🚧 END OF FOOTER SECION A 🚧
+	==============================-->
+	
+	
+<!--================================
+	 📄 START OF FOOTER SECION B 📄
+	================================-->
+	<div>
+		
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container-wide">
+
+		<!--Licence Info -->
+		<p id="license">
+			<a rel="license" href=
+			   "http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+				<img alt="Creative Commons
+					License" style="border-width:0"
+					src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+			<br />This work is licensed under a
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+			Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+		</p>
+		<!--/ Licence Info -->
+
+		<!--Copyright Info -->
+		<p><small>&copy; 2020 Nazmus Shakib Khandaker and NazmusLabs. Some rights reserved.</small></p>
+		<!--/ Copyright Info -->
+
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+		
+	</div>
+	
+<!--==============================
+	 📄 END OF FOOTER SECION B 📄
+	==============================-->
+	
+</body>
+	
+</html>				<!--🌐 End of HTML Document 🌐-->
+
+<!--
+Thanks for stopping by the back-stage!
+
+Written and Designed by Nazmus Shakib Khandaker
+Version 14.0.20.1113
+
+Originally created on September 3, 2020
+Updated on November 13, 2020
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+*/
+
+/*Last Updated on September 9, 2020*/
+
+-->

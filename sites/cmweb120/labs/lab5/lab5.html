@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<!--
+So, you are here to view the source code for this page, huh?
+Well, I'm glad you did; make yourself at home and explore at your leasure..
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+-->
+
+<html lang="en">	<!-- 🌐 START OF HTML DOCUMENT 🌐-->
+
+<head>
+    <title>Lab 5 - Cascading Style Sheets</title>
+	
+    <meta charset="UTF-8">
+	<meta name="description" content="Nazmus's Student Site Webpage for CMWEB at Illinois Central College"/>
+	<meta name="author" content="Nazmus Shakib Khandaker (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)"/>
+	
+	<meta name="version" content="13.0.20.909 (Update 2)"/>
+	<meta name="created" content="September 5, 2020"/>
+	<meta name="updated" content="September 9, 2020"/>
+	<link rel="stylesheet" type="text/css" href="lab5.css">
+</head>
+	
+
+	
+<body>
+	
+<!--==============================
+	 🚥 START OF HEADER SECION 🚥
+	==============================-->
+	<div>
+		
+		<!--///////////////////////
+		  📥 START of Container 📥
+		  ////////////////////////-->
+		<div class="container-wide">
+			
+			<!--Float 1 -->
+			<div class="header-box">
+
+				<!--Site Logo-->
+				<a href="../../index.html" class="left-align">
+					<img src="../../assets/graphics/logo-header.png"
+						 alt="NazmusLabs Logo"
+						 title="NazmusLabs Logo"
+						 class="resize-85-percent">
+				</a>
+				<!--/ Site Logo-->
+				
+			</div>
+			<!--/ Float 1-->
+			
+			<!--Float 2-->
+			<div class="header-box" style="padding-top: 1em">
+				<h5>What is a navigation bar...</h5>
+				<p>...but a simple unordered list in HTML</p>
+			</div>
+			<div class="clearfix"></div>
+			<!--/ Float 2-->
+
+		</div>
+		<!--/////////////////////
+		  📤 END of Container 📤
+		  //////////////////////-->
+		
+	</div>
+<!--============================
+	 🚥 END OF HEADER SECION 🚥
+	============================-->
+
+<!--=========================
+	 🧭 START OF MENU BAR 🧭
+	=========================-->
+	<div>
+		
+		<!--///////////////////////
+		  📥 START of Container 📥
+		  ////////////////////////-->
+		<!--👆🏻 Main Menu-->
+		<div class="nav-bar">
+			<!--🔗 Nav-bar Menu Items-->
+			<div class="container-nav">
+				<ul class="right-align">
+					<li><a class="menu-button" href="../../index.html">Home</a></li>
+					<li class="menu-button-disabled">Projects</li>
+					<li class="menu-button-disabled">Labs</li>
+					<li><a class="menu-button" href="../../about.html">About</a></li>
+					<li class="menu-button-disabled">|</li>
+					<li><a class="menu-button" href="https://github.com/nazmuslabs" target="_blank">GitHub</a></li>
+				</ul>
+				<!--/🔗 Nav-bar Menu Items-->
+			</div>
+		<!--/👆🏻 Main menu-->
+		</div>
+		<!--/////////////////////
+		  📤 END of Container 📤
+		  //////////////////////-->
+		
+	</div>
+<!--=======================
+	 🧭 END OF MENU BAR 🧭
+	=======================-->
+	
+<!--===========================
+	 🎀 START OF FEATURED 🎀
+	===========================-->
+	
+	<div id="featured"><h1>Lab 5 - CMWEB 120 - NazmusLabs</h1></div>
+	
+<!--=========================
+	  🎀 END OF FEATURED 🎀
+	=========================-->
+	
+	
+<!--===============================
+	 📜 START OF CONTENT SECION 📜
+	===============================-->
+	<div class="content-section-light">
+
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container">
+		<h1>From Wikipedia: Cascading Style Sheets</h1>
+
+		<!--Bismillah-->
+		<p id="Bismillah">
+			In the name of Allah, the Most Gracious, the most Merciful.
+		</p>
+		<!--/Bismillah-->
+
+		<!--//////////////////////
+		   💡 START of Sidebar 💡
+		  ////////////////////////-->
+		<div class="sidebar">
+			<!--🔍 Search Box - [DISABLED CODE]
+			<div>
+				<script async src="https://cse.google.com/cse.js?cx=011282160671876409027:ptdgqqdcffz"></script>
+				<div class="gcse-search"></div>
+			</div>
+			<--/🔍 Search Box [DISABLED CODE]-->
+
+			<!--👆🏻 Sidebar Menu-->
+			<div class="menu-vertical">
+				<h2>CMWEB Explorer</h2>
+
+				<!--🔗 Menu Items-->
+				<ul>
+					<li><a href="../lab1/lab1.html"><small>CMWEB 120 Lab 1</small></a></li>
+					<li><a href="../lab2/lab2.html"><small>CMWEB 120 Lab 2</small></a></li>
+					<li><a href="../lab3/lab3.html"><small>CMWEB 120 Lab 3</small></a></li>
+					<li><a href="../lab4/lab4.html"><small>CMWEB 120 Lab 4</small></a></li>
+				</ul>
+				<!--/🔗 Menu Items-->
+
+				<p>
+					<a class="button-ornate" href="../../index.html">
+						<span class="button-text-decoration">↩ CMWEB Home</span>
+					</a>
+				</p>
+			</div>	
+			<!--/👆🏻 Sidebar Menu-->
+		</div>
+		<!--///////////////////////////
+		  💡 END of Sidebar Content 💡
+		  ////////////////////////////-->
+
+
+		<!--///////////////////////////
+		   📖 START of Main Article 📖
+		  ////////////////////////////-->
+		<article>
+		<section>
+		<!--📢 Content Intro-->
+		<p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.[1] Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other media. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.</p>
+
+		<p>But tables were designed primarily to represent data in an HTML document, and they are still one of the best ways to use them today. On the other hand, tables aren't the best nor most flexible for organizing complex HTML web pages.</p>
+		<!--/📢 Content Intro-->
+		</section>
+		
+
+		<!--📑 Main Content 📑-->
+
+		<h2>Variations</h2>
+
+		<p>CSS has various levels and profiles. Each level of CSS builds upon the last, typically adding new features and typically denoted as CSS 1, CSS 2, CSS 3, and CSS 4. Profiles are typically a subset of one or more levels of CSS built for a particular device or user interface. Currently, there are profiles for mobile devices, printers, and television sets. Profiles should not be confused with media types, which were added in CSS 2.</p>
+		
+		<h3>CSS 1</h3>
+		<p>The first CSS specification to become an official W3C Recommendation is CSS level 1, published on December 17, 1996. Håkon Wium Lie and Bert Bos are credited as the original developers.[32][33] Among its capabilities are supported for</p>
+
+		<ul>
+			<li>Font properties such as typeface and emphasis</li>
+			<li>Color of text, backgrounds, and other elements</li>
+			<li>Text attributes such as spacing between words, letters, and lines of text</li>
+			<li>Alignment of text, images, tables and other elements</li>
+			<li>Margin, border, padding, and positioning for most elements</li>
+			<li>Unique identification and generic classification of groups of attributes</li>
+		</ul>
+
+		<p>The W3C no longer maintains the CSS 1 Recommendation.[34]</p>
+
+		<h3>CSS 2</h3>
+		<p>CSS level 2 specification was developed by the W3C and published as a recommendation in May 1998. A superset of CSS 1, CSS 2 includes a number of new capabilities like absolute, relative, and fixed positioning of elements and z-index, the concept of media types, support for aural style sheets (which were later replaced by the CSS 3 Speech modules)[35] and bidirectional text, and new font properties such as shadows.</p>
+
+		<p>By default, blocked off sections of content in an HTML document are represented sequentially from top to bottom. So, the one "div" element, for example, containing some text will display underneath another div containing an image that directly precedes it. We can use the "float" property in CSS to change how and where the individual blocks of HTML content display.</p>
+		
+		<p>The W3C no longer maintains the CSS 2 recommendation.</p>
+		
+		<h4>CSS 2.1</h4>
+		<p>CSS level 2 revision 1, often referred to as "CSS 2.1", fixes errors in CSS 2, removes poorly supported or not fully interoperable features and adds already implemented browser extensions to the specification. To comply with the W3C Process for standardizing technical specifications, CSS 2.1 went back and forth between Working Draft status and Candidate Recommendation status for many years. CSS 2.1 first became a Candidate Recommendation on February 25, 2004, but it was reverted to a Working Draft on June 13, 2005, for further review. It returned to Candidate Recommendation on 19 July 2007 and then updated twice in 2009. However, because changes and clarifications were made, it again went back to the Last Call Working Draft on 7 December 2010.</p>
+		
+		<p>CSS 2.1 went to Proposed Recommendation on 12 April 2011.[37] After being reviewed by the W3C Advisory Committee, it was finally published as a W3C Recommendation on 7 June 2011.[38]</p>
+
+		<h3>CSS 3</h3>
+		<p><em>"CSS3" redirects here. For other uses, see CSS3 (disambiguation).</em></p>
+		
+		<p>Unlike CSS 2, which is a large single specification defining various features, CSS 3 is divided into several separate documents called "modules". Each module adds new capabilities or extends features defined in CSS 2, preserving backward compatibility. Work on CSS level 3 started around the time of publication of the original CSS 2 recommendation. The earliest CSS 3 drafts were published in June 1999.[39]</p>
+		
+		<p>Due to the modularization, different modules have different stability and statuses.[40] As of June 2012, there are over fifty CSS modules published from the CSS Working Group.,[39] and four of these have been published as formal recommendations:</p>
+		
+		<h1>Table goes here</h1>
+		
+		<img src="assets/images/CSS3_taxonomy_and_status-v2.png"
+			 alt="Diagram showing CSS 3 Taxomony and Status"
+			 class="center-image"
+		>
+		
+		<h3>CSS 4</h3>
+		<p>There is no single, integrated CSS4 specification,[43] because it is split into separate modules. However, there are "level 4" modules.[44]</p>
+		
+		<p>Because CSS3 split the CSS language's definition into modules, the modules have been allowed to level independently. Most modules are level 3--they build on things from CSS 2.1. A few level-4 modules exist (such as Image Values, Backgrounds & Borders, or Selectors), which build on the functionality of a preceding level-3 module. Other modules defining entirely new functionality, such as Flexbox, have been designated as "level 1".[45]</p>
+		
+		<p>So, although no monolithic CSS4 will be worked on after CSS3 is finished completely, the level 4 modules can collectively be referred to as CSS4.</p>
+		
+		<h2>CSS Frameworks</h2>
+		
+		<p><em>See also: CSS frameworks</em></p>
+		
+		<p>CSS frameworks are pre-prepared libraries that are meant to allow for easier, more standards-compliant styling of web pages using the Cascading Style Sheets language. CSS frameworks include Foundation, Blueprint, Bootstrap, Cascade Framework and Materialize. Like programming and scripting language libraries, CSS frameworks are usually incorporated as external .css sheets referenced in the HTML &lt;head&gt;. They provide a number of ready-made options for designing and laying out the web page. Although many of these frameworks have been published, some authors use them mostly for rapid prototyping, or for learning from, and prefer to 'handcraft' CSS that is appropriate to each published site without the design, maintenance and download overhead of having many unused features in the site's styling.[58]</p>
+		
+		<h2>CSS Authoring Methodologies</h2>
+		
+		<p>As the size of CSS resources used in project increases, the development team needs to decide on a common methodology to keep them organized. The goals are ease of development, ease of collaboration during development and performance of the deployed stylesheets in the browser. Popular methodologies include OOCSS - Object Oriented CSS, ACSS - Atomic CSS, oCSS - organic Cascade Style Sheet, SMACSS - Scalable and Modular Architecture for CSS and BEM - Block, Element, Modifier.[61]</p>
+
+		<!--/📑 Main Content 📑-->
+
+		<!--🎁 Bonus Content 🎁-->
+		<h2>External Links</h2>
+
+		<!--🔗 External Links-->
+		<ul>
+			<li><a href="https://validator.w3.org/" target="_blank">W3C Markup Validation Service</a></li>
+			<li><a href="https://www.w3schools.com/cssref/default.asp" target="_blank">W3Schools reference page for CSS</a></li>
+			<li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+		</ul>
+		<!--/🔗 External Links-->
+
+		<h3>Thanks for visiting!</h3>
+		<!--/🎁 Bonus Content 🎁-->
+
+		<em><small>Featured image credit: "Red flower with green leaves" by <a href="https://unsplash.com/@chiara_art" target="_blank">Chiara Polo</a> on <a href="https://unsplash.com/photos/6x8mBPAIBrk" target="_blank">Unsplash</a>.</small></em>
+
+		</article>
+		<!--//////////////////////////
+		   📖 END of Main Article 📖
+		  ///////////////////////////-->
+		
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+
+	</div>
+<!--=============================
+	 📜 END OF CONTENT SECION 📜
+	=============================-->
+	
+	<div class="clearfix"></div>
+	
+<!--=================================
+	 🚧 START OF FOOTER SECION A 🚧
+	=================================-->
+	<div class="content-section-grey">
+		
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container-wide">
+
+		<!--👆🏻 Footer Menu-->
+		<div class="menu-horizontal">
+
+			<!--Float 1-->
+			<div class="double-float">
+				<p>
+					<a class="button-ornate" href="../../index.html">
+						<span class="button-text-decoration">↩ CMWEB 120 Home</span>
+					</a>
+				</p>
+			</div>
+			<!--/ Float 1-->
+
+			<!--Float 2-->
+			<div class="double-float">
+				<!--🔗 Footer Menu items-->
+				<ul>
+					<li><a href="../index.html">Projects</a></li>
+					<li><a href="../../labs/index.html">Labs</a></li>
+					<li><a href="../../about.html">About</a></li>
+					<li>|</li>
+					<li><a href ="http://github.com/nazmuslabs" target="_blank">GitHub</a></li>
+				</ul>
+				<!--/🔗 Footer Menu Items-->
+			</div>
+
+			<!--/ Float 2-->
+
+			<div class="clearfix"></div>
+		</div>
+		<!--/👆🏻 Footer Menu-->
+
+		<div class="horizontal-gap"></div>
+
+
+		<!--📞 Contact Options-->
+		<div class="tripple-float">
+			<h3>Get in Touch</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<div class="tripple-float">
+			<h3>Get the Code</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<div class="tripple-float">
+			<h3>Send Feedback</h3>
+			<p>Coming soon Insha'Allah</p>
+		</div>
+		<!--/📞 Contact Options-->
+		<div class="clearfix"></div>
+
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+		
+	</div>
+<!--==============================
+	 🚧 END OF FOOTER SECION A 🚧
+	==============================-->
+	
+	
+<!--================================
+	 📄 START OF FOOTER SECION B 📄
+	================================-->
+	<div>
+		
+	<!--///////////////////////
+	  📥 START of Container 📥
+	  ////////////////////////-->
+	<div class="container-wide">
+
+		<!--Licence Info -->
+		<p id="license">
+			<a rel="license" href=
+			   "http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+				<img alt="Creative Commons
+					License" style="border-width:0"
+					src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+			<br />This work is licensed under a
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+			Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+		</p>
+		<!--/ Licence Info -->
+
+		<!--Copyright Info -->
+		<p><small>&copy; 2020 Nazmus Shakib Khandaker and NazmusLabs. Some rights reserved.</small></p>
+		<!--/ Copyright Info -->
+
+	</div>
+	<!--/////////////////////
+	  📤 END of Container 📤
+	  //////////////////////-->
+		
+	</div>
+	
+<!--==============================
+	 📄 END OF FOOTER SECION B 📄
+	==============================-->
+	
+</body>
+	
+</html>				<!--🌐 End of HTML Document 🌐-->
+
+<!--
+Thanks for stopping by the back-stage!
+
+Written and Designed by Nazmus Shakib Khandaker
+Version 14.0.20.1113
+
+Originally created on September 3, 2020
+Updated on November 13, 2020
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+*/
+
+/*Last Updated on September 9, 2020*/
+
+-->

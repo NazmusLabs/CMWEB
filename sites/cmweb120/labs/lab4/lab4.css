@@ -1,0 +1,607 @@
+/*
+CSS Document for CMWEB120 Lab 1 (lab1.html)
+Version 14.0.20.2113
+Written by Nazmus Shakib Khandaker*/
+
+/*In the name of Allah, the Most Gracious, the Most Merciful*/
+
+/* Reset Styles */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* Custom Styles Start *;
+
+/* CSS > */
+
+/* CSS > General > */
+br{
+	padding: 20px 0px
+}
+
+
+/* CSS > TEXT */
+body {
+	color: lavender;
+	background-color: #1E1E1E;
+	
+	font: normal 24px "Helvetica", "Arial", "sans-serif";
+	line-height: 1.6em;
+}
+
+/* CSS > TEXT > Headings */
+h1, h2, h3, h4, h5, h6{
+	color: lightskyblue;
+	padding: 20px 0;
+	line-height: 1.3em;
+}
+
+/* CSS > TEXT > Paragraph */
+p{
+	padding: 0px 0px 40px 0px;
+}
+
+/* CSS  TEXT > Hyperlinks */
+a{color: lightskyblue;}
+a:link{
+	color: lightskyblue;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline
+}
+
+
+/* CSS > Lists > */
+li{margin: 0px 0px 0px 20px;}
+
+/* CSS > Lists > Unordered Lists */
+ul{
+	padding: 0px 0px 20px 40px;
+	list-style-type: square;
+}
+
+/* CSS > Lists > Ordered Lists */
+ol{
+	padding: 0px 0px 20px 40px;
+	/*list-style: lower-roman;*/
+		/* Enable this option above to use roman numerals instead of arabic ones in ordered lists by default. */
+}
+
+/* CSS > Lists > Definitions */
+dl{
+	padding: 0px 0px 10px 20px;
+}
+dt{
+	padding: 0px 0px 0px 0px;
+}
+dd{
+	padding: 0px 0px 10px 20px;
+}
+
+
+/* CSS > Tables > */
+table{
+	color: #542872;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+table, th, td{
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+
+/* CSS > CLASSES > */
+.wilma{
+	text-align: center;
+	text-shadow: 1px 1px 1px dimgrey;
+}
+
+.fred{
+	background-color: lavender;
+	color: rebeccapurple;
+	
+	width: 95%;
+	padding: 0.6em 2em 0.6em 2em;
+	
+	border-style: solid;
+	border-width: thin;
+	border-radius: 25px;
+	box-sizing: border-box;
+	box-shadow: 1px 1px 3px #292929;
+}
+
+.fred h1, .fred h2, .fred h3, .fred h4, .fred h5, .fred h6{
+	color: rebeccapurple;
+}
+
+.fred ul{padding-left: 1em;}
+
+/* CSS > CLASSES > Layout > */
+.center-align{
+	text-align: center;
+}
+.left-align{
+	text-align: left;
+}
+.right-align{
+	text-align: right;
+}
+
+.pad-right{
+	margin: 0px 0px 0px 30px /* Indents he wole paragraph when used in the p tag. To indent just the first line of any paragraphs, type (without the quotes) "&nbsp;&nbsp;&nbsp;&nbsp;" just before the first word of the paragraph in your HTML document instead. */
+}
+.horizontal-gap{
+	margin: 0.6em 0em;
+}
+
+/* CSS > CLASSES > Layouts > Floats > */
+.clearfix{
+	clear: both; /* Purpose for this is to remove any existing float configurations beyond the given point in the HTML document this class is used. Note: this does not stop one from creating new floats at alater point in the document.*/
+}
+.header-box{
+	float:left;
+	width:50%;
+	box-sizing: border-box;
+}
+.header-box h1, .header-box h2, .header-box h3, .header-box h4, .header-box h5, .header-box h6, p{
+	padding: 3px 0;
+}
+
+.sidebar{
+	float: right;
+	width: 30%;
+	box-sizing: border-box;
+	margin: 0 0 1em 1em;	
+}
+.page-intro{				/* This sits directly on the left of the aforementioned "Sidebar" */
+	/*width: 70%; disabled*/
+	box-sizing: border-box;
+	padding: 1em;
+	
+	/*overflow: hidden;*/
+}
+
+.double-float{
+	width: 50%;
+	float: left;
+	padding: 1em;
+	
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.tripple-float{
+	width: 33.33%;
+	float: left;
+	
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.image-wrap-left{
+	float: left;
+	width: 33.33%;
+	height: auto;
+}
+
+.image-wrap-right{
+	float: right;
+	width: 33.33%;
+	height: auto;
+}
+
+.center-image{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+}
+
+/* CSS > CLASSES > Layouts > Floats > Conditions */
+@media(max-width: 600px){
+	/* THe purpose of this is to accomidate smaller devices, large zoom size, or small screen space in general. At any time the web page goes below 600 pixels, floats are disabled or reduced to ensure maximum readability */
+	.header-box{
+		width: 100%;
+		float: none;
+	}
+	.page-intro{
+		width: 100%;
+		float: none;
+	}
+	.sidebar{
+		width: 100%;
+		float: none;
+	}
+	.double-float{
+		width: 100%;
+		float: none;
+	}
+	.tripple-float{
+		width: 100%;
+		float: none;
+	}
+	
+}
+
+/* CSS > CLASSES > Layout > Containers */
+.content-section-grey{
+	background-color: #b5b5b5;
+	color: #252526;
+	
+	padding: 0px 0px;
+}
+
+.content-section-grey h1, .content-section-grey h2, .content-section-grey h3, .content-section-grey h4, .content-section-grey h5, .content-section-grey ht6{
+	color: #252526;
+	padding: 20px 0;
+	line-height: 1.3em;
+}
+
+.content-section-grey p{
+	padding: 0px 0px 40px 0px;
+}
+
+.content-section-grey a{
+	color: #252526;
+}
+
+.content-section-light{
+	background-color: #eeeef2;
+	color: #252526;
+	
+	padding: 40px 0px;
+}
+
+.content-section-light h1, .content-section-light h2, .content-section-light h3, .content-section-light h4, .content-section-light h5, .content-section-light h6{
+	color: #252526;
+	padding: 20px 0;
+	line-height: 1.3em;
+}
+
+.content-section-light p {
+	padding: 0px 0px 40px 0px;
+}
+
+.content-section-light a{
+	color: firebrick;
+}
+
+#featured{
+	background-image: url("assets/images/featured.jpg");
+	background-position: center right;
+	
+	min-height: 250px;
+	margin: 0;
+	box-sizing: border-box;
+	
+	/*Parallax scrolling effect*/
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	text-align: center;
+}
+
+#featured h1{
+	color: #FFFFFF;
+	font-size: 72px;
+	text-shadow: 1px 1px 3px #292929;
+	
+	line-height: 1.6em;
+	padding-top: 50px;
+}
+
+.container{
+	margin:auto;
+	width: 80%;
+	overflow: hidden; /*Prevent unwanted scrollbar from appearing*/
+}
+
+.container-wide{
+	margin:auto;
+	width:90%;
+	padding:40px;
+	overflow: hidden;
+}
+
+.container-mini{
+	margin:auto;
+	width:30%;
+	padding:40px;
+	overflow: hidden;
+}
+
+/* CSS > CLASSES > Images */
+.resize-15-percent{
+	width: 15%;
+	height: auto;
+}
+
+.resize-25-percent{
+	width: 25%;
+	height: auto;
+}
+
+.resize-50-percent{
+	width: 50%;
+	height: auto;
+}
+
+.resize-75-percent{
+	width: 75%;
+	height: auto;
+}
+
+.resize-85-percent{
+	width: 85%;
+	height: auto;
+}
+
+.resize-95-percent{
+	width: 95%;
+	height: auto;
+}
+
+.resize-100-percent{
+	width: 100%;
+	height: auto;
+	
+	box-sizing: border-box;
+}
+
+/*YouTube Resize*/
+.youtube-100-percent{
+	width: 100%;
+	height: 300px;
+	text-align: center;
+}
+
+.container-nav{
+	margin: auto;
+	width: 80%;
+	padding: 0.4em;
+	overflow: hidden
+}
+
+/* CSS > CLASSES > Tables */
+.table-lavender table, .table-lavender tr, .table-lavender td{
+	border: 1px solid black;
+	border-width: 1.5px;
+}
+
+.table-lavender tr:nth-child(even){
+	background-color: lavender;
+}
+
+.table-lime table, .table-lime tr, .table-lime td{
+	border: 1px solid rebeccapurple;
+	border-width: thick
+}
+
+.table-lime tr:nth-child(odd){
+	background-color: #EFFFBF;
+}
+
+.table-lime tr:nth-child(even){
+	background-color: #FBFFF2;
+}
+
+.cell-lavender{
+	background-color: rebeccapurple;
+	color: lavender;
+}
+
+.cell-picure{
+	color: white;
+	text-shadow: 1px 1px 3px #292929;
+	background-image: url(../../assets/images/background2.png);
+}
+
+/* CSS > CLASSES > UI */
+	/*TIP: "Uncomment" disabled css stylings inside this class to enable them*/
+.button, .button-ornate, .menu-button{
+	border: none;
+	border-radius: 0;
+	/*margin: 1em 1em 1em 0em;*/
+	margin: 1em;
+}
+
+.button, .button-ornate{
+	background-color:#333333;
+	color: #FFFFFF;
+	
+	padding: .6em 1.6em;
+}
+
+.menu-button{
+	padding: .6em;
+	margin: 0;
+}
+
+.menu-button-disabled{
+	color: dimgrey;
+	
+	padding: .6em;
+	margin-right: 1em;
+}
+
+.button-ornate{
+	border-radius: 75px;
+	box-shadow: 1px 1px 3px #292929;
+	
+	text-shadow: 1px 1px 3px #292929;
+}
+
+.button:hover, .button-ornate:hover{
+	background-color:firebrick;
+	color: #FFFFFF;
+}
+
+.menu-button:hover{
+	background: linear-gradient(#555555, #3F3F3F);
+	color: #333333;
+	text-decoration: none;
+	
+	box-shadow: 0px 0px 3px black;
+}
+
+.button-text-decoration{
+	Color:#fff; text-decoration: none;
+}
+
+.nav-bar, .menu-horizontal, .menu-vertical{
+	font-family: Helvetica, Arial;
+	font-size: 18px;
+	
+	margin: 0;
+}
+
+.menu-horizontal, .menu-vertical{
+	background-color: #DDDDDD;
+	
+	padding: 20px 20px;
+	line-height: 1.3em;
+	border-top: 3px #E73E11 solid;
+	box-shadow: 1px 1px 8px #7F7F7F; /*FEATURE ENABLED*/
+	/*border-radius: 25px;*/ /*FEATURE DISABLED*/
+
+}
+
+.menu-horizontal p, .menu-vertical p{
+	padding: 20px 0;
+}
+
+.nav-bar, .nav-bar-demo{
+	/*background-color: #2B2B2B;*/
+	color: #CCCCCC;
+	
+	border-bottom: 1px #1C1C1C solid;
+	box-shadow: 0px 0px 5px black;
+}
+
+.nav-bar{
+	background:linear-gradient(to top, #282828, #373737);
+}
+
+.nav-bar-demo{
+	background-color: sandybrown;
+	padding-top: 1em;
+}
+
+.nav-bar a, .nav-bar-demo a{
+	color: #282828;
+	padding-right: 1em;
+}
+
+.menu-horizontal a:hover, .menu-vertical a:hover{
+	color: #E73E11;
+	text-decoration: none;
+}
+
+.nav-bar li, .nav-bar-demo li, .menu-horizontal li, .menu-vertical li{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-bottom: solid #252526 thin;
+	
+	font-weight: bolder;
+}
+
+.nav-bar ul, .nav-bar-demo ul{
+	padding: 0;
+	list-style: none;
+}
+
+.menu-horizontal ul{
+	list-style: none;
+	padding: 20px 0;
+}
+
+.menu-vertical ul{
+	list-style: none;
+	border-color: #252526;
+}
+
+.menu-horizontal li{
+	display:inline;
+	border-bottom:hidden;
+	padding-right: 1.3em;
+	
+	text-align: right
+}
+
+.nav-bar li, .nav-bar-demo li{
+	display:inline;
+	border-bottom:hidden;
+	padding-right: 0;
+	
+	text-align: right;
+}
+
+.menu-vertical li:nth-child(even){
+	background-color: #CCCCCC;
+}
+
+.menu-vertical li:nth-child(odd){
+	background-color: #D6D6D6;
+}
+
+/* CSS > CLASSES > Forms */
+.feedback-form{
+	padding: 20px;
+	font-size: 18px;
+	
+}
+
+.feedback-form .form-group{
+	padding-bottom: .625em;
+	
+}
+
+.feedback-form label{
+	padding-bottom: 1.6em;
+	margin-right: 2em;
+	margin-left: .5em;
+}
+
+.feedback-form input[type="text"], input[type="email"], textarea{
+	padding: .8em;
+	width: 100%;
+	display: block;
+}
+
+.feedback-form textarea{
+	height: 6em;
+}
+
+/* CSS > IDs */
+#Bismillah{
+	color: #555555;
+	font-style: italic
+}
+
+#license{
+	
+}
+/* End of Custom Styles */
+
+/*
+End of CSS Document
+Thanks for stopping by the back-stage!
+
+Originally created on September 3, 2020
+Updated on September 5, 2020
+Updated on November 13, 2020
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+*/
+
+/*Last Updated on September 9, 2020*/
