@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*
 CSS Document for CMWEB120 Lab 1 (lab1.html)
 Version 14.0.20.2113
@@ -78,12 +79,39 @@ table, th, td {
   border-collapse: collapse;
   padding: 10px;
 }
-/* CSS > CLASSES > */
-.wilma {
+/* 🎨 CSS > 📷 Image Gallery > */
+.gallery-container { /*📦*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.gallery { /*📸*/
+  float: left;
+  margin: 5px;
+  width: 240px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+.gallery:hover { /*📸*/
+  border: 2px solid #F62800;
+}
+.gallery img { /*📸*/
+  width: 100%;
+  height: auto;
+}
+.caption { /*🔖*/
+  padding: 15px;
+  line-height: normal;
+  font-size: medium;
+  /*text-align: center;*/
+}
+/* ðŸŽ¨ CSS > CLASSES > */
+.wilma { /*⭐*/
   text-align: center;
   text-shadow: 1px 1px 1px dimgrey;
 }
-.fred {
+.fred { /*⭐*/
   background-color: lavender;
   color: rebeccapurple;
   width: 95%;
@@ -120,10 +148,11 @@ table, th, td {
 .clearfix {
   clear: both; /* Purpose for this is to remove any existing float configurations beyond the given point in the HTML document this class is used. Note: this does not stop one from creating new floats at alater point in the document.*/
 }
-.header-box {
+.header-box { /*🚥*/
   float: left;
   width: 50%;
   box-sizing: border-box;
+  max-height: 5em;
 }
 .header-box h1, .header-box h2, .header-box h3, .header-box h4, .header-box h5, .header-box h6, p {
   padding: 3px 0;
@@ -150,6 +179,7 @@ table, th, td {
 .tripple-float {
   width: 33.33%;
   float: left;
+  padding: 0 10px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -245,24 +275,18 @@ table, th, td {
   line-height: 1.6em;
   padding-top: 50px;
 }
-
-.redirect{
-    color:dimgrey;
-    
-    padding: 0 0 .5em .5em;
+.redirect {
+  color: dimgrey;
+  padding: 0 0 .5em .5em;
 }
-
-.note{
-    background-color: lightgrey;
-    border: dotted;
-    margin: 0 1.5em .5em 0;
-    padding: 5px;
-    
-    font-size: medium;
-    line-height: normal;
-    
+.note {
+  background-color: lightgrey;
+  border: dotted;
+  margin: 0 1.5em .5em 0;
+  padding: 5px;
+  font-size: medium;
+  line-height: normal;
 }
-
 .container {
   margin: auto;
   width: 80%;
@@ -507,6 +531,6 @@ Updated on November 13, 2020
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 
-© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+Â© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
 */
 /*Last Updated on September 9, 2020*/
