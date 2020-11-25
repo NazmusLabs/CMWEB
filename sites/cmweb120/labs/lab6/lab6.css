@@ -421,21 +421,29 @@ table, th, td {
   margin: 0;
 }
 .menu-horizontal, .menu-vertical {
+  display: block;
   background-color: #DDDDDD;
-  padding: 20px 20px;
+  padding: 10px 20px;
   line-height: 1.3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border-top: 3px #E73E11 solid;
   box-shadow: 1px 1px 8px #7F7F7F; /*FEATURE ENABLED*/
   /*border-radius: 25px;*/ /*FEATURE DISABLED*/
 }
-.menu-horizontal p, .menu-vertical p {
-  padding: 20px 0;
+.menu-horizontal {
+  padding-top: 1em;
+  max-height: 4em;
+}
+.menu-vertical {
+  max-width: 14em;
 }
 .nav-bar, .nav-bar-demo {
   /*background-color: #2B2B2B;*/
   text-transform: uppercase;
   border-bottom: 1px #1C1C1C solid;
   box-shadow: 0px 0px 5px black;
+    max-height: 3em;
 }
 .nav-bar {
   /*background:linear-gradient(#373737, #282828);*/
@@ -468,11 +476,11 @@ table, th, td {
 }
 .menu-horizontal ul {
   list-style: none;
-  padding: 20px 0;
 }
 .menu-vertical ul {
   list-style: none;
   border-color: #252526;
+  margin-bottom: 20px;
 }
 .menu-horizontal li {
   display: inline;
@@ -524,13 +532,21 @@ table, th, td {
 End of CSS Document
 Thanks for stopping by the back-stage!
 
-Originally created on September 3, 2020
-Updated on September 5, 2020
-Updated on November 13, 2020
+Patch Notes for 17.0
+----------------------
+⚠ This changelog only lists updates to the CSS. To see th full changelog for this version, see the corresponding HTML document.
+
+17.0 (Gold)
+Patch 1.20.1123
+ - [CSS] Fixed a long-standing issue where the sidebar pane's right drop-shadow was cut off and was not visible.
+ - [CSS] Changed the encoding of the CSS file to the UTF-8 format in order to support the use of emojies in the code comments.
+ - [CSS] Updates to the header-box class to improve the alignment the site logo and webpage text quote.
+ - [CSS] New gallery classe with hover effect added to better layout image to the webpage
+ - [CSS] Fixed an issue where the footer horizontal menu bar was too wide.
+ - [CSS] nav-bar and nav-bar-demo now have a fixed width
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 
-Â© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
 */
-/*Last Updated on September 9, 2020*/
