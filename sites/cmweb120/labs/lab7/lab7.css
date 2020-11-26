@@ -4,7 +4,7 @@ CSS Document for CMWEB120 Lab 1 (lab1.html)
 Version 14.0.20.2113
 Written by Nazmus Shakib Khandaker*/
 /*In the name of Allah, the Most Gracious, the Most Merciful*/
-/* Reset Styles */
+/* ❔ Reset Styles */
 * {
   margin: 0;
   padding: 0;
@@ -105,7 +105,7 @@ table, th, td {
   font-size: medium;
   /*text-align: center;*/
 }
-/* ðŸŽ¨ CSS > CLASSES > */
+/* 🎨 CSS > CLASSES > */
 .wilma { /*⭐*/
   text-align: center;
   text-shadow: 1px 1px 1px dimgrey;
@@ -138,7 +138,7 @@ table, th, td {
   text-align: right;
 }
 .pad-right {
-  margin: 0px 0px 0px 30px /* Indents he wole paragraph when used in the p tag. To indent just the first line of any paragraphs, type (without the quotes) "&nbsp;&nbsp;&nbsp;&nbsp;" just before the first word of the paragraph in your HTML document instead. */
+  margin: 0px 0px 0px 30px /* Indents the whole paragraph when used in the p tag. To indent just the first line of any paragraphs, type (without the quotes) "&nbsp;&nbsp;&nbsp;&nbsp;" just before the first word of the paragraph in your HTML document instead. */
 }
 .horizontal-gap {
   margin: 0.6em 0em;
@@ -223,36 +223,36 @@ table, th, td {
   }
 }
 /* CSS > CLASSES > Layout > Containers */
-.content-section-grey {
+.content-section-grey { /*📦*/
   background-color: #b5b5b5;
   color: #252526;
   padding: 0px 0px;
 }
-.content-section-grey h1, .content-section-grey h2, .content-section-grey h3, .content-section-grey h4, .content-section-grey h5, .content-section-grey ht6 {
+.content-section-grey h1, .content-section-grey h2, .content-section-grey h3, .content-section-grey h4, .content-section-grey h5, .content-section-grey ht6 { /*📦*/
   color: #252526;
   padding: 20px 0;
   line-height: 1.3em;
 }
-.content-section-grey p {
+.content-section-grey p { /*📦*/
   padding: 0px 0px 40px 0px;
 }
-.content-section-grey a {
+.content-section-grey a { /*📦*/
   color: #252526;
 }
-.content-section-light {
+.content-section-light { /*📦*/
   background-color: #eeeef2;
   color: #252526;
   padding: 40px 0px;
 }
-.content-section-light h1, .content-section-light h2, .content-section-light h3, .content-section-light h4, .content-section-light h5, .content-section-light h6 {
+.content-section-light h1, .content-section-light h2, .content-section-light h3, .content-section-light h4, .content-section-light h5, .content-section-light h6 { /*📦*/
   color: #252526;
   padding: 20px 0;
   line-height: 1.3em;
 }
-.content-section-light p {
+.content-section-light p { /*📦*/
   padding: 0px 0px 40px 0px;
 }
-.content-section-light a {
+.content-section-light a { /*📦*/
   color: firebrick;
 }
 #featured {
@@ -286,18 +286,18 @@ table, th, td {
   font-size: medium;
   line-height: normal;
 }
-.container {
-  margin: auto;
+.container { /*📦*/
+  margin: auto; /*❔ Center the container*/
   width: 80%;
-  overflow: hidden; /*Prevent unwanted scrollbar from appearing*/
+  overflow: hidden; /*❔ Prevent unwanted scrollbar from appearing*/
 }
-.container-wide {
+.container-wide { /*📦*/
   margin: auto;
   width: 90%;
   padding: 40px;
   overflow: hidden;
 }
-.container-mini {
+.container-mini { /*📦*/
   margin: auto;
   width: 30%;
   padding: 40px;
@@ -339,7 +339,7 @@ table, th, td {
   height: 300px;
   text-align: center;
 }
-.container-nav {
+.container-nav { /*📦*/
   margin: auto;
   width: 80%;
   padding: 0.4em;
@@ -384,10 +384,12 @@ table, th, td {
   background-color: #333333;
   color: #FFFFFF;
   padding: .6em 1.6em;
+  transition: 0.3s;
 }
 .menu-button {
   padding: .6em;
   margin: 0;
+  transition: all 0.3s ease;
 }
 .menu-button-disabled {
   color: #903A24;
@@ -500,24 +502,29 @@ table, th, td {
   background-color: #D6D6D6;
 }
 /* CSS > CLASSES > Forms */
-.feedback-form {
+.feedback-form { /*📨*/
   padding: 20px;
   font-size: 18px;
+  width: 90%;
+  max-width: 30em;
+  margin: auto; /*❔ Auto margins ensures that this element is centered in its parent element.*/
 }
-.feedback-form .form-group {
+.feedback-form .form-group { /*📨*/
   padding-bottom: .625em;
 }
-.feedback-form label {
+.feedback-form label { /*📨*/
   padding-bottom: 1.6em;
   margin-right: 2em;
   margin-left: .5em;
+  font-family: Helvetica, Arial;
+  font-size: 18px;
 }
-.feedback-form input[type="text"], input[type="email"], textarea {
+.feedback-form input[type="text"], input[type="email"], textarea { /*📨*/
   padding: .8em;
   width: 100%;
   display: block;
 }
-.feedback-form textarea {
+.feedback-form textarea { /*📨*/
   height: 6em;
 }
 /* CSS > IDs */

@@ -266,13 +266,12 @@ table, th, td {
 .container {
   margin: auto;
   width: 80%;
-  overflow: hidden; /*Prevent unwanted scrollbar from appearing*/
 }
 .container-wide {
   margin: auto;
   width: 90%;
   padding: 40px;
-  overflow: hidden;
+  overflow: hidden; /*Prevent unwanted scrollbar from appearing*/
 }
 .container-mini {
   margin: auto;
