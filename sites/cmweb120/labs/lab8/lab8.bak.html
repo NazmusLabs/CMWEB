@@ -12,8 +12,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 18.0.20.1126 (Gold)
-Patch version: 1.20.1126
+Version 19.0.20.1127 (Gold)
+Patch version: 1.20.1127
 
 (See documentation below for changelog)
 
@@ -34,14 +34,14 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
 <!-- 🌐 START OF HTML DOCUMENT 🌐-->
 <html lang="en">
 <head>
-<title>Lab 7 - HTML Forms</title>
+<title>Lab 8 - CSS 3 & Web Fonts</title>
 <meta charset="UTF-8">
 <meta name="description" content="Nazmus's Student Site Webpage for CMWEB at Illinois Central College"/>
 <meta name="instructor" content="Brandy Thatcher">
 <meta name="author" content="Nazmus Shakib Khandaker (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)"/>
-<meta name="version" content="18.0.20.1126 (Gold)"/>
-<meta name="patch" content="1.20.1126"/>
-<link rel="stylesheet" type="text/css" href="lab7.css">
+<meta name="version" content="19.0.20.1127 (Gold)"/>
+<meta name="patch" content="1.20.1127"/>
+<link rel="stylesheet" type="text/css" href="lab8.css">
 </head>
 
 <body>
@@ -72,7 +72,7 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
     <!--Float 2-->
     <div class="header-box">
       <h5>I'm different...</h5>
-      <p><small>...You only live once, but if you do it right, once is enough. ― Mae West</small></p>
+      <p><span style="font-size: 22px;"></span>...You only live once, but if you do it right, once is enough. ― Mae West</p>
     </div>
     <div class="clearfix"></div>
     <!--/ Float 2--> 
@@ -131,7 +131,7 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
 	===========================-->
 
 <div id="featured">
-  <h1>Lab 7 - CMWEB 120 - NazmusLabs</h1>
+  <h1>Lab 8 - CMWEB 120 - NazmusLabs</h1>
 </div>
 
 <!--=========================
@@ -147,7 +147,7 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
 	  📥 START of Container 📥
 	  ////////////////////////-->
   <div class="container">
-    <h1>HTML Forms</h1>
+    <h1>CSS 3 and Web Fonts</h1>
     
     <!--Bismillah-->
     <p id="Bismillah"> In the name of Allah, the Most Gracious, Most Merciful. </p>
@@ -179,10 +179,10 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
           <li><a href="../lab5/lab5.html"><small>CMWEB 120 Lab 5</small></a></li>
           <!--🔗 Click!-->
           <li><a href="../lab6/lab6.html"><small>CMWEB 120 Lab 6</small></a></li>
-          <!--🔗🚫 Click!-->
-          <li><small>CMWEB 120 Lab 7 ✔</small></li>
           <!--🔗 Click!-->
-          <li><a href="../lab8/lab8.html"><small>CMWEB 120 Lab 8</small></a></li>
+          <li><a href="../lab7/lab7.html"><small>CMWEB 120 Lab 7</small></a></li>
+          <!--🔗🚫 Click!-->
+          <li><small>CMWEB 120 Lab 8 ✔</small></li>
         </ul>
         <!--/🔗 Menu Items-->
         
@@ -210,56 +210,11 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
       <!--🔖--> 
       
       <!--📑 Main Content 📑-->
-      
+      <div class="clearfix"></div>
+        
       <section> <!--🔖-->
         <h2>Demo Form</h2>
-        <p>Below is a demo form created using HTML and styled using an external CSS document. Since this is a demo form, content you submit will not actually go to any recepient.</p>
-        <!--📨 Form-->
-        <form class="feedback-form" method="post" action="http://www.markdubois.info/PHP/EchoInformation.php" name="demo-form">
-          <div>
-            <input type="hidden" name="help" value="The demo form processed successfully. The information you entered is displayed below.">
-          </div>
-          <div class="form-group">
-            <h5>Name and Email</h5>
-            <label for="name" >Name:<strong style="color: red">*</strong> </label>
-            <input type="text" name="name" id="name" placeholder="Full Name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:<strong style="color: red">*</strong> </label>
-            <input type="email" name="email" id="email" placeholder="someone@example.com" required>
-          </div>
-          <div class="form-group">
-            <h5>Message</h5>
-            <label for="subject">Subject:<strong style="color: red">*</strong> </label>
-            <input type="text" name="subject" id="subject" placeholder="Subject of your message">
-          </div>
-          <div class= "form-group">
-            <label for="message">Body: </label>
-            <textarea name="body" id="message" placeholder="Type your message here"></textarea>
-          </div>
-          <div class="form-group">
-            <h5>Question or Comment?</h5>
-            <input type="radio" id="question" name="question-or-comment" value="question" />
-            <label for="question">Question</label>
-            <input type="radio" id="comment" name="question-or-comment" value="comment" />
-            <label for="comment">Comment</label>
-          </div>
-          <div class="form-group">
-            <h5>Additional options</h5>
-            <input type="checkbox" name="reply" id="reply" value="reply" checked />
-            <label for="reply">I agree to receiving email response</label>
-          </div>
-          <div>
-            <input type="checkbox" name="subscribe" id="subscribe" value="subscribe" />
-            <label for="subscribe">Subscribe to newsletter (demo option)</label>
-          </div>
-          <div>
-            <input class="button" type="submit" value="Submit" name="submit-button" id="submit" />
-            <input class="button" type="reset" value="Clear Form" name="submit-button" id="reset" />
-          </div>
-          <div> <small> <strong style="color: red">*</strong> Required </small> </div>
-        </form>
-        <!--/📨 Form--> 
+        <iframe src="lab8content.html" title="Lab 8 Demo Content: Mount Olympus News" width="100%" height="1800"  frameborder="0" ></iframe>
       </section>
       <!--🔖--> 
       
@@ -278,7 +233,7 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
       <h3>Thanks for visiting!</h3>
       <!--/🎁 Bonus Content 🎁--> 
       
-      <em><small>Featured image credit: Photo by <a href="https://unsplash.com/@icarium_imagery" target="_blank">Sebastian Leonhardt</a> on <a href="https://unsplash.com/photos/-9bYpSAJzXM" target="_blank">Unsplash</a>.</small></em> </article>
+      <em><small>Featured image credit: Photo by <a href="https://unsplash.com/@cadop" target="_blank">Mathew Schwartz</a> on <a href="https://unsplash.com/photos/s87bBFZviAU" target="_blank">Unsplash</a>.</small></em> </article>
     <!--/////////////////////////////
 		   📖 END of Main Article 📖
 		  ///////////////////////////--> 
@@ -425,19 +380,16 @@ LAB DESCRIPTION: This lab is about building an HTML form and styling the form wi
 
 This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
 
-📣 What’s New in v18
+📣 What’s New in v19
 ----------------------------
- - [CSS] ⭐ Transition effects are now here! Menu items on the nav bar now slides in on page load. Red "button-ornate" and form buttons now have a fad-in hover effect.
- - [CSS] Reduced the width of the "feedback-form" class to 80% with auto margins to center it.
- - [CSS] Set max width of the "feedback-form" class to 30em to prevent the form to render too wide on ultra-wide screens, high resolution displays, and/or page zoom set to significantly below 100%.
- - [CSS] Form input label font size set to 18px, consistent with that of the nav-bar.
+ - 
 
 ⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
 
-📝 Patch Notes for 18.0
+📝 Patch Notes for 19.0
 --------------------------
-18.0 (Gold)
-Patch 1.20.1126
+19.0 (Gold)
+Patch 1.20.1127
  - Initial publication
 
 *See documentation on version numbers for more info.
