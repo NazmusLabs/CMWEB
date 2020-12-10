@@ -436,7 +436,7 @@ table, th, td {
 }
 .menu-horizontal {
   padding-top: 1em;
-  max-height: 3.5em;
+  max-height: 4.0em;
   min-width: 17em;
 }
 .menu-vertical {
@@ -448,7 +448,7 @@ table, th, td {
   text-transform: uppercase;
   border-bottom: 1px #1C1C1C solid;
   box-shadow: 0px 0px 5px black;
-  max-height: 3em;
+  max-height: 4em;
 }
 .nav-bar {
   /*background:linear-gradient(#373737, #282828);*/
@@ -554,14 +554,14 @@ Patch Notes for 18.0
 ======================
 ⚠ This changelog only lists updates to the CSS. To see th full changelog for this version, see the corresponding HTML document.
 
-17.0 (Gold)
-Patch 1.20.1123
- - [CSS] Fixed a long-standing issue where the sidebar pane's right drop-shadow was cut off and was not visible.
- - [CSS] Changed the encoding of the CSS file to the UTF-8 format in order to support the use of emojies in the code comments.
- - [CSS] Updates to the header-box class to improve the alignment the site logo and webpage text quote.
- - [CSS] New gallery classe with hover effect added to better layout image to the webpage
- - [CSS] Fixed an issue where the footer horizontal menu bar was too wide.
- - [CSS] nav-bar and nav-bar-demo now have a fixed width
+19.0 (Update 1)
+Patch 1.20.1209
+ - [CSS] Minor adjustments to the max height for some of the nav-bars
+
+19.0 (Gold)
+Patch 1.20.1209
+ - [CSS] Version 19 underwent a major code refactoring which better organizes the styling structure, added new in-line comments and documentation as well as improving existing ones.
+ - [CSS] Fixed outstanding buts related to the layout of the website, including, but not limited to, the issue where the rightmost part of the sidebar would get cut off, resulting in a loss of drip shadow on its right side.
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
