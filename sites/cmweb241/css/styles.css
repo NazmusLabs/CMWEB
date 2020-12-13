@@ -1,7 +1,7 @@
 @charset "utf-8";
 /*
-CSS Document for CMWEB241 Global Styling
-Version 19.0.20.1127
+CSS Document for CMWEB120 Global Styling
+Version 19.0.20.1209
 Written by Nazmus Shakib Khandaker*/
 /*In the name of Allah, the Most Gracious, the Most Merciful*/
 * {
@@ -438,6 +438,7 @@ table, th, td {
   padding-top: 1em;
   max-height: 4.0em;
   min-width: 17em;
+  min-height: 3.5em;
 }
 .menu-vertical {
   max-width: 20em;

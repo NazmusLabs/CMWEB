@@ -437,6 +437,7 @@ table, th, td {
 .menu-horizontal {
   padding-top: 1em;
   max-height: 4.0em;
+  min-height: 3.5em;
   min-width: 17em;
 }
 .menu-vertical {

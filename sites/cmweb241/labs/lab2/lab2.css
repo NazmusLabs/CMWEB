@@ -100,23 +100,20 @@ table, th, td {
   padding-left: 1em;
 }
 /* 🎨 CSS > 📜 CLASSES > 📸 Alerts */
-.alert, .alert-error, .alert-success{
-    display: block;
-    margin: 1em 0;
-    padding: 1em 2em;
-    font-size: 26px;
+.alert, .alert-error, .alert-success {
+  display: block;
+  margin: 1em 0;
+  padding: 1em 2em;
+  font-size: 26px;
 }
-
-.alert-error{
-    background-color: #FF003C;
-    color: white;
+.alert-error {
+  background-color: #FF003C;
+  color: white;
 }
-
-.alert-success{
-    background-color: #3DAF1A;
-    color: white;
+.alert-success {
+  background-color: #3DAF1A;
+  color: white;
 }
-
 /* 🎨 CSS > 📜 CLASSES > 📸 Images */
 .resize-15-percent {
   width: 15%;
@@ -203,7 +200,7 @@ table, th, td {
   font-family: Helvetica, Arial;
   font-size: 18px;
 }
-.feedback-form input[type="text"], input[type="email"], textarea { /*📨*/
+.feedback-form input[type="text"], input[type="email"], textarea, input[type="password"] { /*📨*/
   padding: .8em;
   width: 100%;
   display: block;
@@ -400,6 +397,7 @@ table, th, td {
 .button, .button-ornate {
   background-color: #333333;
   color: #FFFFFF;
+  font-size: 16px;
   padding: .6em 1.6em;
   transition: 0.3s;
 }
@@ -569,23 +567,20 @@ table, th, td {
 End of CSS Document
 Thanks for stopping by the back-stage!
 
-Patch Notes for 19.0
+Patch Notes for 18.0
 ======================
 ⚠ This changelog only lists updates to the CSS. To see th full changelog for this version, see the corresponding HTML document.
 
-19.0 (Update 2)
-Patch 1.20.1210b
- - No changes made to CSS in this patch
+19.1 (Update 1)
+Patch 1.20.1210a
+ - [CSS] Set a global 16px font size for buttons
+ - [CSS] Added CSS styling to the "password" input type. 
+ - [CSS] Minor adjustments to some of the layout elements.
 
-19.0 (Update 1)
-Patch 1.20.1209a
- - [CSS] Added CSS properties to new "alert" family of classes, including one for success (green) and one for error (red).
- - [CSS] Minor adjustments to the max height for some of the nav-bars
-
-19.0 (Gold)
+19.1 (Gold)
 Patch 1.20.1209
- - [CSS] Version 19 underwent a major code refactoring which better organizes the styling structure, added new in-line comments and documentation as well as improving existing ones.
- - [CSS] Fixed outstanding buts related to the layout of the website, including, but not limited to, the issue where the rightmost part of the sidebar would get cut off, resulting in a loss of drip shadow on its right side.
+ - [CSS] Added CSS properties to new "alert" family of classes, including one for success (green) and one for error (red).
+ - [CSS] Additional adjustments to the max height for some of the nav-bars.
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 

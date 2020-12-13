@@ -1,0 +1,10 @@
+@charset "utf-8";
+/*
+CSS Document for CMWEB120 Lab 8 (lab8.html)
+Version 19.0.20.1127
+Written by Nazmus Shakib Khandaker*/
+/*In the name of Allah, the Most Gracious, the Most Merciful*/
+* {
+  margin: 0; /*❔ Reset any existing or default styles */
+  padding: 0;
+}

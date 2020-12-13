@@ -11,8 +11,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 19.0.20.1209 (Update 2)
-Patch version: 1.20.1210b
+Version 19.0.20.1209 (Update 1)
+Patch version: 1.20.1209b
 
 (See documentation below for changelog)
 
@@ -32,36 +32,34 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
 <!-- ❓ PHP ❓ -->
 <?php
 // Checking for submit...
-if ( filter_has_var( INPUT_POST, 'submit' ) ) {
+if ( filter_has_var( INPUT_POST, 'login' ) ) {
   //collect user input & initializing variables...
-  $chirps = htmlspecialchars( $_POST[ 'input' ] );
+  $username = htmlspecialchars( $_POST[ 'username' ] );
+  $password = htmlspecialchars( $_POST[ 'password' ] );
   $alert = "";
   $alert_class = "";
+  $echo_credentials = "";
 
   //checking required field(s)...
-  if ( !empty( $chirps ) ) {
-    if ( is_numeric( $chirps ) ) {
-      //verifying numeric intervals...
-      if ( $chirps >= 1 && $chirps <= 90 ) {
-        //performaing primary operations...
-        $temp = $chirps + 40;
+  if ( !empty( $username ) || !empty( $password ) ) {
+    //performaing primary operations & generating output...
+    $echo_credentials = "<h4>Here are the credentials you entered:</h4>Username: {$username}</br>" . "Password: {$password}";
 
-        //outputting results...
-        $alert_class = 'alert-success';
-        $alert = "The temperature is calculated to be {$temp}°F.";
-      } else {
-        $alert_class = 'alert-error';
-        $alert = "Values less than 1 or greater than 90 won't work. Please try again.";
-      }
+    //verifying login credentials...
+    if ( $username == "hello" && $password == "world" ) {
+      echo boo;
+      //generating success alert...
+      $alert_class = 'alert-success';
+      $alert = "Your login credentials were correct!";
     } else {
       //verifying data types...
       $alert_class = 'alert-error';
-      $alert = 'Please enter a number.';
+      $alert = 'Incorrect login credentials: Please try again.';
     }
   } else {
     //display error
     $alert_class = 'alert-error';
-    $alert = 'You must first enter a value.';
+    $alert = 'Incorrect login credentials: Make sure enter both the username and the password';
   }
 }
 ?>
@@ -72,16 +70,16 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Cricket Chirp Temperature Calculator - Lab 1</title>
+<title>User Logins - Lab 2</title>
 <meta charset="UTF-8">
 <meta name="description" content="Nazmus's Student Site Webpage for
       CMWEB at Illinois Central College">
 <meta name="instructor" content="Shari Tripp">
 <meta name="author" content="Nazmus Shakib Khandaker
       (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)">
-<meta name="version" content="19.0.20.1209 (Update 2)">
-<meta name="patch" content="1.20.1210b">
-<link rel="stylesheet" type="text/css" href="lab1.css">
+<meta name="version" content="19.0.20.1209 (Update 1)">
+<meta name="patch" content="1.20.1209b">
+<link rel="stylesheet" type="text/css" href="lab2.css">
 </head>
 
 <body>
@@ -102,8 +100,8 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
     <!--/ Float 1--> 
     <!--Float 2-->
     <div class="header-box">
-      <h5>I'm different...</h5>
-      <p><small>..."You only live once, but if you do it right, once is enough." ― Mae West</small></p>
+      <h5>“Be who you are and say what you feel...</h5>
+      <p><small>...because those who mind don't matter, and those who matter don't mind.” ― Bernard M. Baruch </small></p>
     </div>
     <!--/ Float 2--> 
   </div>
@@ -154,7 +152,7 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
 	 🎀 START OF FEATURED 🎀
 	===========================-->
 <div id="featured">
-  <h1>Lab 1 - CMWEB 241 - NazmusLabs</h1>
+  <h1>Lab 2 - CMWEB 241 - NazmusLabs</h1>
 </div>
 <!--=========================
 	  🎀 END OF FEATURED 🎀
@@ -167,7 +165,7 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
 	  📥 START of Container 📥
 	  ////////////////////////-->
   <div class="container">
-    <h1>Chirping Crickets</h1>
+    <h1>User Logins</h1>
     <!--Bismillah-->
     <p id="Bismillah"> In the name of Allah, the Most Gracious, Most
       Merciful. </p>
@@ -185,10 +183,10 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
         <h2>Labs Explorer</h2>
         <!--🔗 Menu Items-->
         <ul>
-          <!--🔗🚫 Click!-->
-          <li><small>CMWEB 241 Lab 1 ✔</small></li>
           <!--🔗 Click!-->
-          <li><a href="../lab2/lab2.php"><small>CMWEB 241 Lab 2</small></a></li>
+          <li><a href="../lab1/lab1.php"><small>CMWEB 241 Lab 1</small></a></li>
+          <!--🔗🚫 Click!-->
+          <li><small>CMWEB 241 Lab 2 ✔</small></li>
           <!--🔗 Click!-->
           <li><a href="../lab3/lab3.php"><small>CMWEB 241 Lab 3</small></a></li>
           <!--🔗 Click!-->
@@ -210,69 +208,79 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
 		   📖 START of Main Article 📖
 		  ////////////////////////////-->
     <article>
-      <section> 
-        <!--🔖--> 
-        <!--📸 Smile!--> 
-        <!--📢 Content Intro 📢-->
-        <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
+    <section> 
+      <!--🔖--> 
+      <!--📸 Smile!--> 
+      <!--📢 Content Intro 📢-->
+      <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
 				 class="tripple-float" >
-          <p>This first lab involves building a Cricket Chirp generator using PHP server-side scripting. This application calculates the temperature (in degrees Fahrenheit) from the number of cricket chirps observed in 14 seconds. The goal of this lab is to become familiar with the use of taking input from the user through HTML forms, using the data collected to perform some mathemetical operation, and displaying the output to the user by printing its value on the web page. The lab also touches on catching and gracefully handling common user errors.</p>
-          <img src="assets/graphics/pine.svg"
+        <p>For this lab, the goal is "to create a reasonably secure login page (for both username and password). This page should contain a  form which collects the data (it should contain a username field and a password field. Also include a submit and reset button.) For the present time, only echo back what was entered into the form (print the contents of the form that were entered on the page when the submit button is pressed)".</p>
+        <img src="assets/graphics/pine.svg"
 				 alt="leaves, pine cones, and bells"
 				 class="center-image" > </div>
-        <!--/📢 Content Intro 📢--> 
-      </section>
-      <!--🔖--> 
-      <!--📑 Main Content 📑-->
-      <section> 
-        <!--🔖-->
-        <h2>Main Application</h2>
-        <p>Below is the main application for this lab. The application begins by asking the visitor to enter the number of cricket chirps observed in 14 seconds, and, using this information, calculate the temperature based on the number of chirps. It, then, displays the resulting temperature as output for the visitor to see.</p>
-      </section>
+      <!--/📢 Content Intro 📢--> 
+    </section>
+    <!--🔖--> 
+    <!--📑 Main Content 📑-->
+    <section> 
       <!--🔖-->
-      <section id="app"> 
-        <!--🔖-->
-        <h3>Cricket Chirp Temperature Calculator</h3>
-        <p> Please provide the number of cricket chirps observed in 14 secons by entering a numeric value between 1 and 90 in the text box below. Then click the "Submit" button to view the resulting temperature (in °F).</p>
-        <h4>Enter a value between 1 and 90</h4>
-        <!--📨 Form-->
-        <form class=feedback-form action="<?php echo $_server['php_self'] ?>#app" method="post" style="margin: 0; max-width: 20em;">
-          <div class="form-group">
-            <label for="input">Number of Chirps:</label>
-            <input type="text" id="input" name="input" value="<?php echo $chirps; ?>" />
-            <!--❔ Preserves previously enter value--> 
-          </div>
-          <div>
-            <input class="button" type="submit" value="Calculate" id="submit" name="submit">
-          </div>
-        </form>
-        <!--📨 Form--> 
-        <!--❓ Output ❓-->
-        <div class="<?php echo $alert_class; ?>"> <?php echo $alert; ?> </div>
-        <!--❓ Output ❓--> 
-      </section>
+      <h2>Main Application</h2>
+      <p>Below is the login form created for this lab. The form is made up of three input types: textbox, password, and button. The "Sign in" button collects the user's input and compares it to a pre-defined username and password. The user is then alerted whether the credentials were correct. Additionally, the values submitted by the user is echoed back to them on the webpage.</p>
+    </section>
+    <!--🔖-->
+    <section id="app">
+    <!--🔖-->
+    <h3>Demo Login Form</h3>
+    <p> Please enter a username and a password and then click "Login" to continue. Note: This is a demo login form and will not sign you into anything. But it does work...somewhat.</p>
+    <h1 style="text-align: center">
+    Sign in
+    </h2>
+    <!--📨 Form-->
+    <form class=feedback-form action="<?php echo $_server['php_self'] ?>#app" method="post" style="max-width: 20em;">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" value="<?php echo $username; ?>"/>
+        <!--❔ Preserves previously enter value--> 
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+      </div>
+      <div>
+        <input class="button" type="submit" value="Sign in" id="login" name="login">
+        <input class="button" type="reset" value="Clear Form" name="reset-button" id="reset" />
+      </div>
+    </form>
+    <!--📨 Form--> 
+    <!--❓ Output ❓-->
+    <div class="<?php echo $alert_class; ?>"> <?php echo $alert; ?> </div>
+    <div><?php echo $echo_credentials; ?></div>
+    <!--❓ Output ❓-->
+    </section>
+    <!--🔖-->
+    <section> 
       <!--🔖-->
-      <section> 
-        <!--🔖-->
-        <h2>How to Get the Code</h2>
-        <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>
-        <p>Fortunately, there is a way around this. I have placed all of the PHP source code for this student site for anyone to view, download, and modify. They are hosted on my CMWEB GitHub repository, which you can view from the link below.</p>
-        <p><a href="https://github.com/NazmusLabs/CMWEB/tree/master/sites/cmweb241" target="_blank">View the php source codes for this course on GitHub</a></p>
-      </section>
-      <!--🔖--> 
-      <!--/📑 Main Content 📑--> 
-      <!--🎁 Bonus Content 🎁-->
-      <h2>External Links</h2>
-      <!--🔗 External Links-->
-      <ul>
-        <li><a href="https://webaim.org/techniques/forms/controls" target="_blank">Creating Accessible Forms</a></li>
-        <li><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">CSS Transitions</a></li>
-      </ul>
-      <!--/🔗 External Links-->
-      <h3>Thanks for visiting!</h3>
-      <!--/🎁 Bonus Content 🎁--> 
-      <em><small>Featured image credit: Photo by <a href="https://unsplash.com/@icarium_imagery" target="_blank">Sebastian Leonhardt</a> on <a href="https://unsplash.com/photos/-9bYpSAJzXM" target="_blank">Unsplash</a>.</small></em></article>
+      <h2>How to Get the Code</h2>
+      <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>
+      <p>Fortunately, there is a way around this. I have placed all of the PHP source code for this student site for anyone to view, download, and modify. They are hosted on my CMWEB GitHub repository, which you can view from the link below.</p>
+      <p><a href="https://github.com/NazmusLabs/CMWEB/tree/master/sites/cmweb241" target="_blank">View the php source codes for this course on GitHub</a></p>
+    </section>
+    <!--🔖--> 
+    <!--/📑 Main Content 📑--> 
+    <!--🎁 Bonus Content 🎁-->
+    <h2>External Links</h2>
+    <!--🔗 External Links-->
+    <ul>
+      <li><a href="https://webaim.org/techniques/forms/controls" target="_blank">Creating Accessible Forms</a></li>
+      <li><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">CSS Transitions</a></li>
+    </ul>
+    <!--/🔗 External Links-->
+    <h3>Thanks for visiting!</h3>
+    <!--/🎁 Bonus Content 🎁--> <em><small>Featured image credit:
+    Photo by <a href="https://unsplash.com/@turnlip19" target="_blank">Jong Marshes</a> on <a
+              href="https://unsplash.com/photos/79mNMAvSORg" target="_blank">Unsplash</a>.</small></em>
+    </article>
     <!--/////////////////////////////
 		   📖 END of Main Article 📖
 		  ///////////////////////////--> 
@@ -417,14 +425,13 @@ This student site was originally created for the CMWEB program at Illinois Centr
 
 📝 Patch Notes for 19.0
 --------------------------
-19.1 (Update 1)
+19.0 (Update 1)
 Patch 1.20.1909b
  - [CSS] Slightly increased form max-width.
 Patch 1.20.1209a
- - [CSS] Added CSS properties to new "alert" family of classes, including one for success (green) and one for error (red).
- - [CSS] Minor adjustments to the max height for some of the nav-bars.
+ - [CSS] Minor adjustments to the max height for some of the nav-bars
 
-19.1 (Gold)
+19.0 (Gold)
 Patch 1.20.1127
  - Initial publication
 
@@ -645,18 +652,17 @@ This student site was originally created for the CMWEB program at Illinois Centr
 
 📝 Patch Notes for 19.0
 --------------------------
-19.0 (Update 2)
-Patch 1.20.1210b
+19.1 (Update 1)
+Patch 1.20.1210a
  - [PHP] Added htmlspecialchars() to code handling user input to prevent malicious attacks through code insertion in input fields.
+ - [CSS] Set a global 16px font size for buttons
+ - [CSS] Added CSS styling to the "password" input type. 
+ - [CSS] Minor adjustments to some of the layout elements.
 
-19.0 (Update 1)
-Patch 1.20.1209a
+19.1 (Gold)
+Patch 1.20.1209
  - [CSS] Added CSS properties to new "alert" family of classes, including one for success (green) and one for error (red).
- - [CSS] Minor adjustments to the max height for some of the nav-bars
-
-19.0 (Gold)
-Patch 1.20.1127
- - Initial publication
+ - [CSS] Additional adjustments to the max height for some of the nav-bars.
 
 *See documentation on version numbers for more info.
 
