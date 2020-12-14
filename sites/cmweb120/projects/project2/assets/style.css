@@ -1,0 +1,211 @@
+@charset "utf-8";
+/*
+CSS Document for CMWEB120 Lab 8 (lab8.html)
+Version 1.0.20.1213
+Written by Nazmus Shakib Khandaker*/
+/*In the name of Allah, the Most Gracious, the Most Merciful*/
+* {
+  margin: 0; /*❔ Reset any existing or default styles */
+  padding: 0;
+}
+/* 🎨 CSS > */ /*❔ Custom Styles Start *;
+
+/* 🎨 CSS > ⭐ General > */
+br {
+  padding: 20px 0px;
+}
+/* 🎨 CSS > 📝 TEXT */
+body {
+  color: #1D1D1D;
+  background-color: white;
+  font: normal 24px "Helvetica", "Arial", "sans-serif";
+  line-height: 1.6em;
+}
+/* 🎨 CSS > 📝 Text > 📝 Headings */
+h1, h2, h3, h4, h5, h6 {
+  padding: 1em 1em 0;
+  line-height: 1.3em;
+}
+/* 🎨 CSS > 📝 Text > 📝 Paragraph */
+p {
+  padding: 1em 1em 0;
+}
+/* 🎨 CSS > 📝 Text > 🔗 Hyperlinks */
+a {
+  color: #00AFFA;
+}
+a:link {
+  color: #00AFFA;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline
+}
+/* 🎨 CSS > 📃 Lists > */
+li {
+  margin: 0px 0px 0px 20px;
+}
+/* 🎨 CSS > 📃 Lists > ✔ Unordered Lists */
+ul {
+  padding: 0px 0px 20px 40px;
+  list-style-type: square;
+}
+/* 🎨 CSS > 📃 Lists > ✔ Ordered Lists */
+ol {
+  padding: 0px 0px 20px 40px;
+  /*list-style: lower-roman;*/
+  /* Enable this option above to use roman numerals instead of arabic ones in ordered lists by default. */
+}
+/* 🎨 CSS > 📃 Lists > 📖 Definitions */
+dl {
+  padding: 0px 0px 10px 20px;
+}
+dt {
+  padding: 0px 0px 0px 0px;
+}
+dd {
+  padding: 0px 0px 10px 20px;
+}
+/* 🎨 CSS > 📜 CLASSES > 📸 Images */
+.resize-15-percent {
+  width: 15%;
+  height: auto;
+}
+.resize-25-percent {
+  width: 25%;
+  height: auto;
+}
+.resize-50-percent {
+  width: 50%;
+  height: auto;
+}
+.resize-75-percent {
+  width: 75%;
+  height: auto;
+}
+.resize-85-percent {
+  width: 85%;
+  height: auto;
+}
+.resize-95-percent {
+  width: 95%;
+  height: auto;
+}
+.resize-100-percent {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.center-image {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+/* 🎨 CSS > 📜 CLASSES > 📐 Layouts > 📦 Containers */
+#logo { /*🚥*/
+  margin: auto;
+  display: block;
+  width: 60%;
+  padding-left: 20%;
+}
+#logo h1 { /*🚥*/
+  padding: 30px 0 0 0;
+  font-size: 24px;
+}
+#logo h2 { /*🚥*/
+  padding: 0;
+  font-size: 20px;
+  text-indent: 10px;
+  color: dimgrey;
+}
+#logo img { /*🚥*/
+  height: 100px;
+  width: auto;
+}
+.container-wide { /*📦*/
+  margin: auto;
+  width: 90%;
+  padding: 0.6em;
+  overflow: hidden; /*❔ Prevent unwanted scrollbar from appearing*/
+}
+.container-body { /*📦*/
+  background: #1E1D1D;
+  color: white;
+}
+.container-blue { /*📦*/
+  background: #00AFFA;
+  color: white;
+}
+/* 🎨 CSS > 📜 CLASSES > 📐 Layout > 👆🏻 UI */
+/*💡 TIP: "Uncomment" disabled css stylings inside this class to enable them*/
+.nav-bar, .nav-bar-main { /*👆🏻*/
+  width: 100%;
+  padding: 0.6em;
+  overflow: hidden;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: white;
+  /*padding: 20px 20px;*/
+  line-height: 1.3em;
+  max-height: 4em;
+  /*box-shadow: 1px 1px 8px #7F7F7F;*/ /*FEATURE DISABLED*/
+}
+.nav-bar a, .nav-bar-main a { /*👆🏻*/
+  padding-right: 1em;
+  /*text-shadow: .5px .5px 3px black;*/
+}
+.nav-bar a:hover, .nav-bar-main a:hover { /*👆🏻*/
+  text-decoration: none;
+}
+.nav-bar li, .nav-bar-main li { /*👆🏻*/
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bolder;
+  display: inline;
+  padding-right: 1.3em;
+}
+.nav-bar ul, .nav-bar-main ul { /*👆🏻*/
+  padding: 0;
+  list-style: none;
+}
+.nav-bar-main {
+  background-color: #00AFFA;
+  color: white;
+}
+.nav-bar-main a { /*👆🏻*/
+  color: white;
+}
+.nav-bar-main a:hover { /*👆🏻*/
+  color: white;
+}
+/* CSS > 📜 CLASSES > 📐 Layouts > 🎈 Floats > */
+.clearfix {
+  clear: both; /*❔ The purpose of this is to remove any existing float configurations beyond the given point in the HTML document this class is used. Note: this does not stop one from creating new floats at alater point in the document.*/
+}
+.double-float { /*🎈*/
+  width: 50%;
+  float: left;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.image-wrap-left { /*🎈*/
+  float: left;
+  width: 66.66%;
+  height: auto;
+  padding: 1em 1em 1em 0;
+}
+.image-wrap-right { /*🎈*/
+  float: right;
+  width: 66.66%;
+  height: auto;
+  padding: 1em 0 1em 1em;
+}
+.thumbnail-left { /*🎈*/
+  float: left;
+  width: 33.33%;
+  height: auto;
+  padding: 1.6em;
+}

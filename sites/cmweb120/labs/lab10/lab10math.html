@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Javascript Math</title>
+<!--Author: Shari Tripp-->
+<!--Modified by: Nazmus Shakib Khandaker-->
+<!--Created with: Notepad-->
+    <style type="text/css">
+        body{
+            background-color: #1E1E1E;
+            color: lavender;
+        }
+    
+    </style>
+</head>
+<body>
+<script>
+	window.alert("Welcome to the math page!  We hope you enjoy your stay!");
+	var integer1;     // string (number) entered by client
+	var integer2;     // string (number) entered by client
+	var integer3;     // string (number) entered by client
+	var number1;      // converted number (from string);
+	var number2;      // converted number (from string);
+	var number3;      // converted number (from string);
+	var sum;          // total sum of number1 and number2;
+	var difference;   // difference between number1 and number2;
+				 
+	// prompt user to enter first number;
+	integer1 = window.prompt("Enter first integer: ", "0");
+
+	// prompt user to enter second number;
+	integer2 = window.prompt("Enter second integer: ", "0");
+    
+	// prompt user to enter third number;
+	integer3 = window.prompt("Enter second integer: ", "0");
+
+	// convert from strings entered to numbers with parseInt function;
+	number1 = parseInt(integer1);	
+	number2 = parseInt(integer2);
+	number3 = parseInt(integer3);
+	
+	// perform the math on these integers;
+	sum = number1 + number2 + number3;
+	difference = number1 - number2 - number3;
+    multiple = number1 * number2 * number3;
+    quotient = number1 / number2 / number3;
+		
+	// print the results (no conversion necessary to string);
+        document.write("<div align='center'><h1><font face='arial, helvetica' color='lightskyblue'>Here are your results!</font></h1></div>");
+	document.write("<div align='center'><h3>The result of " + number1 + " + " + number2 + " + " + number3 +  " = " + sum + "</h3></div>");
+	document.write("<div align='center'><h3>The result of " + number1 + " - " + number2 + " - " + number3 + " = " + difference + "</h3></div>");
+    document.write("<div align='center'><h3>The result of " + number1 + " × " + number2 + " × " + number3 +  " = " + multiple + "</h3></div>");
+    document.write("<div align='center'><h3>The result of " + number1 + " ÷ " + number2 + " ÷ " + number3 +  " = " + quotient + "</h3></div>");
+	document.write("<br /><br /><br />");
+	document.write("<div align='center'><h3>If you would like to perform another calculation, please use your browser refresh [or reload] button.</h3></div>");
+	
+</script>
+</body>
+</html>
