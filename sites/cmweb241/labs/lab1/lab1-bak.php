@@ -264,9 +264,9 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
         <!--🔗 Footer Menu items-->
         <ul>
           <!--🔗 Click!-->
-          <li><a href="../index.html">Projects</a></li>
+          <li><a href="../index.php">Projects</a></li>
           <!--🔗 Click!-->
-          <li><a href="../../labs/index.html">Labs</a></li>
+          <li><a href="../index.php">Labs</a></li>
           <!--🔗 Click!-->
           <li><a href="../../about.html">About</a></li>
           <li>|</li>

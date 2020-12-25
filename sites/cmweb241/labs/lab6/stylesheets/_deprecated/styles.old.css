@@ -1,0 +1,725 @@
+@charset "utf-8";
+/*
+CSS Document for CMWEB241 Lab 1 (lab1.php)
+Version 19.0.20.1209
+Written by Nazmus Shakib Khandaker*/
+/*In the name of Allah, the Most Gracious, the Most Merciful*/
+* {
+  margin: 0; /*❔ Reset any existing or default styles */
+  padding: 0;
+}
+/* 🎨 CSS > */ /*❔ Custom Styles Start *;
+
+/* 🎨 CSS > ⭐ General > */
+br {
+  padding: 20px 0px;
+}
+/* 🎨 CSS > 📝 TEXT */
+body {
+  color: #EEEEFB; /*color: lavender;*/
+  /*background-color: #1E1E1E;*/
+  background-color: #191919;
+  font: normal 24px "Helvetica", "Arial", "sans-serif";
+  line-height: 1.6em;
+}
+/* 🎨 CSS > 📝 Text > 📝 Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #64C4DA;
+  padding: 20px 0;
+  line-height: 1.3em;
+}
+/* 🎨 CSS > 📝 Text > 📝 Paragraph */
+p {
+  padding: 0px 0px 40px 0px;
+}
+/* 🎨 CSS > 📝 Text > 🔗 Hyperlinks */
+a, a:link, a:hover, a:visited {
+  color: #2B96B7;
+  text-decoration: none;
+}
+/*
+a:link {
+  color: lightskyblue;
+}
+*/
+a:hover {
+  text-decoration: underline
+}
+/* 🎨 CSS > 📃 Lists > */
+li {
+  margin: 0px 0px 0px 20px;
+}
+/* 🎨 CSS > 📃 Lists > ✔ Unordered Lists */
+ul {
+  padding: 0px 0px 20px 40px;
+  list-style-type: square;
+}
+/* 🎨 CSS > 📃 Lists > ✔ Ordered Lists */
+ol {
+  padding: 0px 0px 20px 40px;
+  /*list-style: lower-roman;*/
+  /* Enable this option above to use roman numerals instead of arabic ones in ordered lists by default. */
+}
+/* 🎨 CSS > 📃 Lists > 📖 Definitions */
+dl {
+  padding: 0px 0px 10px 20px;
+}
+dt {
+  padding: 0px 0px 0px 0px;
+}
+dd {
+  padding: 0px 0px 10px 20px;
+}
+/* 🎨 CSS > 📊 Tables > */
+table {
+  color: #542872;
+  margin: auto auto 2em auto;
+  width: 90%;
+}
+table, th, td {
+  border-collapse: collapse;
+  padding: 10px;
+}
+/* 🎨 CSS > 📜 CLASSES > */
+.wilma { /*⭐*/
+  text-align: center;
+  text-shadow: 1px 1px 1px dimgrey;
+}
+.fred { /*⭐*/
+  background-color: lavender;
+  color: rebeccapurple;
+  width: 95%;
+  padding: 0.6em 2em 0.6em 2em;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 25px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 3px #292929;
+}
+.fred h1, .fred h2, .fred h3, .fred h4, .fred h5, .fred h6 {
+  color: rebeccapurple;
+}
+.fred ul {
+  padding-left: 1em;
+}
+/* 🎨 CSS > 📜 CLASSES > 📸 Alerts */
+.alert, .alert-error, .alert-success, .alert-error-lite, .alert-success-lite, .alert-success-medium, .alert-neutral-lite, .alert-warning-lite {
+  display: block;
+  margin: 1em auto;
+  padding: 1em 2em;
+  font-size: 26px;
+}
+.alert-error {
+  background-color: #FF003C;
+  color: white;
+}
+.alert-success {
+  background-color: #3DAF1A;
+  color: white;
+}
+.alert-error-lite, .alert-success-lite, .alert-success-medium, .alert-warning-lite, .alert-neutral-lite {
+  background-color: #D0D0D0;
+  color: #2A3347;
+  border-style: solid;
+  border-width: 2px;
+}
+.alert-error-lite {
+  border-color: #FF003C;
+}
+.alert-neutral-lite {
+  border-color: #183F4C;
+}
+.alert-success-lite, .alert-success-medium {
+  border-color: darkgreen;
+}
+.alert-success-medium {
+  background-color: #D1E9D5;
+}
+.alert-warning-lite {
+  border-color: darkorange;
+}
+/* 🎨 CSS > 📜 CLASSES > 📸 Images */
+.resize-15-percent {
+  width: 15%;
+  height: auto;
+}
+.resize-25-percent {
+  width: 25%;
+  height: auto;
+}
+.resize-50-percent {
+  width: 50%;
+  height: auto;
+}
+.resize-75-percent {
+  width: 75%;
+  height: auto;
+}
+.resize-85-percent {
+  width: 85%;
+  height: auto;
+}
+.resize-95-percent {
+  width: 95%;
+  height: auto;
+}
+.resize-100-percent {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.center-image {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+/*YouTube Resize*/
+.youtube-100-percent {
+  width: 100%;
+  height: 300px;
+  text-align: center;
+}
+/* 🎨 CSS > CLASSES > 📸 Images > 📸 Gallery */
+.gallery-container { /*📦*/
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 90%;
+}
+.gallery { /*📸*/
+  /*float: left;*/
+  margin: 3px;
+  width: 300px;
+  background-color: #F4F5F8;
+  color: #3D4557;
+  border: 2px solid #3D4557;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.gallery:hover { /*📸*/
+  border: 2px solid #F62800;
+}
+.gallery img { /*📸*/
+  width: 100%;
+  height: auto;
+}
+.caption { /*🔖*/
+  padding: 5px 35px 15px;
+  line-height: normal;
+  font-size: medium;
+  /*text-align: center;*/
+}
+.fullsize-image {
+  width: 100%;
+  color: black;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+.large-caption {
+  text-align: center;
+  padding: 20px 20px;
+}
+/* 🎨 CSS > 📜 CLASSES > 📨 Forms */
+.feedback-form { /*📨*/
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  font-size: 18px;
+  width: 90%;
+  max-width: 33em;
+  margin: auto; /*❔ Auto margins ensures that this element is centered in its parent element.*/
+}
+.feedback-form .form-group { /*📨*/
+  padding-bottom: .625em;
+}
+.feedback-form label { /*📨*/
+  padding-bottom: 1.6em;
+  margin-right: 2em;
+  margin-left: .5em;
+  font-family: Helvetica, Arial;
+  font-size: 18px;
+}
+.feedback-form input[type="text"], input[type="email"], textarea, input[type="password"] { /*📨*/
+  padding: .8em;
+  width: 100%;
+  display: block;
+}
+.feedback-form input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  top: 10px;
+  left: 8px;
+  font-size: 17px;
+  color: #b8b8b8;
+}
+.button-wrap {
+  position: relative;
+}
+.feedback-form textarea { /*📨*/
+  height: 6em;
+}
+/* 🎨 CSS > 📜 CLASSES > 📊 Tables */
+.table-lavender table, .table-lavender tr, .table-lavender td {
+  border: 1px solid black;
+  border-width: 1.5px;
+}
+.table-lavender tr:nth-child(even) {
+  background-color: lavender;
+}
+.table-lime table, .table-lime tr, .table-lime td {
+  border: 1px solid rebeccapurple;
+  border-width: thick
+}
+.table-lime tr:nth-child(odd) {
+  background-color: #EFFFBF;
+}
+.table-lime tr:nth-child(even) {
+  background-color: #FBFFF2;
+}
+.cell-lavender {
+  background-color: rebeccapurple;
+  color: lavender;
+}
+.cell-picure {
+  color: white;
+  text-shadow: 1px 1px 3px #292929;
+  background-image: url(../../../assets/images/background2.png);
+}
+/* 🎨 CSS > 📜 CLASSES > 📐 Layout > */
+.center-align {
+  text-align: center;
+}
+.left-align {
+  text-align: left;
+}
+.right-align {
+  text-align: right;
+}
+.pad-right {
+  margin: 0px 0px 0px 30px /*❔ Indents he wole paragraph when used in the p tag. To indent just the first line of any paragraphs, type (without the quotes) "&nbsp;&nbsp;&nbsp;&nbsp;" just before the first word of the paragraph in your HTML document instead. */
+}
+.horizontal-gap {
+  margin: 0.6em 0em;
+}
+/* 🎨 CSS > 📜 CLASSES > 📐 Layouts > 📦 Containers */
+.content-section-grey {
+  background-color: #b5b5b5;
+  color: #252526;
+  padding: 0px 0px;
+}
+.content-section-grey h1, .content-section-grey h2, .content-section-grey h3, .content-section-grey h4, .content-section-grey h5, .content-section-grey ht6 {
+  color: #252526;
+  padding: 20px 0;
+  line-height: 1.3em;
+}
+.content-section-grey p {
+  padding: 0px 0px 40px 0px;
+}
+.content-section-grey a:link, .content-section-grey a:visited, .content-section-grey a:hover {
+  color: #094E64;
+  /*color: #252526;*/
+}
+/*
+.content-section-grey a:visited {
+  color: #252526
+}
+*/
+.content-section-light {
+  background-color: #eeeef2;
+  color: #252526;
+  padding: 40px 0px;
+}
+.content-section-light h1, .content-section-light h2, .content-section-light h3, .content-section-light h4, .content-section-light h5, .content-section-light h6 {
+  color: #252526;
+  padding: 20px 0;
+  line-height: 1.3em;
+}
+.content-section-light p {
+  padding: 0px 0px 40px 0px;
+}
+.content-section-light a:link, .content-section-light a:visited {
+  color: firebrick;
+}
+.content-section-navy {
+  background-color: #141A25;
+  color: white;
+  font-size: 28px;
+}
+.content-section-navy h1, .content-section-navy h2, .content-section-navy h3, .content-section-navy h4, .content-section-navy h5, .content-section-navy h6 {
+  color: #78C4DC;
+  padding: 20px 0;
+  line-height: 1.3em;
+}
+.content-section-navy a:link, .content-section-navy a:visited {
+  color: lightskyblue;
+}
+#featured {
+  background-image: url("../assets/images/featured.jpg");
+  min-height: 250px;
+  margin: 0;
+  box-sizing: border-box;
+  /*❔ Parallax scrolling effect*/
+  background-attachment: fixed;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+#featured h1 {
+  color: #FFFFFF;
+  font-size: 72px;
+  text-shadow: 1px 1px 3px #292929;
+  line-height: 1.6em;
+  padding-top: 50px;
+}
+.redirect {
+  color: dimgrey;
+  padding: 0 0 .5em .5em;
+}
+.note {
+  background-color: lightgrey;
+  border: dotted;
+  margin: 0 1.5em .5em 0;
+  padding: 5px;
+  font-size: medium;
+  line-height: normal;
+}
+.container {
+  margin: auto;
+  width: 80%;
+}
+.container-wide {
+  margin: auto;
+  width: 90%;
+  padding: 1.6em;
+  overflow: hidden; /*❔ Prevent unwanted scrollbar from appearing*/
+}
+.container-mini { /*📦*/
+  margin: auto;
+  width: 30%;
+  padding: 40px;
+  overflow: hidden;
+}
+/* CSS > 📜 CLASSES > 📐 Layouts > 🎈 Floats > */
+.clearfix {
+  clear: both; /*❔ The purpose of this is to remove any existing float configurations beyond the given point in the HTML document this class is used. Note: this does not stop one from creating new floats at alater point in the document.*/
+}
+.header-box { /*🚥*/
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  max-height: 5em;
+}
+.header-box h1, .header-box h2, .header-box h3, .header-box h4, .header-box h5, .header-box h6, p {
+  padding: 3px 0;
+}
+.sidebar {
+  float: right;
+  width: 35%;
+  box-sizing: border-box;
+  margin: 0 0 1em 1em;
+}
+.page-intro { /* ❔ This should sit directly on the left of the "Sidebar" */
+  /*width: 70%; disabled*/
+  box-sizing: border-box;
+  padding: 1em;
+  /*overflow: hidden;*/
+}
+.double-float { /*🎈*/
+  width: 50%;
+  float: left;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.tripple-float { /*🎈*/
+  width: 33.33%;
+  float: left;
+  padding: 0 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.image-wrap-left { /*🎈*/
+  float: left;
+  width: 33.33%;
+  height: auto;
+}
+.image-wrap-right { /*🎈*/
+  float: right;
+  width: 33.33%;
+  height: auto;
+}
+.upload-container {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 60%;
+  background-color: #E2E2E9;
+  color: #212A3F;
+  border-color: #C5C5D1;
+  border-style: solid;
+  border-bottom-width: 1px;
+  padding: 2.5em;
+}
+/* 🎨 CSS > 📜 CLASSES > 📐 Layout > 👆🏻 UI */
+/*💡 TIP: "Uncomment" disabled css stylings inside this class to enable them*/
+.admin-banner {
+  background-color: #A2063C;
+  color: white;
+  text-align: center;
+  font: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+  font-stretch: expanded;
+}
+.button, .button-ornate, .menu-button {
+  border: none;
+  border-radius: 0;
+  /*margin: 1em 1em 1em 0em;*/
+  margin: 1em;
+}
+.button, .button-ornate {
+  background-color: #333333;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: .6em 1.6em;
+  transition: 0.3s;
+  cursor: default;
+}
+.button-lime, .button-wire {
+  display: inline-block;
+  padding: 1.45em 1.65em .7em;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #8ebf42;
+  color: #fff;
+  transition: 0.3s;
+}
+.button-wire {
+  padding: 2em 3em;
+  background-color: #E2E2E9;
+  color: #212A3F;
+  border-style: solid;
+  border-color: #212A3F;
+  border-radius: 50px;
+  border-width: 2px;
+  transition: 0.3s;
+}
+.button-lime:hover, .button-wire:hover {
+  background-color: #212A3F;
+  color: white;
+}
+.menu-button {
+  padding: .6em;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+.menu-button-disabled {
+  color: #903A24;
+  padding: .6em;
+  margin-right: 1em;
+}
+.button-ornate {
+  border-radius: 75px;
+  box-shadow: 1px 1px 3px #292929;
+  text-shadow: 1px 1px 3px #292929;
+}
+.button:hover, .button-ornate:hover {
+  background-color: firebrick;
+  color: #FFFFFF;
+}
+.button-ornate:hover {
+  background-color: #2D6475;
+  text-decoration: none;
+  color: #fff;
+}
+.menu-button:hover {
+  /*background: linear-gradient(#555555, #3F3F3F);*/
+  background: linear-gradient(#FFD354, #FF9F32);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 0px 1px black;
+}
+.button-text-decoration {
+  Color: #fff;
+  text-decoration: none;
+}
+.container-nav { /*📦*/
+  margin: auto;
+  width: 80%;
+  padding: 0.4em;
+  overflow: hidden
+}
+.nav-bar, .menu-horizontal, .menu-vertical {
+  font-family: Helvetica, Arial;
+  font-size: 18px;
+  margin: 0;
+}
+.menu-horizontal, .menu-vertical {
+  background-color: #DDDDDD;
+  padding: 20px 20px;
+  line-height: 1.3em;
+  border-top: 3px #183F4C /*#E73E11*/ solid;
+  box-shadow: 1px 1px 8px #7F7F7F; /*FEATURE ENABLED*/
+  /*border-radius: 25px;*/ /*FEATURE DISABLED*/
+  /*color: #217893; color: #2B96B7;*/
+}
+.menu-horizontal {
+  padding-top: 1em;
+  max-height: 4.0em;
+  min-width: 17em;
+  min-height: 3.5em;
+}
+.menu-vertical {
+  max-width: 20em;
+  min-width: 14em;
+}
+.nav-bar, .nav-bar-demo {
+  /*background-color: #2B2B2B;*/
+  text-transform: uppercase;
+  border-bottom: 1px #1C1C1C solid;
+  box-shadow: 0px 0px 5px black;
+  max-height: 4em;
+}
+.nav-bar {
+  /*background:linear-gradient(#373737, #282828);*/
+  background: linear-gradient(#E56E3F, #BD4528);
+}
+.nav-bar-demo {
+  background-color: #FC864C;
+  color: #CCCCCC;
+  padding-top: 1em;
+}
+.nav-bar a, .nav-bar-demo a {
+  /*color: #333333;*/
+  color: white;
+  padding-right: 1em;
+  text-shadow: .5px .5px 3px black;
+}
+.menu-horizontal a:link, .menu-horizontal a:visited, .menu-vertical a:link, .menu-vertical a:visited {
+  color: #094E64;
+}
+.menu-horizontal a:hover, .menu-vertical a:hover {
+  color: #1885A8; /*color: #E73E11;*/
+  text-decoration: none;
+}
+.nav-bar li, .nav-bar-demo li, .menu-horizontal li, .menu-vertical li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: solid #252526 thin;
+  font-weight: bolder;
+}
+.menu-vertical li {
+  padding: 11px 0 11px 20px;
+}
+.nav-bar ul, .nav-bar-demo ul {
+  padding: 0;
+  list-style: none;
+}
+.menu-horizontal ul {
+  list-style: none;
+}
+.menu-vertical ul {
+  list-style: none;
+  border-color: #252526;
+  margin-bottom: 20px;
+}
+.menu-horizontal li {
+  display: inline;
+  border-bottom: hidden;
+  padding-right: 1.3em;
+  text-align: right
+}
+.nav-bar li, .nav-bar-demo li {
+  display: inline;
+  border-bottom: hidden;
+  padding-right: 0;
+  text-align: right;
+}
+.menu-vertical li:nth-child(even) {
+  background-color: #CCCCCC;
+}
+.menu-vertical li:nth-child(odd) {
+  background-color: #D6D6D6;
+}
+/*Special*/
+.gallery a:link, .gallery a:hover, .gallery a:visited {
+  /*color: #217893;*/
+  color: #2B96B7;
+}
+.gallery figcaption {
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 16px;
+}
+/* CSS > CLASSES > Layouts > Conditions */
+@media(max-width: 800px) {
+  /* ❔ The purpose of this is to accomidate smaller devices, large zoom size, or small screen space in general. At any time the web page goes below 600 pixels, floats are disabled or reduced to ensure maximum readability */
+  .header-box {
+    width: 100%;
+    float: none;
+  }
+  .page-intro {
+    width: 100%;
+    float: none;
+  }
+  .sidebar {
+    width: 100%;
+    float: none;
+  }
+  .double-float {
+    width: 100%;
+    float: none;
+  }
+  .tripple-float {
+    width: 100%;
+    float: none;
+  }
+  .gallery {
+    width: 100%;
+    float: none;
+  }
+  .menu-horizontal {
+    max-height: none;
+  }
+  .nav-bar {
+    max-height: none;
+  }
+}
+/* CSS > IDs */
+#Bismillah {
+  color: #555555;
+  font-style: italic
+}
+#license {}
+/* End of Custom Styles */
+/*
+End of CSS Document
+Thanks for stopping by the back-stage!
+
+Patch Notes for 18.0
+======================
+⚠ This changelog only lists updates to the CSS. To see th full changelog for this version, see the corresponding HTML document.
+
+19.1 (Update 1)
+Patch 1.20.1210a
+ - [CSS] Set a global 16px font size for buttons
+ - [CSS] Added CSS styling to the "password" input type. 
+ - [CSS] Minor adjustments to some of the layout elements.
+
+19.1 (Gold)
+Patch 1.20.1209
+ - [CSS] Added CSS properties to new "alert" family of classes, including one for success (green) and one for error (red).
+ - [CSS] Additional adjustments to the max height for some of the nav-bars.
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+*/

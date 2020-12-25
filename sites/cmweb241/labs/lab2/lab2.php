@@ -47,7 +47,6 @@ if ( filter_has_var( INPUT_POST, 'login' ) ) {
 
     //verifying login credentials...
     if ( $username == "hello" && $password == "world" ) {
-      echo boo;
       //generating success alert...
       $alert_class = 'alert-success';
       $alert = "Your login credentials were correct!";
@@ -208,79 +207,76 @@ if ( filter_has_var( INPUT_POST, 'login' ) ) {
 		   📖 START of Main Article 📖
 		  ////////////////////////////-->
     <article>
-    <section> 
-      <!--🔖--> 
-      <!--📸 Smile!--> 
-      <!--📢 Content Intro 📢-->
-      <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
+      <section> 
+        <!--🔖--> 
+        <!--📸 Smile!--> 
+        <!--📢 Content Intro 📢-->
+        <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
 				 class="tripple-float" >
-        <p>For this lab, the goal is "to create a reasonably secure login page (for both username and password). This page should contain a  form which collects the data (it should contain a username field and a password field. Also include a submit and reset button.) For the present time, only echo back what was entered into the form (print the contents of the form that were entered on the page when the submit button is pressed)".</p>
-        <img src="assets/graphics/pine.svg"
+          <p>For this lab, the goal is "to create a reasonably secure login page (for both username and password). This page should contain a  form which collects the data (it should contain a username field and a password field. Also include a submit and reset button.) For the present time, only echo back what was entered into the form (print the contents of the form that were entered on the page when the submit button is pressed)".</p>
+          <img src="assets/graphics/pine.svg"
 				 alt="leaves, pine cones, and bells"
 				 class="center-image" > </div>
-      <!--/📢 Content Intro 📢--> 
-    </section>
-    <!--🔖--> 
-    <!--📑 Main Content 📑-->
-    <section> 
+        <!--/📢 Content Intro 📢--> 
+      </section>
+      <!--🔖--> 
+      <!--📑 Main Content 📑-->
+      <section> 
+        <!--🔖-->
+        <h2>Main Application</h2>
+        <p>Below is the login form created for this lab. The form is made up of three input types: textbox, password, and button. The "Sign in" button collects the user's input and compares it to a pre-defined username and password. The user is then alerted whether the credentials were correct. Additionally, the values submitted by the user is echoed back to them on the webpage.</p>
+      </section>
       <!--🔖-->
-      <h2>Main Application</h2>
-      <p>Below is the login form created for this lab. The form is made up of three input types: textbox, password, and button. The "Sign in" button collects the user's input and compares it to a pre-defined username and password. The user is then alerted whether the credentials were correct. Additionally, the values submitted by the user is echoed back to them on the webpage.</p>
-    </section>
-    <!--🔖-->
-    <section id="app">
-    <!--🔖-->
-    <h3>Demo Login Form</h3>
-    <p> Please enter a username and a password and then click "Login" to continue. Note: This is a demo login form and will not sign you into anything. But it does work...somewhat.</p>
-    <h1 style="text-align: center">
-    Sign in
-    </h2>
-    <!--📨 Form-->
-    <form class=feedback-form action="<?php echo $_server['php_self'] ?>#app" method="post" style="max-width: 20em;">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" value="<?php echo $username; ?>"/>
-        <!--❔ Preserves previously enter value--> 
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" />
-      </div>
-      <div>
-        <input class="button" type="submit" value="Sign in" id="login" name="login">
-        <input class="button" type="reset" value="Clear Form" name="reset-button" id="reset" />
-      </div>
-    </form>
-    <!--📨 Form--> 
-    <!--❓ Output ❓-->
-    <div class="<?php echo $alert_class; ?>"> <?php echo $alert; ?> </div>
-    <div><?php echo $echo_credentials; ?></div>
-    <!--❓ Output ❓-->
-    </section>
-    <!--🔖-->
-    <section> 
+      <section id="app"> 
+        <!--🔖-->
+        <h3>Demo Login Form</h3>
+        <p> Please enter a username and a password and then click "Login" to continue. Note: This is a demo login form and will not sign you into anything. But it does work...somewhat.</p>
+        <h1 style="text-align: center"> Sign in </h1>
+        <!--📨 Form-->
+        <form class="feedback-form" action="<?php echo $_server['php_self'] ?>#app" method="post" style="max-width: 20em;">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="<?php echo $username; ?>"/>
+            <!--❔ Preserves previously enter value--> 
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" />
+          </div>
+          <div>
+            <input class="button" type="submit" value="Sign in" id="login" name="login">
+            <input class="button" type="reset" value="Clear Form" name="reset-button" id="reset" />
+          </div>
+        </form>
+        <!--📨 Form--> 
+        <!--❓ Output ❓-->
+        <div class="<?php echo $alert_class; ?>"> <?php echo $alert; ?> </div>
+        <div><?php echo $echo_credentials; ?></div>
+        <!--❓ Output ❓--> 
+      </section>
       <!--🔖-->
-      <h2>How to Get the Code</h2>
-      <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>
-      <p>Fortunately, there is a way around this. I have placed all of the PHP source code for this student site for anyone to view, download, and modify. They are hosted on my CMWEB GitHub repository, which you can view from the link below.</p>
-      <p><a href="https://github.com/NazmusLabs/CMWEB/tree/master/sites/cmweb241" target="_blank">View the php source codes for this course on GitHub</a></p>
-    </section>
-    <!--🔖--> 
-    <!--/📑 Main Content 📑--> 
-    <!--🎁 Bonus Content 🎁-->
-    <h2>External Links</h2>
-    <!--🔗 External Links-->
-    <ul>
-      <li><a href="https://webaim.org/techniques/forms/controls" target="_blank">Creating Accessible Forms</a></li>
-      <li><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">CSS Transitions</a></li>
-    </ul>
-    <!--/🔗 External Links-->
-    <h3>Thanks for visiting!</h3>
-    <!--/🎁 Bonus Content 🎁--> <em><small>Featured image credit:
-    Photo by <a href="https://unsplash.com/@turnlip19" target="_blank">Jong Marshes</a> on <a
-              href="https://unsplash.com/photos/79mNMAvSORg" target="_blank">Unsplash</a>.</small></em>
-    </article>
+      <section> 
+        <!--🔖-->
+        <h2>How to Get the Code</h2>
+        <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>
+        <p>Fortunately, there is a way around this. I have placed all of the PHP source code for this student site for anyone to view, download, and modify. They are hosted on my CMWEB GitHub repository, which you can view from the link below.</p>
+        <p><a href="https://github.com/NazmusLabs/CMWEB/tree/master/sites/cmweb241" target="_blank">View the php source codes for this course on GitHub</a></p>
+      </section>
+      <!--🔖--> 
+      <!--/📑 Main Content 📑--> 
+      <!--🎁 Bonus Content 🎁-->
+      <h2>External Links</h2>
+      <!--🔗 External Links-->
+      <ul>
+        <li><a href="https://webaim.org/techniques/forms/controls" target="_blank">Creating Accessible Forms</a></li>
+        <li><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">CSS Transitions</a></li>
+      </ul>
+      <!--/🔗 External Links-->
+      <h3>Thanks for visiting!</h3>
+      <!--/🎁 Bonus Content 🎁--> <em><small>Featured image credit:
+      Photo by <a href="https://unsplash.com/@turnlip19" target="_blank">Jong Marshes</a> on <a
+              href="https://unsplash.com/photos/79mNMAvSORg" target="_blank">Unsplash</a>.</small></em> </article>
     <!--/////////////////////////////
 		   📖 END of Main Article 📖
 		  ///////////////////////////--> 
@@ -312,9 +308,9 @@ if ( filter_has_var( INPUT_POST, 'login' ) ) {
         <!--🔗 Footer Menu items-->
         <ul>
           <!--🔗 Click!-->
-          <li><a href="../index.html">Projects</a></li>
+          <li><a href="../index.php">Projects</a></li>
           <!--🔗 Click!-->
-          <li><a href="../../labs/index.html">Labs</a></li>
+          <li><a href="../index.php">Labs</a></li>
           <!--🔗 Click!-->
           <li><a href="../../about.html">About</a></li>
           <li>|</li>
@@ -388,154 +384,7 @@ if ( filter_has_var( INPUT_POST, 'login' ) ) {
 <!--==============================
 	 📄 END OF FOOTER SECION B 📄
 	==============================--> 
-<!--🌐 End of HTML Document 🌐--> 
-<!--
-Thanks for stopping by the back-stage!
 
-© 2020 NazmusLabs. Some rights reserved. 
-
-CMWEB Student Site
--------------------
-Written By Nazmus Shakib Khandaker
-
-CC-BY-SA 4.0
-
-======================
-   📘 DOCUMENTATION
-======================
-System requirements:  Chromium based web browser (Google Chrome, Microsoft Edge, Opera, Brave, etc) version 86 or later. Apple Safari 14 or later. Mozilla Firefox 82 or later. Microsoft Internet Explorer and Microsoft Edge (Legacy) are not supported.
-
-📖 Introduction - NazmusLabs Help
-----------------------------------
-LAB DESCRIPTION: This lab is about building an HTML form and styling the form with CSS.
-
-This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
-
-📣 What’s New in v19
-----------------------------
- - Version 19 of this HTML document structure is all about polish and refinement.
- - This revision received a comprehensive look at all the changes and additions made in all of the CMWEB 120 labs so far and analyzed any outstanding bugs and areas of improvement.
- - [CSS] Version 19 underwent a major code refactoring which better organizes the styling structure, added new in-line comments and documentation as well as improving existing ones.
- - [CSS] Fixed outstanding buts related to the layout of the website, including, but not limited to, the issue where the rightmost part of the sidebar would get cut off, resulting in a loss of drip shadow on its right side.
- - Improved in-line comments and documentation for throughtou the HTML documents.
- - Other general improvements and fixes
-
-
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
-
-📝 Patch Notes for 19.0
---------------------------
-19.0 (Update 1)
-Patch 1.20.1909b
- - [CSS] Slightly increased form max-width.
-Patch 1.20.1209a
- - [CSS] Minor adjustments to the max height for some of the nav-bars
-
-19.0 (Gold)
-Patch 1.20.1127
- - Initial publication
-
-*See documentation on version numbers for more info.
-
-📖 Additional Information
----------------------------
-Below are some general documentation that applies to this and other CMWEB webpage source codes. Contextual documentation on specefic features or layout may be available in-line with the code.
-
-💡 Terminology 
-----------------
-Daisy: the term "Daisy" may be used to indicate the client device that is rendering the webpage. E.g. files stored on "Daisy” vs files stored on server”.
-
-It may be used in names of variables that relate specefically to the end-device. For instance, a variable that holds the content to be read aloud by the device may have "Daisy" in its name (as in “Daisy” will speak the following text).
-
-Other examples: "Daisy set to silent", "Daisy on airplane mode", "Daisy will execute this javascript if...", etc.
-
-    ****
-
-Cordelia: The term "Cordelia" may be used when referring to the server. Variables with this designation may be used in pages containing PHP or any other server side code.
-
-💡 Getting Help
--------------------
-Refer to in-line comments throughout this and all related source codes. Addional documentation is contextually available where appropriate.
-
-
-📖 License Information
--------------------------
-This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
-
-To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-⌛️ End of Document
--------------------
-  /// Thank you! /// 
---> 
-<!--🌐 End of HTML Document 🌐--> 
-<!--
-Thanks for stopping by the back-stage!
-
-© 2020 NazmusLabs. Some rights reserved. 
-
-CMWEB Student Site
--------------------
-Written By Nazmus Shakib Khandaker
-
-CC-BY-SA 4.0
-
-======================
-   📘 DOCUMENTATION
-======================
-System requirements:  Chromium based web browser (Google Chrome, Microsoft Edge, Opera, Brave, etc) version 86 or later. Apple Safari 14 or later. Mozilla Firefox 82 or later. Microsoft Internet Explorer and Microsoft Edge (Legacy) are not supported.
-
-📖 Introduction - NazmusLabs Help
-----------------------------------
-LAB DESCRIPTION: This lab is about building an HTML form and styling the form with CSS.
-
-This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
-
-📣 What’s New in v19
-----------------------------
- - 
-
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
-
-📝 Patch Notes for 19.0
---------------------------
-19.0 (Gold)
-Patch 1.20.1127
- - Initial publication
-
-*See documentation on version numbers for more info.
-
-📖 Additional Information
----------------------------
-Below are some general documentation that applies to this and other CMWEB webpage source codes. Contextual documentation on specefic features or layout may be available in-line with the code.
-
-💡 Terminology 
-----------------
-Daisy: the term "Daisy" may be used to indicate the client device that is rendering the webpage. E.g. files stored on "Daisy” vs files stored on server”.
-
-It may be used in names of variables that relate specefically to the end-device. For instance, a variable that holds the content to be read aloud by the device may have "Daisy" in its name (as in “Daisy” will speak the following text).
-
-Other examples: "Daisy set to silent", "Daisy on airplane mode", "Daisy will execute this javascript if...", etc.
-
-    ****
-
-Cordelia: The term "Cordelia" may be used when referring to the server. Variables with this designation may be used in pages containing PHP or any other server side code.
-
-💡 Getting Help
--------------------
-Refer to in-line comments throughout this and all related source codes. Addional documentation is contextually available where appropriate.
-
-
-📖 License Information
--------------------------
-This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
-
-To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-⌛️ End of Document
--------------------
-  /// Thank you! /// 
---> 
 <!--🌐 End of HTML Document 🌐--> 
 <!--
 Thanks for stopping by the back-stage!
@@ -573,96 +422,29 @@ This student site was originally created for the CMWEB program at Illinois Centr
 
 📝 Patch Notes for 19.0
 --------------------------
+19.0 (update 4)
+Patch 1.20.1219d
+ - Fixed a mismatched pair of h2 openeing and closing tags.
+ - Fixed other minor code inconsistencies and missing quotations around certain in-line css properties.
+
+   ***
+
+19.0 (Update 3)
+Patch 1.20.1217c
+ - Fixed an issue where large number of documentation text as well as some HTML markups had several duplicates.
+ - Removed leftover debug code.
+
+   ***
+
 19.0 (Update 1)
 Patch 1.20.1209
  - [CSS] Minor adjustments to the max height for some of the nav-bars
 
+   ***
+
 19.0 (Gold)
 Patch 1.20.1127
  - Initial publication
-
-*See documentation on version numbers for more info.
-
-📖 Additional Information
----------------------------
-Below are some general documentation that applies to this and other CMWEB webpage source codes. Contextual documentation on specefic features or layout may be available in-line with the code.
-
-💡 Terminology 
-----------------
-Daisy: the term "Daisy" may be used to indicate the client device that is rendering the webpage. E.g. files stored on "Daisy” vs files stored on server”.
-
-It may be used in names of variables that relate specefically to the end-device. For instance, a variable that holds the content to be read aloud by the device may have "Daisy" in its name (as in “Daisy” will speak the following text).
-
-Other examples: "Daisy set to silent", "Daisy on airplane mode", "Daisy will execute this javascript if...", etc.
-
-    ****
-
-Cordelia: The term "Cordelia" may be used when referring to the server. Variables with this designation may be used in pages containing PHP or any other server side code.
-
-💡 Getting Help
--------------------
-Refer to in-line comments throughout this and all related source codes. Addional documentation is contextually available where appropriate.
-
-
-📖 License Information
--------------------------
-This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
-
-To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-⌛️ End of Document
--------------------
-  /// Thank you! /// 
--->
-</body>
-</html>
-<!--🌐 End of HTML Document 🌐-->
-<!--
-Thanks for stopping by the back-stage!
-
-© 2020 NazmusLabs. Some rights reserved. 
-
-CMWEB Student Site
--------------------
-Written By Nazmus Shakib Khandaker
-
-CC-BY-SA 4.0
-
-======================
-   📘 DOCUMENTATION
-======================
-System requirements:  Chromium based web browser (Google Chrome, Microsoft Edge, Opera, Brave, etc) version 86 or later. Apple Safari 14 or later. Mozilla Firefox 82 or later. Microsoft Internet Explorer and Microsoft Edge (Legacy) are not supported.
-
-📖 Introduction - NazmusLabs Help
-----------------------------------
-LAB OBJECTIVE: To build a simple calculator based on predefined specs using PHP server-side scripting.
-
-This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
-
-📣 What’s New in v19
-----------------------------
- - Version 19 of this HTML document structure is all about polish and refinement.
- - This revision received a comprehensive look at all the changes and additions made in all of the CMWEB 120 labs so far and analyzed any outstanding bugs and areas of improvement.
- - [CSS] Version 19 underwent a major code refactoring which better organizes the styling structure, added new in-line comments and documentation as well as improving existing ones.
- - [CSS] Fixed outstanding buts related to the layout of the website, including, but not limited to, the issue where the rightmost part of the sidebar would get cut off, resulting in a loss of drip shadow on its right side.
- - Improved in-line comments and documentation for throughtou the HTML documents.
- - Other general improvements and fixes
-
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
-
-📝 Patch Notes for 19.0
---------------------------
-19.1 (Update 1)
-Patch 1.20.1210a
- - [PHP] Added htmlspecialchars() to code handling user input to prevent malicious attacks through code insertion in input fields.
- - [CSS] Set a global 16px font size for buttons
- - [CSS] Added CSS styling to the "password" input type. 
- - [CSS] Minor adjustments to some of the layout elements.
-
-19.1 (Gold)
-Patch 1.20.1209
- - [CSS] Added CSS properties to new "alert" family of classes, including one for success (green) and one for error (red).
- - [CSS] Additional adjustments to the max height for some of the nav-bars.
 
 *See documentation on version numbers for more info.
 
