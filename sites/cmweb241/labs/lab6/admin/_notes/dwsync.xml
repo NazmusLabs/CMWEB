@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="photo_upload.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132527422048622727" remote="132528620400000000" Dst="1" />
-<file name="index.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132532504586330295" remote="132532504200000000" Dst="1" />
-<file name="authorized.txt" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132528780849156621" remote="132528780600000000" Dst="1" />
-<file name="unauthorized.txt" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132528780969946601" remote="132528780600000000" Dst="1" />
-<file name="admin.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132530832407634192" remote="132530832600000000" Dst="1" />
-<file name="admin.php" server="C:/xampp/htdocs/sites/cmweb/" local="132530832407634192" remote="132530832400000000" Dst="1" />
-<file name="authorized.txt" server="C:/xampp/htdocs/sites/cmweb/" local="132528780849156621" remote="132528780840000000" Dst="1" />
-<file name="index.php" server="C:/xampp/htdocs/sites/cmweb/" local="132532504586330295" remote="132532504580000000" Dst="1" />
-<file name="photo_upload.php" server="C:/xampp/htdocs/sites/cmweb/" local="132527422048622727" remote="132527422040000000" Dst="1" />
-<file name="unauthorized.txt" server="C:/xampp/htdocs/sites/cmweb/" local="132528780969946601" remote="132528780960000000" Dst="1" />
-<file name="indexs.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132530950691402315" remote="132531535200000000" Dst="1" />
-<file name="indexs.php" server="C:/xampp/htdocs/sites/cmweb/" local="132530950691402315" remote="132530950690000000" Dst="1" />
+<file name="photo_upload.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132533747159770818" remote="132533746800000000" Dst="1" />
+<file name="authorized.txt" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132542857334037583" remote="132543467400000000" Dst="1" />
+<file name="unauthorized.txt" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132542857223114727" remote="132543467400000000" Dst="1" />
+<file name="admin.php" server="C:/xampp/htdocs/sites/cmweb/" local="132542985795000703" remote="132542985790000000" Dst="1" />
+<file name="authorized.txt" server="C:/xampp/htdocs/sites/cmweb/" local="132542857334037583" remote="132542857330000000" Dst="1" />
+<file name="index.php" server="C:/xampp/htdocs/sites/cmweb/" local="132542980847578928" remote="132542980840000000" Dst="1" />
+<file name="photo_upload.php" server="C:/xampp/htdocs/sites/cmweb/" local="132533747159770818" remote="132533747150000000" Dst="1" />
+<file name="unauthorized.txt" server="C:/xampp/htdocs/sites/cmweb/" local="132542857223114727" remote="132542857220000000" Dst="1" />
+<file name="admin.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132542985795000703" remote="132542985600000000" Dst="1" />
+<file name="index.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132542980847578928" remote="132542980800000000" Dst="1" />
+<file name="deleteUnauthorized.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132543467303166568" remote="132543468000000000" Dst="1" />
+<file name="deleteAuthorized.php" server="ftp.nkhandaker.webprofessionaltraining.org//public_html/" local="132543467371566410" remote="132543467400000000" Dst="1" />
+<file name="deleteAuthorized.php" server="C:/xampp/htdocs/sites/cmweb/" local="132543467371566410" remote="132543467370000000" Dst="1" />
+<file name="deleteUnauthorized.php" server="C:/xampp/htdocs/sites/cmweb/" local="132543467303166568" remote="132543467300000000" Dst="1" />
 </dwsync>

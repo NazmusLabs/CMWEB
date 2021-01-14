@@ -1,0 +1,147 @@
+@charset "utf-8";
+/*Import file #1*/
+/*
+CSS Document for CMWEB241 Lab 1 (lab1.php)
+Version 19.0.20.1209
+Written by Nazmus Shakib Khandaker*/
+/*In the name of Allah, the Most Gracious, the Most Merciful*/
+* {
+  margin: 0; /*❔ Reset any existing or default styles */
+  padding: 0;
+}
+/* 🎨 CSS > */ /*❔ Custom Styles Start *;
+
+/* 🎨 CSS > ⭐ General > */
+br {
+  padding: 20px 0px;
+}
+/* 🎨 CSS > 📝 TEXT */
+body {
+  color: #EEEEFB; /*color: lavender;*/
+  /*background-color: #1E1E1E;*/
+  background-color: #191919;
+  font: normal 24px "Helvetica", "Arial", "sans-serif";
+  line-height: 1.6em;
+}
+/* 🎨 CSS > 📝 Text > 📝 Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #64C4DA;
+  padding: 20px 0;
+  line-height: 1.3em;
+}
+/* 🎨 CSS > 📝 Text > 📝 Paragraph */
+p {
+  padding: 0px 0px 40px 0px;
+}
+/* 🎨 CSS > 📝 Text > 🔗 Hyperlinks */
+a, a:link, a:hover, a:visited {
+  color: #2B96B7;
+  text-decoration: none;
+}
+/*
+a:link {
+  color: lightskyblue;
+}
+*/
+a:hover {
+  text-decoration: underline
+}
+/* 🎨 CSS > 📃 Lists > */
+li {
+  margin: 0px 0px 0px 20px;
+}
+/* 🎨 CSS > 📃 Lists > ✔ Unordered Lists */
+ul {
+  padding: 0px 0px 20px 40px;
+  list-style-type: square;
+}
+/* 🎨 CSS > 📃 Lists > ✔ Ordered Lists */
+ol {
+  padding: 0px 0px 20px 40px;
+  /*list-style: lower-roman;*/
+  /* Enable this option above to use roman numerals instead of arabic ones in ordered lists by default. */
+}
+/* 🎨 CSS > 📃 Lists > 📖 Definitions */
+dl {
+  padding: 0px 0px 10px 20px;
+}
+dt {
+  padding: 0px 0px 0px 0px;
+}
+dd {
+  padding: 0px 0px 10px 20px;
+}
+/* 🎨 CSS > 📊 Tables > */
+table {
+  color: #542872;
+  margin: auto auto 2em auto;
+  width: 90%;
+}
+table, th, td {
+  border-collapse: collapse;
+  padding: 10px;
+}
+/* 🎨 CSS > 📜 CLASSES > */
+.wilma { /*⭐*/
+  text-align: center;
+  text-shadow: 1px 1px 1px dimgrey;
+}
+.fred { /*⭐*/
+  background-color: lavender;
+  color: rebeccapurple;
+  width: 95%;
+  padding: 0.6em 2em 0.6em 2em;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 25px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 3px #292929;
+}
+.fred h1, .fred h2, .fred h3, .fred h4, .fred h5, .fred h6 {
+  color: rebeccapurple;
+}
+.fred ul {
+  padding-left: 1em;
+}
+/* 🎨 CSS > 📜 CLASSES > 📸 Images */
+.resize-15-percent {
+  width: 15%;
+  height: auto;
+}
+.resize-25-percent {
+  width: 25%;
+  height: auto;
+}
+.resize-50-percent {
+  width: 50%;
+  height: auto;
+}
+.resize-75-percent {
+  width: 75%;
+  height: auto;
+}
+.resize-85-percent {
+  width: 85%;
+  height: auto;
+}
+.resize-95-percent {
+  width: 95%;
+  height: auto;
+}
+.resize-100-percent {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.center-image {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+/*YouTube Resize*/
+.youtube-100-percent {
+  width: 100%;
+  height: 300px;
+  text-align: center;
+}

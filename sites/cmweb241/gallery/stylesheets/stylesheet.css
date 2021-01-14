@@ -1,0 +1,97 @@
+@charset "utf-8";
+@import "standard.css";
+@import "gallery.css";
+@import "layouts.css";
+@import "ui.css";
+@import "queries.css";
+/* CSS > IDs */
+#Bismillah {
+  color: #555555;
+  font-style: italic
+}
+#license {}
+/* End of Custom Styles */
+/*
+End of CSS Document
+Thanks for stopping by the back-stage!
+
+Patch Notes for 18.0
+======================
+⚠ This changelog only lists updates to the CSS. To see th full changelog for this version, see the corresponding HTML document.
+
+19.1 (Update 1)
+Patch 1.20.1210a
+ - [CSS] Set a global 16px font size for buttons
+ - [CSS] Added CSS styling to the "password" input type. 
+ - [CSS] Minor adjustments to some of the layout elements.
+
+19.1 (Gold)
+Patch 1.20.1209
+ - [CSS] Added CSS properties to new "alert" family of classes, including one for success (green) and one for error (red).
+ - [CSS] Additional adjustments to the max height for some of the nav-bars.
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, U/* CSS > CLASSES > Layouts > Conditions */
+@media(max-width: 800px) {
+  /* ❔ The purpose of this is to accomidate smaller devices, large zoom size, or small screen space in general. At any time the web page goes below 600 pixels, floats are disabled or reduced to ensure maximum readability */
+  .header-box {
+    width: 100%;
+    float: none;
+  }
+  .page-intro {
+    width: 100%;
+    float: none;
+  }
+  .sidebar {
+    width: 100%;
+    float: none;
+  }
+  .double-float {
+    width: 100%;
+    float: none;
+  }
+  .tripple-float {
+    width: 100%;
+    float: none;
+  }
+  .gallery {
+    width: 100%;
+    float: none;
+  }
+  .menu-horizontal {
+    max-height: none;
+  }
+  .nav-bar {
+    max-height: none;
+  }
+}
+/* CSS > IDs */
+#Bismillah {
+  color: #555555;
+  font-style: italic
+}
+#license {}
+/* End of Custom Styles */
+/*
+End of CSS Document
+Thanks for stopping by the back-stage!
+
+Patch Notes for 18.0
+======================
+⚠ This changelog only lists updates to the CSS. To see th full changelog for this version, see the corresponding HTML document.
+
+19.1 (Update 1)
+Patch 1.20.1210a
+ - [CSS] Set a global 16px font size for buttons
+ - [CSS] Added CSS styling to the "password" input type. 
+ - [CSS] Minor adjustments to some of the layout elements.
+
+19.1 (Gold)
+Patch 1.20.1209
+ - [CSS] Added CSS properties to new "alert" family of classes, including one for success (green) and one for error (red).
+ - [CSS] Additional adjustments to the max height for some of the nav-bars.
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+
+© 2020 Nazus Shakib Khandaker & NazmusLabs. Some Rights Reserved. CC-BY-SA 4.0
+*/

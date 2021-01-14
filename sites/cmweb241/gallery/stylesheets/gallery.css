@@ -1,0 +1,132 @@
+@charset "utf-8";
+/*Import file #2*/
+/* 🎨 CSS > CLASSES > 📸 Images > 📸 Gallery */
+.gallery-container { /*📦*/
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 90%;
+}
+.gallery { /*📸*/
+  /*float: left;*/
+  margin: 3px;
+  width: 300px;
+  background-color: #F4F5F8;
+  color: #3D4557;
+  border: 2px solid #3D4557;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.gallery:hover { /*📸*/
+  border: 2px solid #F62800;
+}
+.gallery img { /*📸*/
+  width: 100%;
+  height: auto;
+}
+.caption { /*🔖*/
+  padding: 5px 35px 15px;
+  line-height: normal;
+  font-size: medium;
+  /*text-align: center;*/
+}
+.fullsize-image {
+  width: 100%;
+  color: black;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+.large-caption {
+  text-align: center;
+  padding: 20px 20px;
+}
+/* 🎨 CSS > 📜 CLASSES > 📨 Forms */
+.feedback-form { /*📨*/
+  /*display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;*/
+  padding: 20px;
+  font-size: 18px;
+  width: 90%;
+  max-width: 33em;
+  margin: auto; /*❔ Auto margins ensures that this element is centered in its parent element.*/
+}
+.feedback-form, .upload-form, .form-group { /*📨*/
+  padding-bottom: .625em;
+}
+.feedback-form label, .upload-form label { /*📨*/
+  padding-bottom: 1.6em;
+  margin-right: 2em;
+  margin-left: .5em;
+  font-family: Helvetica, Arial;
+  font-size: 18px;
+}
+.feedback-form input[type="text"], input[type="email"], textarea, input[type="password"], .upload-form input[type="text"] { /*📨*/
+  padding: .8em;
+  width: 100%;
+  display: block;
+}
+.button-wrap {
+  position: relative;
+}
+.feedback-form textarea, .upload-form textarea { /*📨*/
+  height: 6em;
+}
+.upload-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.upload-form input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  top: 10px;
+  left: 8px;
+  font-size: 17px;
+  color: #b8b8b8;
+}
+/* 🎨 CSS > 📜 CLASSES > 📊 Tables */
+.table-lavender table, .table-lavender tr, .table-lavender td {
+  border: 1px solid black;
+  border-width: 1.5px;
+}
+.table-lavender tr:nth-child(even) {
+  background-color: lavender;
+}
+.table-lime table, .table-lime tr, .table-lime td {
+  border: 1px solid rebeccapurple;
+  border-width: thick
+}
+.table-lime tr:nth-child(odd) {
+  background-color: #EFFFBF;
+}
+.table-lime tr:nth-child(even) {
+  background-color: #FBFFF2;
+}
+.cell-lavender {
+  background-color: rebeccapurple;
+  color: lavender;
+}
+.cell-picure {
+  color: white;
+  text-shadow: 1px 1px 3px #292929;
+  background-image: url(../../../assets/images/background2.png);
+}
+/* 🎨 CSS > 📜 CLASSES > 📐 Layout > */
+.center-align {
+  text-align: center;
+}
+.left-align {
+  text-align: left;
+}
+.right-align {
+  text-align: right;
+}
+.pad-right {
+  margin: 0px 0px 0px 30px /*❔ Indents he wole paragraph when used in the p tag. To indent just the first line of any paragraphs, type (without the quotes) "&nbsp;&nbsp;&nbsp;&nbsp;" just before the first word of the paragraph in your HTML document instead. */
+}
+.horizontal-gap {
+  margin: 0.6em 0em;
+}

@@ -1,0 +1,1 @@
+<?php header("Location: index.php?command=clear-unauthorized.txt#app1");

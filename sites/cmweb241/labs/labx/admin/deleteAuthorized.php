@@ -1,0 +1,1 @@
+<?php header("Location: admin.php?command=clear-authorized.txt#app1");
