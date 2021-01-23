@@ -38,7 +38,7 @@ $alert_class = "";
 if ( isset( $_GET[ 'output' ] ) ) {
 
   //Enabling admin access...
-    $is_authorized = ture;
+  $is_authorized = ture;
 
   //Processing input parameter...
   $status = $_GET[ 'output' ];
@@ -52,8 +52,8 @@ if ( isset( $_GET[ 'output' ] ) ) {
       $alert = "✅ Done! Your file has uploaded successfully.<br><br><a href=\"index.php?event=logoff#app2\" style=\"color: darkgreen; text-decoration: none; \"><strong>&nbsp &nbsp Sign Out</strong></a>";
       $debug_arg = "";
       $error_code = "";
-        
-        $view_mode = 'single_image';
+
+      $view_mode = 'single_image';
 
     } else {
 
@@ -91,7 +91,7 @@ if ( isset( $_GET[ 'output' ] ) ) {
     $login_status = '✅ You are currently signed in.<br><br><a href="index.php?event=logoff#app2" style="color: darkgreen; text-decoration: none; "><strong>&nbsp &nbsp Sign Out</strong></a>';
   }
 } else {
-    
+
   if ( isset( $_POST[ 'submit' ] ) ) {
     $alert_class = 'alert-error-lite';
     $alert = "<strong><strong>Sorry, there was a problem uploading your file:</strong></strong> <em>\"This action requires administrator privileges.\"</em>";
@@ -100,10 +100,10 @@ if ( isset( $_GET[ 'output' ] ) ) {
   } else {
     $error_code = "";
     if ( $_GET[ 'event' ] == "logoff" ) {
-      $login_status = "⚠ You Have successfully signed out.";
+      $login_status = "⚠️ You Have successfully signed out.";
       $alert_class = 'alert-warning-lite';
     } else {
-      $login_status = "⚠ You are not signed in.";
+      $login_status = "⚠️ You are not signed in.";
       $alert_class = 'alert-neutral-lite';
     }
   }
@@ -115,8 +115,8 @@ if ( isset( $_GET[ 'output' ] ) ) {
 //Checking for parameters...
 if ( isset( $_GET[ 'encoded_path' ] ) ) { //Page will strtup in "single image" mode, Insha'Allah
 
-    $path_decoded = base64_decode(strtr($_GET['encoded_path'], '-_', '+/'));
-    $caption_decoded = base64_decode(strtr($_GET['encoded_caption'], '-_', '+/'));
+  $path_decoded = base64_decode( strtr( $_GET[ 'encoded_path' ], '-_', '+/' ) );
+  $caption_decoded = base64_decode( strtr( $_GET[ 'encoded_caption' ], '-_', '+/' ) );
 
   $display_image = "<div class=\"fullsize-image\"><img src=\"$path_decoded\" alt=\"flowers\" style=\"width: 100%; hight: auto;\" ><div class=\"large-caption\"><p> $caption_decoded</p><br><div><a href=\"index.php?clearance=$clearance_l2#photo\" class=\"button-ornate\">Return to Gallery</a></div></div></div>";
 
@@ -171,11 +171,11 @@ if ( isset( $_GET[ 'encoded_path' ] ) ) { //Page will strtup in "single image" m
 }
 
 // ❔ The upload form's "Action" attribute is dependent on the current state of "$is_authorized".
-if($is_authorized){
-    $form_action = 'action="admin/photo_upload.php" method="POST" enctype="multipart/form-data"';
-    $admin_banner = 'ATTENTION: You are currently logged in as Administrator.';
-} else 
-    $form_action = "action=\"index.php#app2\" method='POST'";
+if ( $is_authorized ) {
+  $form_action = 'action="admin/photo_upload.php" method="POST" enctype="multipart/form-data"';
+  $admin_banner = 'ATTENTION: You are currently logged in as Administrator.';
+} else
+  $form_action = "action=\"index.php#app2\" method='POST'";
 
 ?>
 <!-- /❓ PHP ❓ -->
@@ -251,8 +251,10 @@ if($is_authorized){
     <!--📢 Content Intro 📢-->
     <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
-				 class="tripple-float" >
+				 class="tripple-float" style="max-height: 300px; width: auto" >
       <p>In this lab, image upload system has been added. This feature includes restrictions, such as file size limits, file override protection, file type enforcement, etc. Code has been added to gracefully handle with common types of effors. Additionally a crude form of authentication has been implimented via PHP that only allows uploads if the user is at a signed-in state. Also included in this lab are dynamic UI, text, and banners that reflect a variety of scenarios.</p>
+      <!--⚓-->
+      <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
     </div>
     <!--/📢 Content Intro 📢--> 
   </section>
@@ -282,10 +284,10 @@ if($is_authorized){
             $path = $daisy[ "path" ] . $daisy[ "img_name" ];
             $alt = $daisy[ "alt-text" ];
             $caption = $daisy[ "caption" ];
-              
-              //Encoding image metadata...
-              $path_encoded = strtr(base64_encode($path), '+/', '-_');
-              $caption_encoded = strtr(base64_encode($caption), '+/', '-_');
+
+            //Encoding image metadata...
+            $path_encoded = strtr( base64_encode( $path ), '+/', '-_' );
+            $caption_encoded = strtr( base64_encode( $caption ), '+/', '-_' );
 
             echo "
             <!--📸 Smile!-->
@@ -295,7 +297,7 @@ if($is_authorized){
           }
         }
 
-              //Single Image (Large)
+        //Single Image (Large)
         echo $display_image;
 
         ?>
@@ -343,7 +345,7 @@ if($is_authorized){
   <div class="container"><br>
     <section> <!--🔖-->
       <h2>How to Get the Code</h2>
-      <img style="float: right; width: 40%" src="assets/graphics/pine.svg"
+      <img style="float: right; max-height: 1000px; width: auto" src="assets/graphics/pine.svg"
 				 alt="leaves, pine cones, and bells"
 				 class="center-image" >
       <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>

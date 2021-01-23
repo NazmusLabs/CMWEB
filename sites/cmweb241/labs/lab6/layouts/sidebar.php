@@ -12,25 +12,29 @@
       <!--🔗 Click!-->
       <li><a href="/sites/cmweb241/labs/lab1"><small>CMWEB 241 Lab 1</small></a></li>
       <!--🔗 Click!-->
-      <li><a href="/sites/cmweb241/labs/lab2"><small>CMWEB 241 Lab 2</small></a></li>
+      <li><a href="/sites/cmweb241/labs/lab2/"><small>CMWEB 241 Lab 2</small></a></li>
       <!--🔗 Click!-->
-      <li><a href="/sites/cmweb241/labs/lab3"><small>CMWEB 241 Lab 3</small></a></li>
+      <li><a href="/sites/cmweb241/labs/lab3/"><small>CMWEB 241 Lab 3</small></a></li>
       <!--🔗 Click!-->
       <li><a href="/sites/cmweb241/labs/lab4"><small>CMWEB 241 Lab 4</small></a></li>
       <!--🔗 Click!-->
-      <li><a href="/sites/cmweb241/labs/lab5"><small>CMWEB 241 Lab 5</small></a></li>
+      <li><a href="/sites/cmweb241/labs/lab5/"><small>CMWEB 241 Lab 5</small></a></li>
       <!--🔗🚫 Click!-->
       <li><small><a title="Click to reset this lab" style="color: black; text-decoration: none; cursor:default;" href="index.php">CMWEB 241 Lab 6 ✔</a></small></li>
       <!--🔗 Click!-->
-      <li><a href="/sites/cmweb241/labs/lab7"><small>CMWEB 241 Lab 7</small></a></li>
+      <li><a href="/sites/cmweb241/labs/lab7/"><small>CMWEB 241 Lab 7</small></a></li>
       <!--🔗 Click!-->
-      <li><a href="/sites/cmweb241/labs/lab8"><small>CMWEB 241 Lab 8</small></a></li>
+      <li><a href="/sites/cmweb241/labs/lab8/"><small>CMWEB 241 Lab 8</small></a></li>
       <!--🔗 Click!-->
-      <li><a href="/sites/cmweb241/labs/lab9"><small>CMWEB 241 Lab 9</small></a></li>
+      <li><a href="/sites/cmweb241/labs/lab9/"><small>CMWEB 241 Lab 9</small></a></li>
       <!--🔗 Click!-->
-      <li><a href="/sites/cmweb241/labs/lab10"><small>CMWEB 241 Lab 10</small></a></li>
+      <li><a href="/sites/cmweb241/labs/labx/"><small>CMWEB 241 Lab 10</small></a></li>
       <!--🔗 Click!-->
-      <li><a href="/sites/cmweb241/labs/lab11"><small>CMWEB 241 Lab 11</small></a></li>
+      <li><a href="/sites/cmweb241/labs/lab11/"><small>CMWEB 241 Lab 11</small></a></li>
+      <!--🔗 Click!-->
+      <li><a href="/sites/cmweb241/labs/lab12/"><small>CMWEB 241 Lab 12</small></a></li>
+      <!--🔗 Click!-->
+      <li><a href="/sites/cmweb241/labs/lab13/"><small>CMWEB 241 Lab 13 🍰</small></a></li>
     </ul>
     <!--/🔗 Menu Items-->
     <p> 

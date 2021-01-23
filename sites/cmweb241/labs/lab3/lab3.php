@@ -11,8 +11,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 20.0.20.1216 (Gold)
-Patch version: 1.20.1217a
+Version 20.0.20.1221 (Update 4)
+Patch version: 1.21.116e
 
 (See documentation below for changelog)
 
@@ -91,8 +91,8 @@ $images = array(
 <meta name="instructor" content="Shari Tripp">
 <meta name="author" content="Nazmus Shakib Khandaker
       (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)">
-<meta name="version" content="20.0.20.1216 (Update 1)">
-<meta name="patch" content="1.20.1217a">
+<meta name="version" content="20.0.20.1221 (Update 4)">
+<meta name="patch" content="1.21.116e">
 <link rel="stylesheet" type="text/css" href="lab3.css">
 </head>
 
@@ -108,14 +108,14 @@ $images = array(
     <!--Float 1 -->
     <div class="header-box"> 
       <!--Site Logo--> <a href="../../index.html" class="left-align"> <img src="../../assets/graphics/logo-header.png"
-            alt="NazmusLabs Logo" title="NazmusLabs Logo" class="resize-85-percent"> </a> 
+            alt="NazmusLabs Logo" title="NazmusLabs Logo" class="resize-85-percent" style="max-height: 125px; width: auto" > </a> 
       <!--/ Site Logo--> 
     </div>
     <!--/ Float 1--> 
     <!--Float 2-->
     <div class="header-box">
-      <h5>“Be who you are and say what you feel...</h5>
-      <p><small>...because those who mind don't matter, and those who matter don't mind.” ― Bernard M. Baruch </small></p>
+      <h5>“In three words...</h5>
+      <p><small>...I can sum up everything I've learned about life: it goes on. ― Robert Frost</small></p>
     </div>
     <!--/ Float 2--> 
   </div>
@@ -140,8 +140,8 @@ $images = array(
       <ul class="right-align">
         <!--🔗 Click!-->
         <li><a class="menu-button" href="../../index.html">Home</a></li>
-        <!--🔗🚫 Click!-->
-        <li class="menu-button-disabled">Projects</li>
+        <!--🔗 Click!-->
+        <li><a class="menu-button" href="/sites/cmweb241/projects/">Project</a></li>
         <!--🔗🚫 Click!-->
         <li class="menu-button-disabled">Labs</li>
         <!--🔗 Click!-->
@@ -207,6 +207,22 @@ $images = array(
           <li><a href="../lab4/lab4.php"><small>CMWEB 241 Lab 4</small></a></li>
           <!--🔗 Click!-->
           <li><a href="../lab5/lab5.php"><small>CMWEB 241 Lab 5</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab6/"><small>CMWEB 241 Lab 6</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab7/"><small>CMWEB 241 Lab 7</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab8/"><small>CMWEB 241 Lab 8</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab9/"><small>CMWEB 241 Lab 9</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../labx/"><small>CMWEB 241 Lab 10</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab11/"><small>CMWEB 241 Lab 11</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab12/"><small>CMWEB 241 Lab 12</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="/sites/cmweb241/labs/lab13/"><small>CMWEB 241 Lab 13 🍰</small></a></li>
         </ul>
         <!--/🔗 Menu Items-->
         <p> 
@@ -227,25 +243,27 @@ $images = array(
         <!--📢 Content Intro 📢-->
         <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
-				 class="tripple-float" >
+				 class="tripple-float" style="max-height: 300px; width: auto" >
           <p>The objective of this lab is to create a dynamic photo gallery using PHP. The dynamic gallery needs to collect data stored in arrays that identify the images and their location, and use that data to build the gallery by outputting HTML at at real time when the page loads. A dynamic gallery such as this allows the web developer to add and remove images from the gallery without needing to modify the HTML code..</p>
+          <!--⚓-->
+          <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
           <img src="assets/graphics/pine.svg"
 				 alt="leaves, pine cones, and bells"
-				 class="center-image" > </div>
+				 class="center-image" style="max-height: 500px; width: auto" > </div>
         <!--/📢 Content Intro 📢--> 
       </section>
       <!--🔖--> 
       <!--📑 Main Content 📑-->
       <section> <!--🔖-->
         <h2>Main Application</h2>
-        <p>Below is the gallery I originally created earlier as part of "lab 6" of the CMWEB 120 course using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that will generate the same gallery in a much more effecient manner.</p>
+        <p>Below is a gallery I originally created earlier as part of "<a href="/sites/cmweb120/labs/lab6/lab6.html">CMWEB 120 lab 6</a>" using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that will generate the same gallery in a much more effecient manner.</p>
         <p>For this lab, I have hard-coded the image file names and paths in a two-dimentional array that the PHP code can use to generate the gallery.</p>
       </section>
       <!--🔖--> 
       <!--APP 🚩🚩🚩🚩 🚩🚩🚩🚩 🚩🚩🚩🚩 🚩🚩🚩🚩 START-->
       <section id="app"> <!--🔖-->
-        <h3>Photo Gallery A</h3>
-         <p>The gallery below <strong>was not</strong> generated using PHP code. This one has been maually hand written for CMWEB 120 Lab 6, and taken almost as is and placed here. I say almost because there is one major upgrade to the styling. <em>The gallery in the CMWEB lab webpage is styled using <strong>floats</strong>, while the one here is styled using <strong>flexbox</strong>.</em> I did this mainly because flexbox is much better suited for dynamic gallery we are implimenting.</p>
+        <h3 id="gallery">Photo Gallery A</h3>
+        <p>The gallery below <strong>was not</strong> generated using PHP code. This one has been maually hand written for CMWEB 120 Lab 6, and taken almost as is and placed here. I say almost because there is one major upgrade to the styling. <em>The gallery in the CMWEB lab webpage is styled using <strong>floats</strong>, while the one here is styled using <strong>flexbox</strong>.</em> I did this mainly because flexbox is much better suited for dynamic gallery we are implimenting.</p>
         <!--🎨 Gallery-->
         <div class="gallery-container"> 
           <!--📸 Smile!-->
@@ -291,7 +309,9 @@ $images = array(
           }
           ?>
         </div>
-        <!--/🎨 Gallery--> 
+        <!--/🎨 Gallery-->
+        
+        <p style="padding-top: 1em"><em>Did you know that I did most of the editing, including manual color grading and cropping, using just "Water Lily", my iPhone? <strong>Mobile devices today are more capable at high quality image editing than even the most powerful desktop PCs from a dacade ago</strong>; it's quite profound, really! You can learn more about <a href="/sites/cmweb120/labs/lab6/lab6.html">how I edited these photos here</a>, where I also discuss the importance of getting images and color for your webpage right.</em></p>
         
         <!--🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧--> 
       </section>
@@ -310,8 +330,10 @@ $images = array(
       <h2>External Links</h2>
       <!--🔗 External Links-->
       <ul>
-        <li><a href="https://webaim.org/techniques/forms/controls" target="_blank">Creating Accessible Forms</a></li>
-        <li><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">CSS Transitions</a></li>
+        <li><a href="https://color.adobe.com/color-wheel-game" target="_blank">Color Wheel Game</a></li>
+        <li><a href="http://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF" target="_blank">Create Your Own Color Pallete</a></li>
+        <li><a href="https://color.adobe.com/" target="_blank">Adobe Color</a></li>
+        <li><a href="https://www.w3schools.com/PHP/php_arrays_associative.asp" target="_blank">Learn About PHP Associative Arrays</a></li>
       </ul>
       <!--/🔗 External Links-->
       <h3>Thanks for visiting!</h3>
@@ -342,16 +364,16 @@ $images = array(
       <!--Float 1-->
       <div class="double-float"> 
         <!--🔗 Click!--> <a class="button-ornate" href="../../index.html"> <span class="button-text-decoration">↵
-        CMWEB 120 Home</span> </a> </div>
+        CMWEB 241 Home</span> </a> </div>
       <!--/ Float 1--> 
       <!--Float 2-->
       <div class="double-float"> 
         <!--🔗 Footer Menu items-->
         <ul>
           <!--🔗 Click!-->
-          <li><a href="../index.php">Projects</a></li>
+          <li><a href="/sites/cmweb241/projects/">Project</a></li>
           <!--🔗 Click!-->
-          <li><a href="../index.php">Labs</a></li>
+          <li><a href="/sites/cmweb241#labs">Labs</a></li>
           <!--🔗 Click!-->
           <li><a href="../../about.html">About</a></li>
           <li>|</li>
@@ -445,7 +467,7 @@ System requirements:  Chromium based web browser (Google Chrome, Microsoft Edge,
 
 📖 Introduction - NazmusLabs Help
 ----------------------------------
-LAB DESCRIPTION: This lab is about building an HTML form and styling the form with CSS.
+LAB DESCRIPTION: This lab is about displaying a photo gallery dynamically using associative arrays in PHP.
 
 This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
 
@@ -454,10 +476,30 @@ This student site was originally created for the CMWEB program at Illinois Centr
  - [CSS] The gallery container class now uses flexbox instead of floats.
  - General improvements to the core document markup.
 
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
+⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects. This DOES NOT pertain to the PATCH NOTES below, which may document changes of any type that are made after initial publication.
 
 📝 Patch Notes for 19.0
 --------------------------
+20.0 (Update 4)
+Patch 1.21.116e
+ - Fixed an issue where some SVG images may appear overly large on high resolution displays or when the site is zoomed below 100%.
+ - Updated incorrect button text
+ - Updates to the sidebar
+ - Button to jump to the gallery
+20.0 (Update 3)
+Patch 1.21.114d
+ - Udates to main and footer nav-bars which enables the "Project" menu item.
+ - Updates to the footer nav-bar that updates the link for the "Labs" menu item..
+
+20.0 (Update 2)
+Patch 1.21.114c
+ - Content updates, with a few additions and general improvements to existing text accross the board.
+ - Updated sidebar links
+ - Fixed an issue where certain graphics would become disproportionately large on high-resolution displays or when the site viewed at zoom levels significanly below 100%.
+ - Fixed an issue where the website logo was not properly alligned.
+ - New "External Links" and refreshed popular quote.
+ - Minor padding and styling improvements.
+
 20.0 (Update 1)
 Patch 1.20.1217b
  - Fixed an issue where large number of documentation text as well as some HTML markups had several duplicates.

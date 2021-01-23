@@ -1,4 +1,8 @@
 <?php
+
+//⌛Loading settings...
+REQUIRE '../inc/config.php';
+
 //⌛Getting things ready...
 $return_to = "../index.php";
 $dir = "../assets/images/";
@@ -43,7 +47,7 @@ if ( isset( $_POST[ 'submit' ] ) ) {
               move_uploaded_file( $file[ 'tmp_name' ], $dir . $file_name ); //❔ File uploaded!
 
               $output = 'success';
-                
+
             } else {
               echo "Error: " . $query . "<br>" . $conn->error;
             }
@@ -57,18 +61,17 @@ if ( isset( $_POST[ 'submit' ] ) ) {
               Now this script will, Insha'Allah, follow the same procedure that is used on index.php to display a single large image. The main lab page passes metadata via GET method to itself which is then processed at load time to display the image instead of the gallery. So here, the same concept is used. This script will send the metadata of the image that was uploaded to index.php so a large version of the image is displayed.
               */
 
-            $path = substr( $dir . $file_name, 3 );
             $alt = $file_name;
             $caption = "A new photo has been uploaded!<br>File name: " . $file_name;
 
-            //Encoding image metadata...
-            $path_encoded = urlencode( $path );
+            //⌛Encoding image metadata...
+            $path_encoded = urlencode(IMAGE_PATH . $file_name);
             $caption_encoded = urlencode( $caption );
 
 
           } else {
             $output = 'conflict';
-            //$debug = $dir . $file_name;
+            $debug = $file_name;
           }
 
 

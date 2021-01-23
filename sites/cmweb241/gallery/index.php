@@ -43,6 +43,9 @@ $alert_class = $is_authorized ? 'alert-success-light' : 'alert-neutral-light';
 $command = $_GET[ 'command' ];
 $username = $_SESSION[ 'user' ];
 
+//⌛Loading saved settings...
+REQUIRE 'inc/config.php';
+
 //⌛Setting Privilages...
 if ( isset( $_SESSION[ 'usergroup' ] ) && $_SESSION[ 'usergroup' ] === 'administrator' ) {
   //⌛Enabling admin access...
@@ -80,22 +83,22 @@ if ( $status != '' ) {
         $alert_class = 'alert-error';
         break;
       case 'fatal':
-        $alert = "<strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"An error occured while trying to uploading this file. Try again later or try uploading a different file.\"</em>";
+        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"An error occured while trying to uploading this file. Try again later or try uploading a different file.\"</em>";
         $alert_class = 'alert-error-light';
         $error_code = 'ERROR: ' . $status;
         break;
       case 'ext':
-        $alert = "<strong><strong>Sorry, there was a problem uploading your file:<br></strong></strong> <em>\"The file type you selected is not allowed. Please upload a PNG, jpeg (.jpg, .jpeg) or a GIF (.gif) file.\"</em>";
+        $alert = "⚠️ <strong><strong>Sorry, there was a problem uploading your file:<br></strong></strong> <em>\"The file type you selected is not allowed. Please upload a PNG, jpeg (.jpg, .jpeg) or a GIF (.gif) file.\"</em>";
         $alert_class = 'alert-error-light';
         $error_code = 'ERROR: ' . $status;
         break;
       case 'size':
-        $alert = "<strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"The file you selected is too large. Please upload an image that is 1MB or less.\"</em>";
+        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"The file you selected is too large. Please upload an image that is 1MB or less.\"</em>";
         $alert_class = 'alert-error-light';
         $error_code = 'ERROR: ' . $status;
         break;
       case 'conflict':
-        $alert = "<strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"There's already a photo what that file name. Please rename the photo and try uploading again.\"</em>";
+        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"There's already a photo what that file name. Please rename the photo and try uploading again.\"</em>";
         $alert_class = 'alert-error-light';
         $error_code = 'ERROR: ' . $status;
         break;
@@ -120,13 +123,13 @@ if ( $status != '' ) {
         $error_code = '';
         break;
       default:
-        $alert = "<strong>Something went wrong...:<br> </strong><em>\"An error occured while trying to process your request. Please try again later.\"</em>";
+        $alert = "⚠️ <strong>Something went wrong...<br> </strong><em>\"An error occured while trying to process your request. Please try again later.\"</em>";
         $alert_class = 'alert-error-light';
-        $error_code = $status;
+        $error_code = 'ERROR: ' . $status;
     }
   }
 } else {
-  $alert = $is_authorized ? "✅ You are currenlty signed in and can upload images to the gallery, insha'Allah" : '⚠ You are currently not signed in.';
+  $alert = $is_authorized ? "✅ You are currenlty signed in and can upload images to the gallery, insha'Allah" : '⚠️ You are currently not signed in.';
 
 }
 
@@ -155,7 +158,7 @@ if ( isset( $_GET[ 'encoded_path' ] ) ) { //Page will strtup in "single image" m
     $lily_heading = "Image Preview";
     $lily_message = "This large view of the photo is generated from PHP code, based on the information provided to it through the URL.";
 
-    $display_image = "<div class=\"fullsize-image\"><img src=\"$path_decoded\" alt=\"flowers\" style=\"width: 100%; hight: auto;\" ><div class=\"large-caption\"><p> $caption_decoded</p><br><div><a href=\"index.php?#app1\" class=\"button-ornate\">Return to Gallery</a></div></div></div>";
+    $display_image = "<div class=\"fullsize-image\"><img src=\"$path_decoded\" alt=\"flowers\" style=\"width: 100%; hight: auto;\" ><div class=\"large-caption\"><p> $caption_decoded</p><br><div><a href=\"index.php?#app1\" class=\"button-ornate\"><span class=\"button-text-decoration\">Return to Gallery</span></a></div></div></div>";
 
   } else {
     //⌛loading log file
@@ -191,17 +194,12 @@ if ( isset( $_GET[ 'encoded_path' ] ) ) { //Page will strtup in "single image" m
 
   //⌛Getting things ready...
   $lily_heading = "Photo Gallery";
-  $lily_message = !$_GET[ 'delete' ] ? 'This photo gallery is generated using PHP code. Click on any of the images below to view a larger version of it.' : 'You are currently on delete mode. Select a photo to delete it.';
+  $lily_message = !$_GET[ 'delete' ] ? 'This photo gallery is generated using PHP code. Click on any of the images below to view a larger version of it.' : 'You are currently in delete mode. Select a photo to delete it.';
 
-  //📸 Smile!
+  //📸Smile!
   //⌛Fetching data from database & allocating images...
-  $img_path = "assets/images/";
+  $img_path = IMAGE_PATH;
   $images = mysqli_fetch_all( $result, MYSQLI_ASSOC );
-
-  //⌛Cleaning up...
-  mysqli_free_result( $result );
-  mysqli_close( $conn );
-
 }
 
 /*🥫---🥫        🥫---🥫*/
@@ -257,25 +255,27 @@ $daisy_form2 = '
 
 /* Administration Menu/*
 /*☕---☕        ☕---☕*/
-
 $admin_menu =
   "
     <h3>Administration Menu</h3>
     <ul>
+    <!--📜--> <!--📜-->
       <li><a href=\"index.php?encoded_path=$log_path_unauthorized&command=clear-unauthorized.txt#app1\">View Unauthorized sign-in attempts</a></li>
       <li><a href=\"index.php?encoded_path=$log_path_authorized&command=clear-authorized.txt#app1\">View Authorized sign-in attempts</a></li>
       <li><a href=\"#app2\">Upload photos</a></li>
       <li><a href=\"admin/delete_photo.php\">Delete Photos</a></li>
       <li><a href=\"index.php#app1\">Go to Photo Gallery</a></li>
+    <!--📜--> <!--📜-->
     </ul>
     ";
-
 /*☕---☕        ☕---☕*/
 /* End of Administration Menu */
 
-
+//⌛Cleaning up...
+mysqli_free_result( $result );
+mysqli_close( $conn );
 ?>
-<!-- /❓ PHP ❓ -->
+<!-- /❓ End of PHP startup sequence ❓ -->
 
 <!-- 🌐 START OF HTML DOCUMENT 🌐-->
 <!DOCTYPE html>
@@ -295,7 +295,8 @@ $admin_menu =
 </head>
 
 <body>
-<div class="<?php echo $sys_notif_class ?>" > <!--🥤-1-🥤-->
+<!--🥤-1-🥤-->
+<div class="<?php echo $sys_notif_class ?>" >
   <p style="padding-left: 1em" ><small><?php echo $sys_notif ?> <?php echo $is_authorized ? '<a style="color: white; text-decoration: none; position: absolute; right: 2em" href="admin/admin.php?command=logoff"><strong>Sign Out</strong></a>' : '' ?></small></p>
 </div>
 <!--/🥤-1-🥤--> 
@@ -303,7 +304,7 @@ $admin_menu =
 	 🚥 START OF HEADER SECION 🚥
 	==============================-->
 
-<?php // include 'layouts/header.php' ?>
+<?php //include 'layouts/header.php' ?>
 
 <!--============================
 	 🚥 END OF HEADER SECION 🚥
@@ -311,9 +312,10 @@ $admin_menu =
 
 <!--===========================
 	 🎀 START OF FEATURED 🎀
-	===========================-->
-<div id="featured"> <!--🍧-1-🍧-->
-  <h1>Photo Gallery - NazmusLabs</h1>
+	===========================--> 
+<!--🍧-1-🍧-->
+<div id="featured">
+  <h1>NazmusLabs Photo Gallery</h1>
 </div>
 <!--🍧-1-🍧--> 
 <!--=========================
@@ -327,125 +329,106 @@ $admin_menu =
      class="container" style="margin-top: 1em"': '' ?> > <?php echo $is_authorized ? '<h2>Gallery Admin Center</h2>': '' ?> <?php echo $is_authorized ? "<p>Welcome to the Gallery Admin Center. This is your go-to place where you will find navigation links to all of the administration taks and tools available to you. You can review and delete logs, upload photos, and delete phots.</p>": '' ?> 
   
   <!--Administration Menu--> 
-  <!--☕---☕        ☕---☕--> 
-  
-  <!--☕---☕        ☕---☕--> 
-  <!--Administration Menu-->
-  
+  <!--☕---☕        ☕---☕-->
   <div <?php echo $is_authorized ? 'class="alert-neutral-dark" style="padding: 2em; margin-bottom: 4em"': '' ?>> <?php echo $is_authorized ? $admin_menu : '' ?> 
-    <!--☕-1-☕--> 
-    <?php echo $is_authorized ? "<p>⚠<em>Please note that in <strong>this verion</strong> of the Photo Gallery doesn't have all of the admin features fully up and working. So items might not wrok and/or be intentionally disabled.</em></p>": '' ?> 
-    
-    <!--❓ Output ❓--> 
-    
-    <!--❓ Output ❓--> 
+    <!--⚓--> 
+    <?php echo $is_authorized ? "<p>⚠️ <em>Please note that in <strong>this verion</strong> of the Photo Gallery doesn't have all of the admin features fully up and working. So items might not wrok and/or be intentionally disabled.</em></p>": '' ?> 
     <!--
-
-
-
-Content in this section is restricted and requires elevated permissions to view. Non elevated users may not see any HTML inside this div element, Insha'Allah.
+💡 Developer Remarks
+=====================
+Content in this section is restricted and requires elevated permissions to view. Non elevated users may not see any HTML inside this div element.
 --> 
   </div>
-  <!--☕-1-☕--> 
+  <!--☕---☕        ☕---☕--> 
+  <!--Administration Menu--> 
 </div>
 <!--============================
 	  🔐 END OF ADMIN CENTER 🔐
 	============================--> 
 
 <!--=================================
-	 📜 START OF CONTENT SECION A 📜
+	 📕 START OF CONTENT SEGMENT A 📕
 	=================================-->
 <div class="content-section-light">
-<!--🍨-1-🍨--> 
-<!--///////////////////////
-	  📥 START of Container 📥
-	  ////////////////////////-->
-<div class="container">
+<!--🍨-1-🍨-->
+<div class="container" style="position: relative">
 <!--🍦-2-🍦-->
-<h1>CMWEB 241 PHP Student Project - Photo Gallery Version 5.0</h1>
-<!--Bismillah-->
-<p id="Bismillah"> In the name of Allah, the Most Gracious, Most
-  Merciful. </p>
+<h1>Welcome to My CMWEB 241 PHP Student Project!</h1>
+<!--Bismillah--> 
+<!--⚓-->
+<p id="Bismillah"> In the name of Allah, the Most Gracious, Most Merciful. </p>
 <!--/Bismillah--> 
-<!--//////////////////////
-		   💡 START of Sidebar 💡
-		  ////////////////////////-->
-
+<!--========================
+	 🧭 START OF SIDEBAR 🧭
+	========================-->
 <?php include 'layouts/sidebar.php' ?>
+<!--======================
+	 🧭 END OF SIDEBAR 🧭
+	======================--> 
 
-<!--//////////////////////////////
-		  💡 END of Sidebar Content 💡
-		  ////////////////////////////--> 
-<!--//////////////////////////////
-		   📖 START of Main Article 📖
-		  ////////////////////////////-->
-<article id="intro">
-<section> <!--🔖--> 
-  <!--📸 Smile!--> 
-  <!--📢 Content Intro 📢-->
-  <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
-				 alt="A puzzle piece"
-				 class="tripple-float" >
-    <p>In this lab, image upload system has been added. This feature includes restrictions, such as file size limits, file override protection, file type enforcement, etc. Code has been added to gracefully handle with common types of effors. Additionally a crude form of authentication has been implimented via PHP that only allows uploads if the user is at a signed-in state. Also included in this lab are dynamic UI, text, and banners that reflect a variety of scenarios.</p>
+<!--========================
+	 📃 START OF ARTICLE 📃
+	========================-->
+<article id="intro"> 
+  <!--====================
+	 📢 INTRODUCTION 📢
+	====================-->
+  <section> <!--🔖--> 
+    <!--👓-3👓-->
+    <div class="page-intro"> <img src="assets/graphics/circles.svg"
+				 alt="Circles"
+				 class="tripple-float" style="max-height: 300px; width: auto" > <!--📸 Smile!--> 
+      <!--⚓-->
+      <p>Welcome to the Photo Gallery application. What you are looking at now, Insha'Allah, is the culmunation of a whole semester's worth of effort, with no exageration. The entire PHP course at Illinois Central College, CMWEB, involved developing this application, weith each lab and assignment either directly contributing to the code to what would eventually become this multi-functional web applicaion or covered one or more of several variety of concepts that went into creating this application. Without further ado, let's get straight into it; select the <em>Jump to the Gallery</em> button to begin.</p>
+      <!--⚓-->
+      <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
+    </div>
+    <!--👓-3👓--> 
+    <!--🔖--> 
+  </section>
+  
+  <!--=====================
+	 📢 END OF INTRO 📢
+	=====================--> 
+  
+  <!--=============================
+	 📖 START OF MAIN CONTENT 📖
+	==============================-->
+  
+  <section> <!--🔖-->
+    <h2>Main Application</h2>
+    <p>This image gallery below dates all the way back to "<a href="/sites/cmweb120/labs/lab6/lab6.html">lab 6 of CMWEB 120</a>". What started out as nothing more than a hand coded HTML photo gallery is now a fully dynamic PHP application.</p>
+    <p>This application uses PHP code to grab the necessary file metadata from a MySQL database, from which it then creates a two-dimentional array that is used to populate the image gallery with content.</p>
+    <!--🔖--> 
+  </section>
   </div>
-  <!--/📢 Content Intro 📢--> 
-  <!--🔖--> 
-</section>
+  <!--🍦-2-🍦-->
+  </div>
+  <!--🍨-1-🍨--> 
+</article>
+<!--====================
+	 📃 END OF ARTICLE 📃
+	========================--> 
+<!--=================================
+	 📕 END OF CONTENT SEGMENT A 📕
+	=================================--> 
 
-<!--📑 Main Content 📑-->
-
-<section> <!--🔖-->
-  <h2 id="lab6">Lab 6</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quas commodi nemo, vitae saepe at quasi consequatur vel cupiditate voluptas? Labore, eveniet, delectus. Harum aut fugit, atque ab odio consequuntur!</p>
-  
-  <!--🔖--> 
-</section>
-<section> <!--🔖-->
-  <h2 id="lab8">Lab 8</h2>
-  <div class="note">Looking for lab 7? <a href="../lab7">Click here</a> </div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quas commodi nemo, vitae saepe at quasi consequatur vel cupiditate voluptas? Labore, eveniet, delectus. Harum aut fugit, atque ab odio consequuntur!</p>
-  
-  <!--🔖--> 
-</section>
-<section> <!--🔖-->
-  <h2>Features Overview</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque voluptatum harum adipisci doloremque dolor est cupiditate nemo facere quod. Eum dolore sed ducimus fuga officia amet adipisci nostrum non consectetur!</p>
-  <h3>What's new in version 3.0</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto voluptates quos harum. Minus, nobis repellat ipsum natus. Architecto, iusto, esse. Aliquam accusamus tempora similique consequuntur, tenetur, ex delectus voluptas voluptatibus!</p>
-  <h3>Features added in previous versions</h3>
-  <h4>Version 2.0</h4>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illo nihil culpa unde cumque maxime cum. Adipisci laudantium architecto nemo, harum quae aperiam eaque eos iusto et, obcaecati excepturi libero.</p>
-  <h4>Version 1.0</h4>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum expedita dolorem laboriosam non, odit earum, unde delectus, consequatur sed dolore nulla sunt voluptatem reprehenderit! Quos ad quia sequi quis nihil.</p>
-  <!--🔖--> 
-</section>
-<section> <!--🔖-->
-  <h2>Main Application</h2>
-  <p>Below is the gallery I originally created earlier as part of "lab 6" of the CMWEB 120 course using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that will generate the same gallery in a much more effecient manner.</p>
-  <p>For this lab, I have hard-coded the image file names and paths in a two-dimentional array that the PHP code can use to generate the gallery.</p>
-  <!--🔖--> 
-</section>
-</div>
-<!--🍦-2-🍦-->
-</div>
-<!--🍨-1-🍨--> 
-
-<!--==============================
-	 📜 END OF CONTENT SECION A 📜
-	==============================--> 
+<!--=================================
+	 📗 START OF CONTENT SEGMENT B 📗
+	=================================--> 
 
 <!--=====================
 	 🍰 APPLICATION I 🍰
-	=====================-->
-
-<div class="content-section-navy" id="app"> <!--🍫-1-🍫-->
-  
+	=====================--> 
+<!--🍫-1-🍫-->
+<div class="content-section-navy" id="app">
   <section id="app1" class="container-wide"> <!--🔖-->
     <h3 id="gallery"><?php echo $lily_heading ?></h3>
-    <!--App 1-->
+    <!--🚩--> <!--🚩-->
     <p style="padding-bottom: 1em" ><?php echo $lily_message ?></p>
-    <!--🎨 Gallery-->
-    <div class="gallery-container" id="photo">
+    <!--🍬-2-🍬-->
+    <div class="gallery-container" id="photo"> 
+      <!--🎨 Image Gallery 🎨-->
       <?php
       //Dsiplay photo gallery
       if ( !$_GET[ 'delete' ] ) {
@@ -461,7 +444,7 @@ Content in this section is restricted and requires elevated permissions to view.
           $caption_encoded = urlencode( $caption );
 
           echo "
-            <!--📸 Smile!-->
+            <!--📸Smile!-->
             <figure class=\"gallery\"><a href=\"index.php?encoded_path=$path_encoded&encoded_caption=$caption_encoded#gallery\"><img src=\"$path\" alt=\"$alt\" width=\"600\" height=\"400\"></a>
             <figcaption class=\"caption\">$caption</figcaption>
             </figure>";
@@ -482,7 +465,6 @@ Content in this section is restricted and requires elevated permissions to view.
         echo '</ul>';
       }
 
-
       //Display single image (Large);
       echo $display_image;
 
@@ -491,18 +473,17 @@ Content in this section is restricted and requires elevated permissions to view.
 
       ?>
     </div>
+    <!--🍬-1-🍬--> 
     <br>
     <?php
-      echo $return_button;
-      
-      echo $_GET['delete'] ? "<a href=\"index.php?#app1\" class=\"button-ornate\">Return to Gallery</a>" : '';
-      ?>
+    echo $return_button;
+
+    echo $_GET[ 'delete' ] ? "<a href=\"index.php?#app1\" class=\"button-ornate\">Return to Gallery</a>" : '';
+    ?>
     <br>
-    <!--/🎨 Gallery--> 
-    
+    <!--🎨 /Image Gallery 🎨--> 
+    <!--🔖--> 
   </section>
-  <!--🔖--> 
-  
 </div>
 <!--🍫-1-🍫--> 
 
@@ -515,11 +496,11 @@ Content in this section is restricted and requires elevated permissions to view.
 	=======================-->
 <div class="content-section-grey" id="app"> 
   <!--🍚-1-🍚-->
-  <section> 
-    <!--🔖-->
-    <div class="container" id="app2"> <!--🍟-2-🍟-->
-      
-      <h2 style="color: #131A24" >Image Upload Center</h2>
+  <section> <!--🔖--> 
+    <!--🍟-2-🍟-->
+    <div class="container" id="app2">
+      <h2 style="color: #131A24; padding-top: 2em" >Image Upload Center</h2>
+      <!--⚓-->
       <p><strong> <?php echo $daisy_message ?></strong> </p>
       <!--❓ Alert Box ❓-->
       <div class="<?php echo $alert_class; ?>" style="width: 70%"> <?php echo $alert; ?>
@@ -541,64 +522,93 @@ Content in this section is restricted and requires elevated permissions to view.
       <!--🌴 -3- 🌴--> 
     </div>
     <!--🌳 -2- 🌳--> 
+    <!--🔖--> 
   </section>
-  <!--🔖--> 
 </div>
 <!--/🍚-1-🍚--> 
-
 <!--======================
 	 🧁 END OF APP II  🧁
 	======================--> 
+<!--================================
+	 📗 END OF CONTENT SEGMENT B 📗
+	================================--> 
 
 <!--=================================
-	 📜 START OF CONTENT SECION B 📜
-	=================================-->
-<div   <?php echo $is_authorized ? 'class="content-section-light"': 'style="padding-bottom: 1.5em"' ?>> <!--B5B5B5-->
-  <div class="container"><br>
+	 📘 START OF CONTENT SEGMENT C 📘
+	=================================--> 
+<!--===========================
+	 📃 START OF ARTICLE II 📃
+	===========================-->
+<article> 
+  <!--/🥨-1-🥨-->
+  <div   <?php echo $is_authorized ? 'class="content-section-light"': 'style="padding-bottom: 1.5em"' ?>> <!--B5B5B5-->
+    <div class="container"><br>
+      <!--🍷-2-🍷-->
+      <section> <!--🔖-->
+        <h2>How to Get the Code</h2>
+        <!--🚩--> <!--🚩--> 
+        <img style="float: left; max-width: 400px; height: auto; margin-right: 4em; margin-bottom: 4em" src="assets/graphics/kevin.png"
+				 alt="Kevin"
+				 class="center-image" > <!--📸Smile!--> 
+        <!--⚓-->
+        <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>
+        <!--⚓-->
+        <p>Fortunately, there is a way around this. I have placed all of the PHP source code for this student site for anyone to view, download, and modify. They are hosted on my CMWEB GitHub repository, which you can view from the link below.</p>
+        <!--⚓-->
+        <p><a href="https://github.com/NazmusLabs/CMWEB/tree/master/sites/cmweb241" target="_blank">View the php source codes for this course on GitHub</a></p>
+        <!--🔖--> 
+      </section>
+    </div>
+    <!--/🍷-2-🍷--> 
+  </div>
+  <!--🥨-1-🥨--> 
+  <!--============================
+	 📖 END OF MAIN CONTENT 📖
+	=============================--> 
+  
+  <!--===============================
+	 💎 START OF BONUS CONTENT 💎
+	===============================--> 
+  <!--🍳-1-🍳-->
+  <div class="content-section-light" <?php echo $is_authorized ? 'style="padding-top: 0"': '' ?> > 
     <!--🔔-1-🔔-->
-    <section> <!--🔖-->
-      <h2>How to Get the Code</h2>
-      <img style="float: right; width: 40%" src="assets/graphics/pine.svg"
-				 alt="leaves, pine cones, and bells"
-				 class="center-image" >
-      <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>
-      <p>Fortunately, there is a way around this. I have placed all of the PHP source code for this student site for anyone to view, download, and modify. They are hosted on my CMWEB GitHub repository, which you can view from the link below.</p>
-      <p><a href="https://github.com/NazmusLabs/CMWEB/tree/master/sites/cmweb241" target="_blank">View the php source codes for this course on GitHub</a></p>
-    </section>
-    <!--🔖--> 
-    <!--/📑 Main Content 📑--> 
+    <aside class="container">
+      <h2>External Links</h2>
+      <!--📜--> <!--📜-->
+      <ul>
+        <!--🔗 Click!-->
+        <li><a href="https://color.adobe.com/color-wheel-game" target="_blank">Color Wheel Game</a></li>
+        <!--🔗 Click!-->
+        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a></li>
+        <!--🔗 Click!-->
+        <li><a href="https://www.goodreads.com/quotes" target="_blank">Popular Quotes (it's where I get my quotes for this website)</a></li>
+        <!--🔗 Click!-->
+        <li><a href="http://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF" target="_blank">Create Your Own Color Pallete</a></li>
+        <!--🔗 Click!-->
+        <li><a href="https://answers.microsoft.com/en-us/microsoftedge/forum/msedge_other-msedge_win10/in-edge-surf-game-we-can-become-the-octopus/7b1a3d82-bb3b-41e6-b6c8-0a36ceac45b1" target="_blank">Did you know Microsoft Edge ships with an "in-browser" game? It even works without internet connection! Learn how to become an octopus in the game!</a></li>
+      </ul>
+      <!--📜--> <!--📜-->
+      <h3>Thanks for visiting!</h3>
+      <!--📸Smile!--> <!--📸Smile!--> 
+      <em><small>Featured image credit:
+      Photo by <a href="https://unsplash.com/@rmvisuals" target="_blank">Renaldo Matamoro </a> on <a href="https://unsplash.com/photos/nrQ3V0A4bxk" target="_blank">Unsplash</a>.</small></em> 
+      <!--📸Smile!--> <!--📸Smile!--> 
+    </aside>
+    <!--🔔-1-🔔--> 
+    <!--============================
+	 💎 END OF BONUS CONTENT 💎
+	============================--> 
   </div>
-</div>
-<div class="content-section-light" <?php echo $is_authorized ? 'style="padding-top: 0"': '' ?> >
-  <div class="container"> 
-    <!--🎁 Bonus Content 🎁-->
-    <h2>External Links</h2>
-    <!--🔗 External Links-->
-    <ul>
-      <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a></li>
-      <li><a href="https://www.goodreads.com/quotes" target="_blank">Popular Quotes (it's where I get my quotes for this website)</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">Basic Concept of Flexbox - Documentation from MDN (excellent reference material)</a></li>
-      <li><a href="https://answers.microsoft.com/en-us/microsoftedge/forum/msedge_other-msedge_win10/in-edge-surf-game-we-can-become-the-octopus/7b1a3d82-bb3b-41e6-b6c8-0a36ceac45b1" target="_blank">Did you know Microsoft Edge ships with an "in-browser" game? It even works without internet connection! Learn how to become an octopus in the game!</a></li>
-    </ul>
-    <!--/🔗 External Links-->
-    <h3>Thanks for visiting!</h3>
-    <!--/🎁 Bonus Content 🎁--> <em><small>Featured image credit: Photo by <a href="https://unsplash.com/@rmvisuals" target="_blank">Renaldo Matamoro </a> on <a href="https://unsplash.com/photos/nrQ3V0A4bxk" target="_blank">Unsplash</a>.</small></em>
-    </article>
-    <!--/////////////////////////////
-		   📖 END of Main Article 📖
-		  ///////////////////////////--> 
-  </div>
-  <!--🔔-1-🔔--> 
-  <!--//////////////////////
-	  📤 END of Container 📤
-	  //////////////////////--> 
-</div>
-<!--==============================
-	 📜 END OF CONTENT SECION B 📜
-	==============================-->
+  <!--🍳-1-🍳--> 
+</article>
+<!--=========================
+	 📃 END OF ARTICLE II 📃
+	=========================--> 
+<!--================================
+	 📘 END OF CONTENT SEGMENT C 📘
+	================================-->
 
 <?php
-include 'inc/config.php';
 include 'layouts/footer.php';
 ?>
 

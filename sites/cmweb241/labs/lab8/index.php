@@ -1,0 +1,1 @@
+<?php header("Location: ../lab6/#lab8");

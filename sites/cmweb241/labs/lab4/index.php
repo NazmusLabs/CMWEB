@@ -11,8 +11,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 20.0.20.1216 (Gold)
-Patch version: 1.20.1217a
+Version 20.0.20.1220 (Update 4)
+Patch version: 1.21.116e
 
 (See documentation below for changelog)
 
@@ -91,8 +91,8 @@ $images = array(
 <meta name="instructor" content="Shari Tripp">
 <meta name="author" content="Nazmus Shakib Khandaker
       (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)">
-<meta name="version" content="20.0.20.1216 (Gold)">
-<meta name="patch" content="1.20.1217a">
+<meta name="version" content="21.0.20.1221 (Update 4)">
+<meta name="patch" content="1.21.116e">
 <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 </head>
 
@@ -132,9 +132,9 @@ $images = array(
     <!--//////////////////////
 		   💡 START of Sidebar 💡
 		  ////////////////////////-->
-      
-      <?php include 'layouts/sidebar.php' ?>
-      
+    
+    <?php include 'layouts/sidebar.php' ?>
+    
     <!--//////////////////////////////
 		  💡 END of Sidebar Content 💡
 		  ////////////////////////////--> 
@@ -147,25 +147,37 @@ $images = array(
         <!--📢 Content Intro 📢-->
         <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
-				 class="tripple-float" >
-          <p>This lab is all about <strong>PHP include statements</strong>. The content of this document is almost identical to that of lab 3. However, under the hood, lab 4 is a completely different beast. Major sections of this webpage is broken into several smaller, external, php files. Elements that are no longer part of the <em>index.php</em> code include the nav bar, the site header, the fotter nav bar, contact info, and even the sidebar. Those have been relegated to <em>header.php</em>, <em>footer.php</em>, and <em>sidebar.php</em> files. The include statements allows the content of all included files to be merged with the main files (in our case it's <em>index.php</em>) to generate a complete html page that gets sent to the clients' browser.</p>
+				 class="tripple-float" style="max-height: 300px; width: auto" >
+          <p>This lab is all about <strong>PHP include statements</strong>. Content wise, this lab is almost identical to that of lab 3. However, under the hood, lab 4 is a completely different beast! There are two parts to this lab. One focuses on taking out parts of the webpage that are likely to be common accross multiple web pages, seperating them into their own individual php files, which can, then, be referred to and used by multiple web pages. The second portion of this lab involves creating a configuration file that allows us to set preferences on how certain things are displayed. We discuss both of these in more detail below.</p>
+          <!--⚓-->
+          <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
           <img src="assets/graphics/pine.svg"
 				 alt="leaves, pine cones, and bells"
-				 class="center-image" > </div>
+				 class="center-image" style="max-height: 500px; width: auto" > </div>
         <!--/📢 Content Intro 📢--> 
       </section>
       <!--🔖--> 
       <!--📑 Main Content 📑-->
+      
+      <section> <!--🔖-->
+        <h2>Seperating Common Elements</h2>
+        <p>There are parts of a web page that are common accorss multiple web pages. These can include the nav-bar, site header, footer, etc. With PHP, we can save these individual elements as seperate PHP files. We, then, can use the PHP "include" statement to "import" them into our mane webpage. What this essentially does is, at runtime, the PHP processor will insert the code in the files at the line where they are referred to by the include statment. Once the page is processed and sent to the browser, the user will see a generated webpage made up of the combined HTML code of the webpage and the header file, seemlessly, as if they were all just one document to begin with!</P>
+        <p>In fact, major sections of this webpage is broken into several smaller, external, php files. Elements that are no longer part of the <em>index.php</em> code include the nav bar, the site header, the fotter nav bar, contact info, and even the sidebar. Those have been relegated to <em>header.php</em>, <em>footer.php</em>, and <em>sidebar.php</em> files. The include statements allows the content of all included files to be merged with the main files (in our case it's <em>index.php</em>) to generate a complete html page that gets sent to the clients' browser.</p>
+      </section>
+      <!--🔖-->
+      <section> <!--🔖-->
+        <h2>Config File</h2>
+        The second part of this lab involves using a config file to display the copyright information, which you can see at the bottom of this web page (Insha'Allah). The copyright date is not hard-coded on the page. Instead, there is a configureation file that generates the copyright information, and the main index page has an include statement that referrs to the config file. Here's the neat part. I written code in the config file that allows us to choose how the copyright date is displayed. I can go in the config file, and set a variable to equate to one of the available values that will determine who the copyright information appears on this web page. Options include displaying month plus year or just the year, for example. You will notice that the copyright information on this page differs from that of the next lab, which is a result of me setting different valalues on the config files of each labs. Another benefit of using the config file is that I can write code such that the date always remains current. This way, I won't have to manually change the copyright from 2020 to 2021 once the new year approaches, Insha'Allah. </section>
+      <!--🔖-->
       <section> <!--🔖-->
         <h2>Main Application</h2>
-        <p>Below is the gallery I originally created earlier as part of "lab 6" of the CMWEB 120 course using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that will generate the same gallery in a much more effecient manner.</p>
-        <p>For this lab, I have hard-coded the image file names and paths in a two-dimentional array that the PHP code can use to generate the gallery.</p>
+        <p>Below is a gallery I originally created earlier as part of "<a href="/sites/cmweb120/labs/lab6/lab6.html">CMWEB 120 lab 6</a>" using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that generates the same gallery in a much more effecient manner.</p>
       </section>
       <!--🔖--> 
       <!--APP 🚩🚩🚩🚩 🚩🚩🚩🚩 🚩🚩🚩🚩 🚩🚩🚩🚩 START-->
       <section id="app"> <!--🔖-->
-        <h3>Photo Gallery</h3>
-        <p>This next photo gallery has been generated completely from PHP code. I have written the code in php to output a gallery that looks as close to the original CMWEB 120 one (i.e. Gallery A).</p>
+        <h3 id="gallery">Photo Gallery</h3>
+        <p>This lab has the image file and path names hard-coded into a two-dimentional array that PHP can use to generate the gallery.</p>
         <!--🎨 Gallery-->
         <div class="gallery-container">
           <?php
@@ -184,8 +196,9 @@ $images = array(
           }
           ?>
         </div>
-        <!--/🎨 Gallery--> 
+        <!--/🎨 Gallery-->
         
+        <p style="padding-top: 1em"><em>Did you know that I did most of the editing, including manual color grading and cropping, using just "Water Lily", my iPhone? <strong>Mobile devices today are more capable at high quality image editing than even the most powerful desktop PCs from a dacade ago</strong>; it's quite profound, really! You can learn more about <a href="/sites/cmweb120/labs/lab6/lab6.html">how I edited these photos here</a>, where I also discuss the importance of getting images and color for your webpage right.</em></p>
         <!--🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧--> 
       </section>
       <!--🔖--> 
@@ -203,8 +216,10 @@ $images = array(
       <h2>External Links</h2>
       <!--🔗 External Links-->
       <ul>
-        <li><a href="https://webaim.org/techniques/forms/controls" target="_blank">Creating Accessible Forms</a></li>
-        <li><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">CSS Transitions</a></li>
+        <li><a href="https://color.adobe.com/color-wheel-game" target="_blank">Color Wheel Game</a></li>
+        <li><a href="http://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF" target="_blank">Create Your Own Color Pallete</a></li>
+        <li><a href="https://color.adobe.com/" target="_blank">Adobe Color</a></li>
+        <li><a href="https://www.w3schools.com/PHP/php_includes.asp" target="_blank">Learn more about PHP Include and Require in W3Schools</a></li>
       </ul>
       <!--/🔗 External Links-->
       <h3>Thanks for visiting!</h3>
@@ -221,10 +236,10 @@ $images = array(
 	 📜 END OF CONTENT SECION 📜
 	=============================-->
 
-<?php 
-    include 'inc/config.php';
-    include 'layouts/footer.php';
-    ?>
+<?php
+include 'inc/config.php';
+include 'layouts/footer.php';
+?>
 
 <!--🌐 End of HTML Document 🌐--> 
 
@@ -250,26 +265,45 @@ LAB OBJECTIVE: To build a simple calculator based on predefined specs using PHP 
 
 This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
 
-📣 What’s New in v20
+📣 What’s New in v21
 ----------------------------
- - [CSS] The gallery container class now uses flexbox instead of floats.
+ - [PHP] Common elements of the web pages are now broken into multiple, individual, php files
+ - [PHP] A configuration file has been added that allows the customization of the appearance of the copyright date. This is the first forey into customizability, and a first of many to come Insha'Allah
  - General improvements to the core document markup.
 
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
+⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects. This DOES NOT pertain to the PATCH NOTES below, which may document changes of any type that are made after initial publication.
 
-📝 Patch Notes for 19.0
+📝 Patch Notes for 21.0
 --------------------------
-20.0 (Update 2)
+21.0 (Update 4)
+Patch 1.21.116e
+ - Fixed an issue where some SVG images may appear overly large on high resolution displays or when the site is zoomed below 100%.
+ - Fixed broken links and updated incorrect button text.
+ - Updates to the sidebar
+ - Button to jump to the gallery
+21.0 (Update 3)
+Patch 1.21.114d
+ - Udates to main and footer nav-bars which enables the "Project" menu item.
+ - Updates to the footer nav-bar that updates the link for the "Labs" menu item..
+ - Content updates, with a few additions and general improvements to existing text accross the board.
+ - Updated sidebar links
+ - Fixed broken links in nav-bars, sidebar, and site logo
+ - Fixed an issue where certain graphics would become disproportionately large on high-resolution displays or when the site viewed at zoom levels significanly below 100%.
+ - Fixed an issue where the website logo was not properly alligned.
+ - New "External Links" and refreshed popular quote.
+ - Minor padding and styling improvements.
+
+21.0 (Update 2)
 Patch 1.20.1227c
  - [PHP] Main document broken down into multiple php files and connected using php includes.
  - Updated document in-line comment to better accomidate php include statements.
  - Updates to the sidebar navigation
 
-20.0 (Update 1)
+21.0 (Update 1)
 Patch 1.20.1217b
  - Fixed an issue where large number of documentation text as well as some HTML markups had several duplicates.
 
-20.0 (Gold)
+21.0 (Gold)
 Patch 1.20.1216a
  - Initial publication
 

@@ -28,19 +28,19 @@ switch($copy_constant){
     <div class="menu-horizontal"> 
       <!--Float 1-->
       <div class="double-float"> <!--🎈--> 
-        <!--🔗 Click!--> <a class="button-ornate" href="../../index.php"> <span class="button-text-decoration">↵
-        CMWEB 120 Home</span> </a> </div>
+        <!--🔗 Click!--> <a class="button-ornate" href="/sites/cmweb241/"> <span class="button-text-decoration">↵
+        CMWEB 241 Home</span> </a> </div>
       <!--/ Float 1--> 
       <!--Float 2-->
       <div class="double-float"> <!--🎈--> 
         <!--🔗 Footer Menu items-->
         <ul>
           <!--🔗 Click!-->
-          <li><a href="../index.html">Projects</a></li>
+          <li><a href="/sites/cmweb241/projects/">Project</a></li>
           <!--🔗 Click!-->
-          <li><a href="../../labs/index.html">Labs</a></li>
+          <li><a href="/sites/cmweb241#labs">Labs</a></li>
           <!--🔗 Click!-->
-          <li><a href="../../about.html">About</a></li>
+          <li><a href="/sites/cmweb241/about.html">About</a></li>
           <li>|</li>
           <!--🔗 Click!-->
           <li><a href="http://github.com/nazmuslabs" target="_blank">GitHub</a></li>
@@ -61,7 +61,7 @@ switch($copy_constant){
     <div class="tripple-float"> <!--🎈--> 
       <h3>Get the Code</h3>
       <p>All of the source codes and assets for this page as well as
-        those for entirety of this CMWEB student site is available
+        those for the entirety of this CMWEB student site is available
         to you on my <a href="https://github.com/NazmusLabs/CMWEB" target="_blank">CMWEB
         GitHub
         repository</a>.</p>

@@ -17,41 +17,41 @@ switch ( $copy_constant ) {
 ?>
 
 <!--=================================
-	 🚧 START OF FOOTER SECION A 🚧
+	 📑 START OF FOOTER SECION A 📑
 	=================================-->
+<!--💍-1-💍-->
 <div class="content-section-grey"> 
-  <!--///////////////////////
-	  📥 START of Container 📥
-	  ////////////////////////-->
+  <!--🧶-2-🧶-->
   <div class="container-wide"> 
-    <!--👆🏻 Footer Menu-->
-    <div class="menu-horizontal"> 
-      <!--Float 1-->
-      <div class="double-float"> <!--🎈--> 
+    <!--🧢-3-🧢-->
+    <nav class="menu-horizontal" style="position: relative;"> 
+      <!--🪡-4-🪡-->
+      <div class="double-float" > <!--🎈--> 
         <!--🔗 Click!--> <a class="button-ornate" href="/sites/cmweb241"> <span class="button-text-decoration">↵
         CMWEB 241 Home</span> </a> </div>
-      <!--/ Float 1--> 
-      <!--Float 2-->
-      <div class="double-float"> <!--🎈--> 
-        <!--🔗 Footer Menu items-->
-        <ul>
+      <!--🪡-4-🪡--> 
+      
+      <!--🧵-4-🧵-->
+      <div class="double-float" > <!--🎈--> 
+        <!--📜--> <!--📜-->
+        <ul style="position: absolute; right: 1em">
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241">Projects</a></li>
+          <li><a href="/sites/cmweb241/projects/">Project</a></li>
           <!--🔗 Click!-->
           <li><a href="/sites/cmweb241#labs">Labs</a></li>
           <!--🔗 Click!-->
           <li><a href="/sites/cmweb241">About</a></li>
           <li>|</li>
           <!--🔗 Click!-->
-          <li><a href="http://github.com/nazmuslabs" target="_blank">GitHub</a></li>
+          <li><a href="https://github.com/NazmusLabs/CMWEB" target="_blank">GitHub</a></li>
         </ul>
-        <!--/🔗 Footer Menu Items--> 
+        <!--📜--> <!--📜--> 
       </div>
-      <!--/ Float 2--> 
-    </div>
+      <!--🧵-4-🧵--> 
+    </nav>
+    <!--🧢-3-🧢--> 
     <br>
-    <!--/👆🏻 Footer Menu--> 
-    <!--📞 Contact Options-->
+    <!--📞-3-📞-->
     <div class="tripple-float"> <!--🎈-->
       <h3>Get in Touch</h3>
       <p> Connect with me on Twitter <a href="http://twitter.com/nazmuslabs" target="_blank">@NazmusLabs</a>.<br>
@@ -59,6 +59,9 @@ switch ( $copy_constant ) {
         You can also check out my latest videos <a href="http://youtube.com/nazmuslabsvideos" target="_blank"
            >on YouTube</a>.</p>
     </div>
+    <!--📞-3-📞--> 
+    
+    <!--📞-3-📞-->
     <div class="tripple-float"> <!--🎈-->
       <h3>Get the Code</h3>
       <p>All of the source codes and assets for this page as well as
@@ -67,28 +70,29 @@ switch ( $copy_constant ) {
         GitHub
         repository</a>.</p>
     </div>
+    <!--📞-3-📞--> 
+    
+    <!--📞-3-📞-->
     <div class="tripple-float"> <!--🎈-->
       <h3>Send Feedback</h3>
       <p>Have questions or comments? Just shoot me an email either
         at my college email address (<a href="mailto:nk308@lab.icc.edu">nk308@lab.icc.edu</a>)
         or at my personal email (<a href="mailto:nazmus@outlook.com">nazmus@outlook.com</a>).</p>
     </div>
-    <!--/📞 Contact Options--> 
+    <!--📞-3-📞--> 
   </div>
-  <!--/////////////////////
-	  📤 END of Container 📤
-	  //////////////////////--> 
+  <!--🧶-2-🧶--> 
 </div>
+<!--💍-1-💍--> 
 <!--==============================
-	 🚧 END OF FOOTER SECION A 🚧
+	 📑 END OF FOOTER SECION A 📑
 	==============================--> 
 <!--================================
-	 📄 START OF FOOTER SECION B 📄
-	================================-->
-<div> 
-  <!--///////////////////////
-	  📥 START of Container 📥
-	  ////////////////////////-->
+	 🥏 START OF FOOTER SECION B 🥏
+	================================--> 
+<!--🎫-1-🎫-->
+<footer> 
+  <!--👒-1-👒-->
   <div class="container-wide"> 
     <!--Licence Info -->
     <p id="license"> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"> <img
@@ -103,15 +107,17 @@ switch ( $copy_constant ) {
       rights reserved.</small></p>
     <!--/ Copyright Info --> 
   </div>
-  <!--/////////////////////
-	  📤 END of Container 📤
-	  //////////////////////--> 
-</div>
+  <!--👒-1-👒--> 
+</footer>
+<!--🎫-1-🎫--> 
+<!--==============================
+	 🥏 END OF FOOTER SECION A 🥏
+	==============================--> 
 
 <!--💡 Developer Remarks
--------------------------------
+==========================
 This meta tag is to let text editors know to open this file as a UTF-8 file and, therefore, prevent potential data loss.
--->
+--> 
 <!--
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 -->

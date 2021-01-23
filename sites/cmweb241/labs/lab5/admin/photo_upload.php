@@ -44,7 +44,7 @@ if ( isset( $_POST[ 'submit' ] ) ) {
 
           } else {
             $output = 'conflict';
-            //$debug = $dir . $file_name;
+            $debug = $file_name;
           }
 
 

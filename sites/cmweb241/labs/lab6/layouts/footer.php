@@ -62,7 +62,7 @@ switch ( $copy_constant ) {
     <div class="tripple-float"> <!--🎈-->
       <h3>Get the Code</h3>
       <p>All of the source codes and assets for this page as well as
-        those for entirety of this CMWEB student site is available
+        those for the entirety of this CMWEB student site is available
         to you on my <a href="https://github.com/NazmusLabs/CMWEB" target="_blank">CMWEB
         GitHub
         repository</a>.</p>

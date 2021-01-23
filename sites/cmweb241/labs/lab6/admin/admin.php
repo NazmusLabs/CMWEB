@@ -36,15 +36,15 @@ if ( $_GET[ 'command' ] === 'logoff' ) {
 
       } else if ( $_GET[ 'command' ] === 'clear-unauthorized.txt' ) {
 
-        $file = fopen( $log_path_unauthorized, "w" )or exit( "File read error: <em>there was a problem opening the requested file</em>." ); 
+        $file = fopen( $log_path_unauthorized, "w" )or exit( "File read error: <em>there was a problem opening the requested file</em>." );
 
         $event = "Record of previously failed sign-in attempts. (Codename 'momo')\n\n &nbsp&nbsp > Event log cleared by: ";
 
       } else {
 
         $file = fopen( $log_path_authorized, "a" )or exit( "File read error: <em>there was a problem opening the requested file</em>." );
-          
-          $event = "&nbsp&nbsp > Successful sign-in by: ";
+
+        $event = "&nbsp&nbsp > Successful sign-in by: ";
       }
       //❔ Old, disabled, code
       /*echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
@@ -60,8 +60,8 @@ if ( $_GET[ 'command' ] === 'logoff' ) {
 
       //⌛Loading files...
       $file = fopen( $log_path_unauthorized, "a" )or exit( "File read error: <em>there was a problem opening the requested file</em>." );
-        
-        $event = "&nbsp&nbsp > Unsuccessful sign-in attempt by: ";
+
+      $event = "&nbsp&nbsp > Unsuccessful sign-in attempt by: ";
 
       // ❌ FATALITY! ❌
 

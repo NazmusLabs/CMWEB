@@ -5,8 +5,8 @@
   <div class="container-wide"> 
     <!--Float 1 -->
     <div class="header-box"> 
-      <!--Site Logo--> <a href="../../index.php" class="left-align"> <img src="../../assets/graphics/logo-header.png"
-            alt="NazmusLabs Logo" title="NazmusLabs Logo" class="resize-85-percent"> </a> 
+      <!--Site Logo--> <a href="/sites/cmweb241/" class="left-align"> <img src="../../assets/graphics/logo-header.png"
+            alt="NazmusLabs Logo" title="NazmusLabs Logo" class="resize-85-percent" style="max-height: 125px; width: auto" > </a> 
       <!--/ Site Logo--> 
     </div>
     <!--/ Float 1--> 
@@ -35,13 +35,13 @@
       <!--🔗 Nav-bar Menu Items-->
       <ul class="right-align">
         <!--🔗 Click!-->
-        <li><a class="menu-button" href="../../index.php">Home</a></li>
-        <!--🔗🚫 Click!-->
-        <li class="menu-button-disabled">Projects</li>
+        <li><a class="menu-button" href="/sites/cmweb241/">Home</a></li>
+        <!--🔗 Click!-->
+        <li><a class="menu-button" href="/sites/cmweb241/projects/">Project</a></li>
         <!--🔗🚫 Click!-->
         <li class="menu-button-disabled">Labs</li>
         <!--🔗 Click!-->
-        <li><a class="menu-button" href="../../about.html">About</a></li>
+        <li><a class="menu-button" href="/sites/cmweb241/about">About</a></li>
         <!--Seperator-->
         <li class="menu-button-disabled">|</li>
         <!--🔗 Click!-->

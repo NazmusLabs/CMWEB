@@ -38,13 +38,13 @@ if ( isset( $_POST[ 'submit' ] ) ) {
             $caption = "A new photo has been uploaded!<br>File name: " . $file_name;
 
             //Encoding image metadata...
-            $path_encoded = strtr( base64_encode( $path ), '+/', '-_' );
-            $caption_encoded = strtr( base64_encode( $caption ), '+/', '-_' );
+            $path_encoded = urlencode( $path );
+            $caption_encoded = urlencode( $caption );
 
 
           } else {
             $output = 'conflict';
-            //$debug = $dir . $file_name;
+            $debug = $file_name;
           }
 
 

@@ -82,7 +82,8 @@ if ( filter_has_var( INPUT_POST, 'login' ) ) {
 
         $event = "Sign-in history. (Codename 'Buki')\n\n &nbsp&nbsp > Event log cleared by: ";
 
-        $sys_notif = urlencode( 'Success: Log cleared' );
+        $output_status = 'success';
+        $id = 'app2';
 
       } else {
         $output_status = 'elevation_required';
@@ -97,7 +98,8 @@ if ( filter_has_var( INPUT_POST, 'login' ) ) {
 
         $event = "Record of previously failed sign-in attempts. (Codename 'momo')\n\n &nbsp&nbsp > Event log cleared by: ";
 
-        $sys_notif = urlencode( 'Success: Log cleared' );
+        $output_status = 'success';
+        $id = 'app2';
 
       } else {
         $output_status = 'elevation_required';

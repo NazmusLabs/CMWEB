@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+//⌛Loading settings...
+REQUIRE '../inc/config.php';
+
 //⌛Getting things ready...
 $return_to = "../index.php";
 $dir = "../assets/images/";
@@ -18,6 +21,7 @@ if ( isset( $_SESSION[ 'usergroup' ] ) && $_SESSION[ 'usergroup' ] === 'administ
 //⌛Verifying authentication...
 if ( !$is_authorized ) {
   header( "location: admin.php" );
+  exit(); //❔ Rails motto - DRY: We redirect the user to admin.php because that page already has all the necessary code for dealing with scenarios in which users attempt to view restricted content without appropriate level of permission. In doing so, we avoid having to write redundant code here.
 }
 
 //⌛Connecting to database...
@@ -30,6 +34,12 @@ if ( !isset( $_GET[ 'filename' ] ) ) {
 } else {
   //⌛Getting this ready...
   $filename = $_GET[ 'filename' ];
+  //⌛Checking for protected files...
+  $protected_files = array( "car.jpg", "city.jpg", "sunset_trees.jpg", "flowers.jpg", "fruits.jpg" );
+  //⌛Halts execution immediately, Insha'Allah, if protected file is detected...
+  if ( in_array( $filename, $protected_files ) )
+    exit( 'This is a pre-installed application asset and is protected from deletion. Please select the back button on your browser to return to the gallery and try again by selecting any file that was uploaded by the user after the Photo Gallery application was installed.' );
+
   //⌛Creating query...
   $query = "DELETE FROM photographs WHERE filename = '$filename'";
 

@@ -69,32 +69,32 @@ if ( $status != '' ) {
 
     switch ( $status ) {
       case 'empty':
-        $alert = "<strong>File upload error:<br> </strong><em>\"Oops, you didn't select any images to upload. Select the \"browse\" button to choose an image and then click \"Upload\".\"</em>";
+        $alert = "⚠️ <strong>File upload error:<br> </strong><em>\"Oops, you didn't select any images to upload. Select the \"browse\" button to choose an image and then click \"Upload\".\"</em>";
         $error_code = $status;
         break;
       case 'fatal':
-        $alert = "<strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"An error occured while trying to uploading this file. Try again later or try uploading a different file.\"</em>";
+        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"An error occured while trying to uploading this file. Try again later or try uploading a different file.\"</em>";
         $error_code = $status;
         break;
       case 'ext':
-        $alert = "<strong><strong>Sorry, there was a problem uploading your file:<br></strong></strong> <em>\"The file type you selected is not allowed. Please upload a jpeg (.jpg, .jpeg) or a GIF (.gif) image.\"</em>";
+        $alert = "⚠️ <strong><strong>Sorry, there was a problem uploading your file:<br></strong></strong> <em>\"The file type you selected is not allowed. Please upload a jpeg (.jpg, .jpeg) or a GIF (.gif) image.\"</em>";
         $error_code = $status;
         break;
       case 'size':
-        $alert = "<strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"The file you selected is too large. Please upload an image that is 1MB or less.\"</em>";
+        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"The file you selected is too large. Please upload an image that is 1MB or less.\"</em>";
         $error_code = $status;
         break;
       case 'conflict':
-        $alert = "<strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"There's already a photo what that file name. Please rename the photo and try uploading again.\"</em>";
+        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"There's already a photo what that file name. Please rename the photo and try uploading again.\"</em>";
         $error_code = $status;
         break;
       case 'credentials_invalid':
-        $alert = "<strong>Sorry, we couldn't sign you in:<br></strong> <em>\"The user name and/or password you entered did not match our records.\"</em>";
+        $alert = "⚠️ <strong>Sorry, we couldn't sign you in:<br></strong> <em>\"The user name and/or password you entered did not match our records.\"</em>";
         $alert_class = 'alert-error';
         $error_code = 'credentials_invalid';
         break;
       default:
-        $alert = "<strong>Something went wrong...:<br> </strong><em>\"An error occured while trying to process your request. Please try again later.\"</em>";
+        $alert = "⚠️ <strong>Something went wrong...:<br> </strong><em>\"An error occured while trying to process your request. Please try again later.\"</em>";
         $alert_class = 'alert-error-light';
         $error_code = $status;
     }
@@ -344,7 +344,7 @@ $admin_menu =
   
   <div <?php echo $is_authorized ? 'class="alert-neutral-dark" style="padding: 2em; margin-bottom: 4em"': '' ?>> <?php echo $is_authorized ? $admin_menu : '' ?> 
     <!--☕-1-☕--> 
-    <?php echo $is_authorized ? "<p>⚠<em>Please note that in <strong>this verion</strong> of the Photo Gallery doesn't have all of the admin features fully up and working. So items might not wrok and/or be intentionally disabled.</em></p>": '' ?> 
+    <?php echo $is_authorized ? "<p>⚠️<em>Please note that in <strong>this verion</strong> of the Photo Gallery doesn't have all of the admin features fully up and working. So items might not wrok and/or be intentionally disabled.</em></p>": '' ?> 
     
     <!--❓ Output ❓--> 
     
@@ -372,7 +372,7 @@ Content in this section is restricted and requires elevated permissions to view.
 	  ////////////////////////-->
 <div class="container">
 <!--🍦-2-🍦-->
-<h1>Photo Gallery 3.0</h1>
+<h1>Photo Gallery 3</h1>
 <!--Bismillah-->
 <p id="Bismillah"> In the name of Allah, the Most Gracious, Most
   Merciful. </p>
@@ -395,8 +395,10 @@ Content in this section is restricted and requires elevated permissions to view.
   <!--📢 Content Intro 📢-->
   <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
-				 class="tripple-float" >
-    <p>In this lab, image upload system has been added. This feature includes restrictions, such as file size limits, file override protection, file type enforcement, etc. Code has been added to gracefully handle with common types of effors. Additionally a crude form of authentication has been implimented via PHP that only allows uploads if the user is at a signed-in state. Also included in this lab are dynamic UI, text, and banners that reflect a variety of scenarios.</p>
+				 class="tripple-float" style="max-height: 300px; width: auto" >
+    <p>Welcome to the third iteration of my photo gallery. This version introduced several new concepts spanning multiple labs. The specefic concepts and the labs to which they pertain is discussed below. You can also look through the list of additons and changes I documented on this page. But from a bird's eye view, the most significant addition to version 3.0 of the gallery is a working user login and authentication system and an administration mode user interface which only becomes available if the user signs in with the correct essentials. We discuss how this all wokrks.</p>
+    <!--⚓-->
+    <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
   </div>
   <!--/📢 Content Intro 📢--> 
   <!--🔖--> 
@@ -405,34 +407,91 @@ Content in this section is restricted and requires elevated permissions to view.
 <!--📑 Main Content 📑-->
 
 <section> <!--🔖-->
-  <h2 id="lab6">Lab 6</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quas commodi nemo, vitae saepe at quasi consequatur vel cupiditate voluptas? Labore, eveniet, delectus. Harum aut fugit, atque ab odio consequuntur!</p>
+  <h2 id="concepts">New Concepts</h2>
+  <p>Let's start by highlighting the overall objectives for each of the labs this gallery covers. Later we will look at how individual features of this version of the gallery addresses some of these objectives, insha’Allah.</p>
+  <h3 id="lab6">Lab 6</h3>
+  <p>Lab 6 is based on the following concepts and requirements:</p>
+  <ol>
+    <li>HTTP authentication</li>
+    <li>Admin page with restricted access</li>
+    <li>Appending text to a file using PHP code</li>
+  </ol>
+  <p><em>Note, this is not a comprehensive list of requirements for this lab but, rather, an attempt to provide a high-level summery without needing to go into individual deleverables or detailed specefications.</em></p>
   
   <!--🔖--> 
 </section>
 <section> <!--🔖-->
-  <h2 id="lab8">Lab 8</h2>
+  <h3 id="lab8">Lab 8</h3>
   <div class="note">Looking for lab 7? <a href="../lab7">Click here</a> </div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quas commodi nemo, vitae saepe at quasi consequatur vel cupiditate voluptas? Labore, eveniet, delectus. Harum aut fugit, atque ab odio consequuntur!</p>
-  
-  <!--🔖--> 
+  <p>Lab 8 focuses on the following concepts and requirements (Refer to the "Data Logging" section below for a detailed breakdown of the features related to this lab):</p>
+  <ol>
+    <li>File read & write operations using PHP code.</li>
+    <li>Displaying contents of file on a webpage</li>
+  </ol>
+  <p><em>As I noted previously, the list above is not a comprehensive list of requirements or specefications for the lab</em></p>
 </section>
+<!--🔖-->
+
 <section> <!--🔖-->
   <h2>Features Overview</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque voluptatum harum adipisci doloremque dolor est cupiditate nemo facere quod. Eum dolore sed ducimus fuga officia amet adipisci nostrum non consectetur!</p>
+  <p>Now that we have the objectives of the aforementioned labs outlined, let's examine how this gallery uses those concepts in practice by taking a closer look at the feaures that impliment them!</p>
   <h3>What's new in version 3.0</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto voluptates quos harum. Minus, nobis repellat ipsum natus. Architecto, iusto, esse. Aliquam accusamus tempora similique consequuntur, tenetur, ex delectus voluptas voluptatibus!</p>
+  <h4>Top New Featurs and Changes in this Version</h4>
+  <h5>User Logins using HTTP Authentication</h5>
+  <p>Users can now log in to the gallery application by clicking on the "Sign-in" button, which is displayed in-place of the image upload UI when the user is not logged in.</p>
+  <p>After selecting the "Sign-in" button, the user is take to admin/index.php, which displays a login prompt dialog box the user's on initial visit. Once the user enters the username and password, they are redirected to admin/admin.php. The admin.php file processes the credentials entered by the user. The page then sets a session variable, which will hold the appropriate value if the user credentials are correct. The user is the  redirected back to index.php (this page)</p>
+  <h5>Admin Center UI</h5>
+  <p>Perhaps the biggest vusual change to the lap, the admin center user interface is displayed near the top of this webpage (index.php) if the session variable indicates that the user is signed in..</p>
+  <p>The admin center is styled with a dark theme laced with a vibrant shade of teal accent. This gives the admin center a look that is in stark contrast to the otherwise bright-colored webpage</p>
+  <p>A banner is activated at the very top of the page when a user is signed in. The banner notifies the user with message confirming they are signed in as administrator. It also includes a sign out option. Clicking this link redirects the user to the previously mentioned admin/admin.php webpage, which processes the request, updating the session variable and redirecting the user back to index.php (this page).</p>
+  <h5>Data Logging</h5>
+  <p>In this version of the gallery, whenever the user signs in successfullt, an entry is appended to the appropriate log file. Likewise, a failed sign-in attempt is also logged, with data being appended to the appropriate file.</p>
+  <p>When signed in, the user has the option to view either the authorized sign-ins or a list of failed attempts. These files are displayed with its text printed in yellow where the gallery would otherwise sit. When in this mode, the user can click a red delete button to clear either of the log files. The act of clearing the data is also logged, which includes the user's IP address and the time the data was cleared.</p>
+  <h4>Security Considerations</h4>
+  <p>While no system is fool-proof, appropriate security measures have been implimented in the gallery application. Aside from basic measures such as filtering user imput fields to prevent code injection, additional checks have been added throughout the code. For instance, users attempting to go directly to admin/admin.php, bypassing admin/index.php are redirected back to index.php (this page). Orher examples include scenarios where users copy URLs from restricted web pages or actions and later manually tries visiting the page or perform the action by pasting in the URL in the address bar. </p>
+  <p>In our case, when we view the log files or request deletion of logs, the instructions are passed to index.php (this page) via strings in the URL. If a user copies the URL and later attempts to clear log data or view a log files while not signed in, the operation is cancelled, the user redirected to the sign-in section of this page, displaying a bright red error asking the user to sign in first. Once signed in, the user can may perform restricted tasks by pasting in the URL values in the address bar.</p>
+</section>
+<!--🔖-->
+
+<section> <!--🔖-->
   <h3>Features added in previous versions</h3>
   <h4>Version 2.0</h4>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat illo nihil culpa unde cumque maxime cum. Adipisci laudantium architecto nemo, harum quae aperiam eaque eos iusto et, obcaecati excepturi libero.</p>
+  <h5>New Features & additions</h5>
+  <ul>
+    <li>A new user interface for selecting and uploading images to the website</li>
+    <li>PHP code to process  uploaded images selected by visitors and upload them to the server if it passes all validations</li>
+    <li>PHP Code to gracefully handle errors and failed validations while also providing informative error messages to the user and output error codes for the developer.</li>
+    <li>[PHP] Multiple startup modes are now possible, providing users different experiences and content based on contexts and permissions.</li>
+    <li>Introducing Large Image Preview mode, which makes use of the aforementioned startup modes to either display a single, large, image, or the image gallery, based on context.</li>
+    <li>[PHP][CSS] New UI to identify logged in state. Banner will display letting you know you are logged in.</li>
+  </ul>
+  <h5>Modifications to Existing Featurs</h5>
+  <ul>
+    <li>[CSS]New styling optiond added</li>
+    <li>[CSS]Improvements to styling of alert boxes as well as new categories of alert-box types added.</li>
+  </ul>
+  <h5>Removed Featurs or Components</h5>
+  <ul>
+    <li>Gallery A from version 1.0 has been removed. Gallery B is now renamed to just "Photo Gallery".</li>
+  </ul>
+  <h5>Bug fixes and minor improvements</h5>
+  <p>Please view the HTML source code for Lab 5 (Ctel+U on Windows) to see detailed list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
   <h4>Version 1.0</h4>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum expedita dolorem laboriosam non, odit earum, unde delectus, consequatur sed dolore nulla sunt voluptatem reprehenderit! Quos ad quia sequi quis nihil.</p>
+  <h5>New Features & Additions</h5>
+  <ul>
+    <li>Now using CSS flexboxes (as opposed to floats) to layout gallery contents </li>
+    <li>The gallery now populates with content from a pre-defined, two-dimentional, array using PHP code instead of having its content hard-coded into the HTML, as was the case previously.</li>
+  </ul>
+  <p>While this is the first version of the gallery made for this course, it isn't the earliest revision. The very first appearance of this gallery was on my CMWEB 120 Lab 6 webpage, which you can see here. The purpose of that lab was to use HTML and CSS to create and style a photo gallery (in additon to work related to photo editing and color grading). And as such, each individual content of the gallery, from photos, captions, and hyperlinks are manually hard-coded in HTML.</p>
+  <p>With version 1.0 of the Gallery made for this course I first took all of the code as is from the CMWEB120 lab and updated the text of the page with relavent content. Next, I made two significant modifications. The first is that I used the newer, more context-appropriate, css flexbox property instead of the css float property as I had previously done.</p>
+  <p>The second change is that I transferred all of the manually written HTML for displaying the images, captions, and links into an associative array. Then, using PHP code, I had the gallery be automatically populated with content by iterating through the array using the foreach loop statement.</p>
+  
   <!--🔖--> 
 </section>
 <section> <!--🔖-->
   <h2>Main Application</h2>
-  <p>Below is the gallery I originally created earlier as part of "lab 6" of the CMWEB 120 course using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that will generate the same gallery in a much more effecient manner.</p>
-  <p>For this lab, I have hard-coded the image file names and paths in a two-dimentional array that the PHP code can use to generate the gallery.</p>
+  <p>Below is a gallery I originally created earlier as part of "<a href="/sites/cmweb120/labs/lab6/lab6.html">CMWEB 120 lab 6</a>" using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that generates the same gallery in a much more effecient manner.</p>
+  <p>For this lab, I have hard-coded the image file names and paths in a two-dimentional array that the PHP code can use to generate the image gallery.</p>
   <!--🔖--> 
 </section>
 </div>
@@ -549,7 +608,7 @@ Content in this section is restricted and requires elevated permissions to view.
     <!--🔔-1-🔔-->
     <section> <!--🔖-->
       <h2>How to Get the Code</h2>
-      <img style="float: right; width: 40%" src="assets/graphics/pine.svg"
+      <img style="float: right; max-height: 1000px; width: auto" src="assets/graphics/pine.svg"
 				 alt="leaves, pine cones, and bells"
 				 class="center-image" >
       <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>
@@ -573,7 +632,8 @@ Content in this section is restricted and requires elevated permissions to view.
     </ul>
     <!--/🔗 External Links-->
     <h3>Thanks for visiting!</h3>
-    <!--/🎁 Bonus Content 🎁--> <em><small>Featured image credit: Photo by <a href="https://unsplash.com/@rmvisuals" target="_blank">Renaldo Matamoro </a> on <a href="https://unsplash.com/photos/nrQ3V0A4bxk" target="_blank">Unsplash</a>.</small></em>
+    <!--/🎁 Bonus Content 🎁--> <em><small>Featured image credit:
+    Photo by <a href="https://unsplash.com/@turnlip19" target="_blank">Jong Marshes</a> on <a href="https://unsplash.com/photos/79mNMAvSORg" target="_blank">Unsplash</a>.</small></em>
     </article>
     <!--/////////////////////////////
 		   📖 END of Main Article 📖

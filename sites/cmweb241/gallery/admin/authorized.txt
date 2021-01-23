@@ -1,1 +1,7 @@
-Record of previousy successful sign-in attempts. (Codename 'Buki')
+Sign-in history. (Codename 'Buki')
+
+ &nbsp&nbsp > Event log cleared by: 140.177.244.218 @ January 14, 2021, 12:53 am UTC.
+&nbsp&nbsp > Successful sign-in by: 140.177.244.218 @ January 17, 2021, 4:06 am UTC.
+&nbsp&nbsp > Successful sign-in by: 140.177.244.218 @ January 19, 2021, 3:30 am UTC.
+&nbsp&nbsp > Successful sign-in by: 8.21.10.104 @ January 20, 2021, 1:55 am UTC.
+&nbsp&nbsp > Successful sign-in by: 8.6.144.33 @ January 21, 2021, 12:33 am UTC.
