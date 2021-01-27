@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+<!DOCTYPE html>
 <!--
 :::::::::::::::::::::::::::::::::::::::::::::::::::
      ⭐️ Welcome to the CMWEB Lab Source Code!
@@ -14,8 +15,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 21.0.20.1216 (Gold)
-Patch version: 1.20.1217a
+Version 23.0.20.1222 (Gold)
+Patch version: 1.21.127f
 
 (See documentation below for changelog)
 
@@ -299,8 +300,8 @@ $admin_menu =
 <meta name="instructor" content="Shari Tripp">
 <meta name="author" content="Nazmus Shakib Khandaker
       (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)">
-<meta name="version" content="21.0.20.1216 (Gold)">
-<meta name="patch" content="1.20.1217a">
+<meta name="version" content="23.0.20.1222 (Update 5)">
+<meta name="patch" content="1.21.127f">
 <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
 </head>
 
@@ -365,137 +366,141 @@ Content in this section is restricted and requires elevated permissions to view.
 <!--=================================
 	 📜 START OF CONTENT SECION A 📜
 	=================================-->
-<div class="content-section-light">
-<!--🍨-1-🍨--> 
-<!--///////////////////////
+<div class="content-section-light"> 
+  <!--🍨-1-🍨--> 
+  <!--///////////////////////
 	  📥 START of Container 📥
 	  ////////////////////////-->
-<div class="container">
-<!--🍦-2-🍦-->
-<h1>Photo Gallery 3</h1>
-<!--Bismillah-->
-<p id="Bismillah"> In the name of Allah, the Most Gracious, Most
-  Merciful. </p>
-<!--/Bismillah--> 
-<!--//////////////////////
+  <div class="container"> 
+    <!--🍦-2-🍦-->
+    <h1>Photo Gallery 3</h1>
+    <!--Bismillah-->
+    <p id="Bismillah"> In the name of Allah, the Most Gracious, Most
+      Merciful. </p>
+    <!--/Bismillah--> 
+    <!--//////////////////////
 		   💡 START of Sidebar 💡
 		  ////////////////////////-->
-
-<?php include 'layouts/sidebar.php' ?>
-
-<!--//////////////////////////////
+    
+    <?php include 'layouts/sidebar.php' ?>
+    
+    <!--//////////////////////////////
 		  💡 END of Sidebar Content 💡
 		  ////////////////////////////--> 
-<!--//////////////////////////////
+    <!--//////////////////////////////
 		   📖 START of Main Article 📖
 		  ////////////////////////////-->
-<article id="intro">
-<section> <!--🔖--> 
-  <!--📸 Smile!--> 
-  <!--📢 Content Intro 📢-->
-  <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
+    <article id="intro">
+      <section> <!--🔖--> 
+        <!--📸 Smile!--> 
+        <!--📢 Content Intro 📢-->
+        <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
 				 class="tripple-float" style="max-height: 300px; width: auto" >
-    <p>Welcome to the third iteration of my photo gallery. This version introduced several new concepts spanning multiple labs. The specefic concepts and the labs to which they pertain is discussed below. You can also look through the list of additons and changes I documented on this page. But from a bird's eye view, the most significant addition to version 3.0 of the gallery is a working user login and authentication system and an administration mode user interface which only becomes available if the user signs in with the correct essentials. We discuss how this all wokrks.</p>
-    <!--⚓-->
-    <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
+          <p>Welcome to the third iteration of my photo gallery. This version introduced several new concepts spanning multiple labs. The specefic concepts and the labs to which they pertain is discussed below. You can also look through the list of additons and changes I documented on this page. But from a bird's eye view, the most significant addition to version 3.0 of the gallery is a working user login and authentication system and an administration mode user interface which only becomes available if the user signs in with the correct essentials. We discuss how this all wokrks.</p>
+          <!--⚓-->
+          <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
+        </div>
+        <!--/📢 Content Intro 📢--> 
+        <!--🔖--> 
+      </section>
+      
+      <!--📑 Main Content 📑-->
+      
+      <section> <!--🔖-->
+        <h2 id="concepts">New Concepts</h2>
+        <p>Let's start by highlighting the overall objectives for each of the labs this gallery covers. Later we will look at how individual features of this version of the gallery addresses some of these objectives, insha’Allah.</p>
+        <h3 id="lab6">Lab 6</h3>
+        <p>Lab 6 is based on the following concepts and requirements:</p>
+        <ol>
+          <li>HTTP authentication</li>
+          <li>Admin page with restricted access</li>
+          <li>Appending text to a file using PHP code</li>
+        </ol>
+        <p><em>Note, this is not a comprehensive list of requirements for this lab but, rather, an attempt to provide a high-level summery without needing to go into individual deleverables or detailed specefications.</em></p>
+        
+        <!--🔖--> 
+      </section>
+      <section> <!--🔖-->
+        <h3 id="lab8">Lab 8</h3>
+        <div class="note">Looking for lab 7? <a href="../lab7">Click here</a> </div>
+        <p>Lab 8 focuses on the following concepts and requirements (Refer to the "Data Logging" section below for a detailed breakdown of the features related to this lab):</p>
+        <ol>
+          <li>File read & write operations using PHP code.</li>
+          <li>Displaying contents of file on a webpage</li>
+        </ol>
+        <p><em>As I noted previously, the list above is not a comprehensive list of requirements or specefications for the lab</em></p>
+      </section>
+      <!--🔖-->
+      
+      <section> <!--🔖-->
+        <h2>Features Overview</h2>
+        <p>Now that we have the objectives of the aforementioned labs outlined, let's examine how this gallery uses those concepts in practice by taking a closer look at the feaures that impliment them!</p>
+        <h3>What's new in version 3.0</h3>
+        <h4>Top New Featurs and Changes in this Version</h4>
+        <h5>User Logins using HTTP Authentication</h5>
+        <p>Users can now log in to the gallery application by clicking on the "Sign-in" button, which is displayed in-place of the image upload UI when the user is not logged in.</p>
+        <p>After selecting the "Sign-in" button, the user is take to admin/index.php, which displays a login prompt dialog box the user's on initial visit. Once the user enters the username and password, they are redirected to admin/admin.php. The admin.php file processes the credentials entered by the user. The page then sets a session variable, which will hold the appropriate value if the user credentials are correct. The user is the  redirected back to index.php (this page)</p>
+        <h5>Admin Center UI</h5>
+        <p>Perhaps the biggest vusual change to the lap, the admin center user interface is displayed near the top of this webpage (index.php) if the session variable indicates that the user is signed in..</p>
+        <p>The admin center is styled with a dark theme laced with a vibrant shade of teal accent. This gives the admin center a look that is in stark contrast to the otherwise bright-colored webpage</p>
+        <p>A banner is activated at the very top of the page when a user is signed in. The banner notifies the user with message confirming they are signed in as administrator. It also includes a sign out option. Clicking this link redirects the user to the previously mentioned admin/admin.php webpage, which processes the request, updating the session variable and redirecting the user back to index.php (this page).</p>
+        <h5>Data Logging</h5>
+        <p>In this version of the gallery, whenever the user signs in successfullt, an entry is appended to the appropriate log file. Likewise, a failed sign-in attempt is also logged, with data being appended to the appropriate file.</p>
+        <p>When signed in, the user has the option to view either the authorized sign-ins or a list of failed attempts. These files are displayed with its text printed in yellow where the gallery would otherwise sit. When in this mode, the user can click a red delete button to clear either of the log files. The act of clearing the data is also logged, which includes the user's IP address and the time the data was cleared.</p>
+        <h4>Security Considerations</h4>
+        <p>While no system is fool-proof, appropriate security measures have been implimented in the gallery application. Aside from basic measures such as filtering user imput fields to prevent code injection, additional checks have been added throughout the code. For instance, users attempting to go directly to admin/admin.php, bypassing admin/index.php are redirected back to index.php (this page). Orher examples include scenarios where users copy URLs from restricted web pages or actions and later manually tries visiting the page or perform the action by pasting in the URL in the address bar. </p>
+        <p>In our case, when we view the log files or request deletion of logs, the instructions are passed to index.php (this page) via strings in the URL. If a user copies the URL and later attempts to clear log data or view a log files while not signed in, the operation is cancelled, the user redirected to the sign-in section of this page, displaying a bright red error asking the user to sign in first. Once signed in, the user can may perform restricted tasks by pasting in the URL values in the address bar.</p>
+      </section>
+      <!--🔖-->
+      
+      <section> <!--🔖-->
+        <h3>Features added in previous versions</h3>
+        <h4>Version 2.0</h4>
+        <h5>New Features & additions</h5>
+        <ul>
+          <li>A new user interface for selecting and uploading images to the website</li>
+          <li>PHP code to process  uploaded images selected by visitors and upload them to the server if it passes all validations</li>
+          <li>PHP Code to gracefully handle errors and failed validations while also providing informative error messages to the user and output error codes for the developer.</li>
+          <li>[PHP] Multiple startup modes are now possible, providing users different experiences and content based on contexts and permissions.</li>
+          <li>Introducing Large Image Preview mode, which makes use of the aforementioned startup modes to either display a single, large, image, or the image gallery, based on context.</li>
+          <li>[PHP][CSS] New UI to identify logged in state. Banner will display letting you know you are logged in.</li>
+        </ul>
+        <h5>Modifications to Existing Featurs</h5>
+        <ul>
+          <li>[CSS]New styling optiond added</li>
+          <li>[CSS]Improvements to styling of alert boxes as well as new categories of alert-box types added.</li>
+        </ul>
+        <h5>Removed Featurs or Components</h5>
+        <ul>
+          <li>Gallery A from version 1.0 has been removed. Gallery B is now renamed to just "Photo Gallery".</li>
+        </ul>
+        <h5>Bug fixes and minor improvements</h5>
+        <p>Please view the HTML source code for Lab 5 (Ctel+U on Windows) to see detailed list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
+        <h4>Version 1.0</h4>
+        <h5>New Features & Additions</h5>
+        <ul>
+          <li>Now using CSS flexboxes (as opposed to floats) to layout gallery contents </li>
+          <li>The gallery now populates with content from a pre-defined, two-dimentional, array using PHP code instead of having its content hard-coded into the HTML, as was the case previously.</li>
+        </ul>
+        <p>While this is the first version of the gallery made for this course, it isn't the earliest revision. The very first appearance of this gallery was on my CMWEB 120 Lab 6 webpage, which you can see here. The purpose of that lab was to use HTML and CSS to create and style a photo gallery (in additon to work related to photo editing and color grading). And as such, each individual content of the gallery, from photos, captions, and hyperlinks are manually hard-coded in HTML.</p>
+        <p>With version 1.0 of the Gallery made for this course I first took all of the code as is from the CMWEB120 lab and updated the text of the page with relavent content. Next, I made two significant modifications. The first is that I used the newer, more context-appropriate, css flexbox property instead of the css float property as I had previously done.</p>
+        <p>The second change is that I transferred all of the manually written HTML for displaying the images, captions, and links into an associative array. Then, using PHP code, I had the gallery be automatically populated with content by iterating through the array using the foreach loop statement.</p>
+        
+        <!--🔖--> 
+      </section>
+      <section> <!--🔖-->
+        <h2>Main Application</h2>
+        <p>Below is a gallery I originally created earlier as part of "<a href="/sites/cmweb120/labs/lab6/lab6.html">CMWEB 120 lab 6</a>" using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that generates the same gallery in a much more effecient manner.</p>
+        <p>For this lab, I have hard-coded the image file names and paths in a two-dimentional array that the PHP code can use to generate the image gallery.</p>
+        <!--🔖--> 
+      </section>
+    </article>
+    <!--/////////////////////////////
+		   📖 END of Main Article 📖
+		  ///////////////////////////--> 
   </div>
-  <!--/📢 Content Intro 📢--> 
-  <!--🔖--> 
-</section>
-
-<!--📑 Main Content 📑-->
-
-<section> <!--🔖-->
-  <h2 id="concepts">New Concepts</h2>
-  <p>Let's start by highlighting the overall objectives for each of the labs this gallery covers. Later we will look at how individual features of this version of the gallery addresses some of these objectives, insha’Allah.</p>
-  <h3 id="lab6">Lab 6</h3>
-  <p>Lab 6 is based on the following concepts and requirements:</p>
-  <ol>
-    <li>HTTP authentication</li>
-    <li>Admin page with restricted access</li>
-    <li>Appending text to a file using PHP code</li>
-  </ol>
-  <p><em>Note, this is not a comprehensive list of requirements for this lab but, rather, an attempt to provide a high-level summery without needing to go into individual deleverables or detailed specefications.</em></p>
-  
-  <!--🔖--> 
-</section>
-<section> <!--🔖-->
-  <h3 id="lab8">Lab 8</h3>
-  <div class="note">Looking for lab 7? <a href="../lab7">Click here</a> </div>
-  <p>Lab 8 focuses on the following concepts and requirements (Refer to the "Data Logging" section below for a detailed breakdown of the features related to this lab):</p>
-  <ol>
-    <li>File read & write operations using PHP code.</li>
-    <li>Displaying contents of file on a webpage</li>
-  </ol>
-  <p><em>As I noted previously, the list above is not a comprehensive list of requirements or specefications for the lab</em></p>
-</section>
-<!--🔖-->
-
-<section> <!--🔖-->
-  <h2>Features Overview</h2>
-  <p>Now that we have the objectives of the aforementioned labs outlined, let's examine how this gallery uses those concepts in practice by taking a closer look at the feaures that impliment them!</p>
-  <h3>What's new in version 3.0</h3>
-  <h4>Top New Featurs and Changes in this Version</h4>
-  <h5>User Logins using HTTP Authentication</h5>
-  <p>Users can now log in to the gallery application by clicking on the "Sign-in" button, which is displayed in-place of the image upload UI when the user is not logged in.</p>
-  <p>After selecting the "Sign-in" button, the user is take to admin/index.php, which displays a login prompt dialog box the user's on initial visit. Once the user enters the username and password, they are redirected to admin/admin.php. The admin.php file processes the credentials entered by the user. The page then sets a session variable, which will hold the appropriate value if the user credentials are correct. The user is the  redirected back to index.php (this page)</p>
-  <h5>Admin Center UI</h5>
-  <p>Perhaps the biggest vusual change to the lap, the admin center user interface is displayed near the top of this webpage (index.php) if the session variable indicates that the user is signed in..</p>
-  <p>The admin center is styled with a dark theme laced with a vibrant shade of teal accent. This gives the admin center a look that is in stark contrast to the otherwise bright-colored webpage</p>
-  <p>A banner is activated at the very top of the page when a user is signed in. The banner notifies the user with message confirming they are signed in as administrator. It also includes a sign out option. Clicking this link redirects the user to the previously mentioned admin/admin.php webpage, which processes the request, updating the session variable and redirecting the user back to index.php (this page).</p>
-  <h5>Data Logging</h5>
-  <p>In this version of the gallery, whenever the user signs in successfullt, an entry is appended to the appropriate log file. Likewise, a failed sign-in attempt is also logged, with data being appended to the appropriate file.</p>
-  <p>When signed in, the user has the option to view either the authorized sign-ins or a list of failed attempts. These files are displayed with its text printed in yellow where the gallery would otherwise sit. When in this mode, the user can click a red delete button to clear either of the log files. The act of clearing the data is also logged, which includes the user's IP address and the time the data was cleared.</p>
-  <h4>Security Considerations</h4>
-  <p>While no system is fool-proof, appropriate security measures have been implimented in the gallery application. Aside from basic measures such as filtering user imput fields to prevent code injection, additional checks have been added throughout the code. For instance, users attempting to go directly to admin/admin.php, bypassing admin/index.php are redirected back to index.php (this page). Orher examples include scenarios where users copy URLs from restricted web pages or actions and later manually tries visiting the page or perform the action by pasting in the URL in the address bar. </p>
-  <p>In our case, when we view the log files or request deletion of logs, the instructions are passed to index.php (this page) via strings in the URL. If a user copies the URL and later attempts to clear log data or view a log files while not signed in, the operation is cancelled, the user redirected to the sign-in section of this page, displaying a bright red error asking the user to sign in first. Once signed in, the user can may perform restricted tasks by pasting in the URL values in the address bar.</p>
-</section>
-<!--🔖-->
-
-<section> <!--🔖-->
-  <h3>Features added in previous versions</h3>
-  <h4>Version 2.0</h4>
-  <h5>New Features & additions</h5>
-  <ul>
-    <li>A new user interface for selecting and uploading images to the website</li>
-    <li>PHP code to process  uploaded images selected by visitors and upload them to the server if it passes all validations</li>
-    <li>PHP Code to gracefully handle errors and failed validations while also providing informative error messages to the user and output error codes for the developer.</li>
-    <li>[PHP] Multiple startup modes are now possible, providing users different experiences and content based on contexts and permissions.</li>
-    <li>Introducing Large Image Preview mode, which makes use of the aforementioned startup modes to either display a single, large, image, or the image gallery, based on context.</li>
-    <li>[PHP][CSS] New UI to identify logged in state. Banner will display letting you know you are logged in.</li>
-  </ul>
-  <h5>Modifications to Existing Featurs</h5>
-  <ul>
-    <li>[CSS]New styling optiond added</li>
-    <li>[CSS]Improvements to styling of alert boxes as well as new categories of alert-box types added.</li>
-  </ul>
-  <h5>Removed Featurs or Components</h5>
-  <ul>
-    <li>Gallery A from version 1.0 has been removed. Gallery B is now renamed to just "Photo Gallery".</li>
-  </ul>
-  <h5>Bug fixes and minor improvements</h5>
-  <p>Please view the HTML source code for Lab 5 (Ctel+U on Windows) to see detailed list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
-  <h4>Version 1.0</h4>
-  <h5>New Features & Additions</h5>
-  <ul>
-    <li>Now using CSS flexboxes (as opposed to floats) to layout gallery contents </li>
-    <li>The gallery now populates with content from a pre-defined, two-dimentional, array using PHP code instead of having its content hard-coded into the HTML, as was the case previously.</li>
-  </ul>
-  <p>While this is the first version of the gallery made for this course, it isn't the earliest revision. The very first appearance of this gallery was on my CMWEB 120 Lab 6 webpage, which you can see here. The purpose of that lab was to use HTML and CSS to create and style a photo gallery (in additon to work related to photo editing and color grading). And as such, each individual content of the gallery, from photos, captions, and hyperlinks are manually hard-coded in HTML.</p>
-  <p>With version 1.0 of the Gallery made for this course I first took all of the code as is from the CMWEB120 lab and updated the text of the page with relavent content. Next, I made two significant modifications. The first is that I used the newer, more context-appropriate, css flexbox property instead of the css float property as I had previously done.</p>
-  <p>The second change is that I transferred all of the manually written HTML for displaying the images, captions, and links into an associative array. Then, using PHP code, I had the gallery be automatically populated with content by iterating through the array using the foreach loop statement.</p>
-  
-  <!--🔖--> 
-</section>
-<section> <!--🔖-->
-  <h2>Main Application</h2>
-  <p>Below is a gallery I originally created earlier as part of "<a href="/sites/cmweb120/labs/lab6/lab6.html">CMWEB 120 lab 6</a>" using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that generates the same gallery in a much more effecient manner.</p>
-  <p>For this lab, I have hard-coded the image file names and paths in a two-dimentional array that the PHP code can use to generate the image gallery.</p>
-  <!--🔖--> 
-</section>
-</div>
-<!--🍦-2-🍦-->
+  <!--🍦-2-🍦--> 
 </div>
 <!--🍨-1-🍨--> 
 
@@ -633,12 +638,7 @@ Content in this section is restricted and requires elevated permissions to view.
     <!--/🔗 External Links-->
     <h3>Thanks for visiting!</h3>
     <!--/🎁 Bonus Content 🎁--> <em><small>Featured image credit:
-    Photo by <a href="https://unsplash.com/@turnlip19" target="_blank">Jong Marshes</a> on <a href="https://unsplash.com/photos/79mNMAvSORg" target="_blank">Unsplash</a>.</small></em>
-    </article>
-    <!--/////////////////////////////
-		   📖 END of Main Article 📖
-		  ///////////////////////////--> 
-  </div>
+    Photo by <a href="https://unsplash.com/@turnlip19" target="_blank">Jong Marshes</a> on <a href="https://unsplash.com/photos/79mNMAvSORg" target="_blank">Unsplash</a>.</small></em> </div>
   <!--🔔-1-🔔--> 
   <!--//////////////////////
 	  📤 END of Container 📤
@@ -653,8 +653,9 @@ include 'inc/config.php';
 include 'layouts/footer.php';
 ?>
 
-<!--🌐 End of HTML Document 🌐--> 
-
+<!--🌐 End of HTML Document 🌐-->
+</body>
+</html>
 <!--
 Thanks for stopping by the back-stage!
 
@@ -679,34 +680,46 @@ This student site was originally created for the CMWEB program at Illinois Centr
 
 📣 What’s New in v21
 ----------------------------
- - Version 21 is a major upgrade. Along with dozens of minor improvements and fixes, it is packed with several new features and enhancements! It's one of the biggest updates yet.
- - [CSS] several new styles of alert messages that ads to the variety and more wide range of scenarios.
- - [CSS] Feedback-form now uses flexbox.
- - [CSS] Brand new lime button. Great for uploads and/or sign-ups.
- - [CSS] Updates and quality of life improvements to the styling throughout.
- - [PHP] First customization features have been added. A new config file allows you to set the format of the copyright date.
- - [PHP] Multiple startup modes are now possible, providing users different experiences and content based on contexts and permissions.
- - [PHP][CSS] New UI to identify logged in state. Banner will display letting you know you are logged in.
- - Bug fixes and quality improvements.
- - Minor updates to documentation.
- - Updated emoji based markers and designators in the in-line documentation.
- - Minimum system requirements have been revised.
+ - 
 
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
+⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects. This DOES NOT pertain to the PATCH NOTES below, which may document changes of any type that are made after initial publication.
 
-📝 Patch Notes for 19.0
+
+📝 Patch Notes for 23.0
 --------------------------
-20.0 (Update 2)
-Patch 1.20.1227c
- - [PHP] Main document broken down into multiple php files and connected using php includes.
- - Updated document in-line comment to better accomidate php include statements.
- - Updates to the sidebar navigation
+23.0 (update 5)
+Patch 1.21.127f
+ - Fixed an issue which caused the resulting HTML generated by the PHP interpreter would fail w3 validation.
+ - Updates to the documentation
 
-20.0 (Update 1)
-Patch 1.20.1217b
- - Fixed an issue where large number of documentation text as well as some HTML markups had several duplicates.
+23.0 (Update 4)
+Patch 1.21.117e
+ - Fixed an issue where some SVG images may appear overly large on high resolution displays or when the site is zoomed below 100%.
+ - Updated incorrect button text
+ - Updates to the sidebar
+ - Button to jump to the gallery
 
-21.0 (Gold)
+23.0 (Update 3)
+Patch 1.21.117c
+ - Udates to main and footer nav-bars which enables the "Project" menu item.
+ - Updates to the footer nav-bar that updates the link for the "Labs" menu item.
+
+23.0 (Update 2)
+Patch 1.21.114c
+ - [PHP] Backported some of the quality-of-life improvements from later versions of the Photo Gallery application.
+ - [PHP] Cumulative bug fixes and improvements to the sign-in experience
+ - [PHP] Cumulative bug fixes for the Photo Gallery application
+ - Content updates, with a few additions and general improvements to existing text accross the board.
+ - Updated sidebar links
+ - Fixed an issue where certain graphics would become disproportionately large on high-resolution displays or when the site viewed at zoom levels significanly below 100%.
+ - Fixed an issue where the website logo was not properly alligned.
+
+Patch 1.21.114b
+ - [PHP] Backported some of the quality-of-life improvements from later versions of the Photo Gallery application.
+ - [PHP] Cumulative bug fixes and improvements to the sign-in experience
+ - [PHP] Cumulative bug fixes for the Photo Gallery application
+
+23.0 (Gold)
 Patch 1.20.1216a
  - Initial publication
 

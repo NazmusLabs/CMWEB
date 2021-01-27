@@ -12,8 +12,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 21.0.20.1216 (Gold)
-Patch version: 1.20.1217a
+Version 25.1.21.127 (Gold)
+Patch version: 1.21.127
 
 (See documentation below for changelog)
 
@@ -45,8 +45,8 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
 <meta name="instructor" content="Shari Tripp">
 <meta name="author" content="Nazmus Shakib Khandaker
       (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)">
-<meta name="version" content="21.0.20.1216 (Gold)">
-<meta name="patch" content="1.20.1217a">
+<meta name="version" content="25.0.20.127 (Gold)">
+<meta name="patch" content="2.20.127">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
@@ -262,15 +262,15 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
       <!--🎨 Image Gallery 🎨--> 
       <!--📸 Smile!-->
       <figure class="gallery"><a href="assets/images/car.jpg" target="_blank"><img src="assets/images/car.jpg" alt="Antique car" width="600" height="400" ></a>
-        <figcaption class="caption">"Oldtimer" by <a href="https://pixabay.com/users/arttower-5337/" target="_blank">Bridget "ArtTower"</a> on <a href="https://pixabay.com/photos/oldtimer-car-fency-colorful-50567/" target="_blank">Pixabay</a>.</figcaption>
+        <figcaption class="caption"><h2 style="text-decoration: none; color: black">Labs</h2></figcaption>
       </figure>
       <!--📸 Smile!-->
       <figure class="gallery"><a href="assets/images/city.jpg" target="_blank" ><img src="assets/images/city.jpg" alt="Cityscape" width="600" height="400" ></a>
-        <figcaption class="caption">Photo by <a href="https://pixabay.com/users/wikiimages-1897/" target="_blank">WikiImages</a> on <a href="https://pixabay.com/photos/city-building-night-view-night-11087/" target="_blank">Pixabay</a>.</figcaption>
+        <figcaption class="caption"><h2 style="text-decoration: none; color: black">Projects</h2></figcaption>
       </figure>
       <!--📸 Smile!-->
       <figure class="gallery"><a href="assets/images/featured.jpg" target="_blank"><img src="assets/images/featured.jpg" alt="Trees in sunset" width="600" height="400" ></a>
-        <figcaption class="caption">Photo by <a href="https://pixabay.com/users/arttower-5337/" target="_blank">Bridget "ArtTower"</a> on <a href="https://pixabay.com/photos/sunset-san-diego-california-weather-52933/" target="_blank">Pixabay</a>.</figcaption>
+        <figcaption class="caption"><h2  style="text-decoration: none; color: black">Extras</h2></figcaption>
       </figure>
       <!--🎨 /Image Gallery 🎨--> 
     </div>
@@ -548,13 +548,14 @@ This student site was originally created for the CMWEB program at Illinois Centr
 
 📣 What’s New in v21
 ----------------------------
- - 
+ - Integrated all of the patches for (6 updates) version 25.0 (CMWEB 241 Lab 13).
 
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
+⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects. This DOES NOT pertain to the PATCH NOTES below, which may document changes of any type that are made after initial publication.
 
 📝 Patch Notes for 19.0
 --------------------------
-
+25.1 (Gold)
+Patch: 2.21.127
 
 *See documentation on version numbers for more info.
 

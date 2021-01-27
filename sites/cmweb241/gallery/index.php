@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+<!DOCTYPE html>
 <!--
 :::::::::::::::::::::::::::::::::::::::::::::::::::
      ⭐️ Welcome to the CMWEB Lab Source Code!
@@ -14,8 +15,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 21.0.20.1216 (Gold)
-Patch version: 1.20.1217a
+Version 25.0.21.120 (Update 6)
+Patch version: 1.21.127f
 
 (See documentation below for changelog)
 
@@ -278,7 +279,6 @@ mysqli_close( $conn );
 <!-- /❓ End of PHP startup sequence ❓ -->
 
 <!-- 🌐 START OF HTML DOCUMENT 🌐-->
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -289,8 +289,8 @@ mysqli_close( $conn );
 <meta name="instructor" content="Shari Tripp">
 <meta name="author" content="Nazmus Shakib Khandaker
       (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)">
-<meta name="version" content="21.0.20.1216 (Gold)">
-<meta name="patch" content="1.20.1217a">
+<meta name="version" content="25.0.21.120 (Update 6)">
+<meta name="patch" content="1.21.127f">
 <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
 </head>
 
@@ -315,7 +315,7 @@ mysqli_close( $conn );
 	===========================--> 
 <!--🍧-1-🍧-->
 <div id="featured">
-  <h1>NazmusLabs Photo Gallery</h1>
+  <h1><a href="/sites/cmweb241" title="Return to CMWEB241 Home" style="text-decoration: none; color: white">NazmusLabs Photo Gallery</a></h1>
 </div>
 <!--🍧-1-🍧--> 
 <!--=========================
@@ -349,66 +349,66 @@ Content in this section is restricted and requires elevated permissions to view.
 <!--=================================
 	 📕 START OF CONTENT SEGMENT A 📕
 	=================================-->
-<div class="content-section-light">
-<!--🍨-1-🍨-->
-<div class="container" style="position: relative">
-<!--🍦-2-🍦-->
-<h1>Welcome to My CMWEB 241 PHP Student Project!</h1>
-<!--Bismillah--> 
-<!--⚓-->
-<p id="Bismillah"> In the name of Allah, the Most Gracious, Most Merciful. </p>
-<!--/Bismillah--> 
-<!--========================
+<div class="content-section-light"> 
+  <!--🍨-1-🍨-->
+  <div class="container" style="position: relative"> 
+    <!--🍦-2-🍦-->
+    <h1>Welcome to My CMWEB 241 PHP Student Project!</h1>
+    <!--Bismillah--> 
+    <!--⚓-->
+    <p id="Bismillah"> In the name of Allah, the Most Gracious, Most Merciful. </p>
+    <!--/Bismillah--> 
+    <!--========================
 	 🧭 START OF SIDEBAR 🧭
 	========================-->
-<?php include 'layouts/sidebar.php' ?>
-<!--======================
+    <?php include 'layouts/sidebar.php' ?>
+    <!--======================
 	 🧭 END OF SIDEBAR 🧭
 	======================--> 
-
-<!--========================
+    
+    <!--========================
 	 📃 START OF ARTICLE 📃
 	========================-->
-<article id="intro"> 
-  <!--====================
+    <article id="intro"> 
+      <!--====================
 	 📢 INTRODUCTION 📢
 	====================-->
-  <section> <!--🔖--> 
-    <!--👓-3👓-->
-    <div class="page-intro"> <img src="assets/graphics/circles.svg"
+      <section> <!--🔖--> 
+        <!--👓-3👓-->
+        <div class="page-intro"> <img src="assets/graphics/circles.svg"
 				 alt="Circles"
 				 class="tripple-float" style="max-height: 300px; width: auto" > <!--📸 Smile!--> 
-      <!--⚓-->
-      <p>Welcome to the Photo Gallery application. What you are looking at now, Insha'Allah, is the culmunation of a whole semester's worth of effort, with no exageration. The entire PHP course at Illinois Central College, CMWEB, involved developing this application, weith each lab and assignment either directly contributing to the code to what would eventually become this multi-functional web applicaion or covered one or more of several variety of concepts that went into creating this application. Without further ado, let's get straight into it; select the <em>Jump to the Gallery</em> button to begin.</p>
-      <!--⚓-->
-      <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
-    </div>
-    <!--👓-3👓--> 
-    <!--🔖--> 
-  </section>
-  
-  <!--=====================
+          <!--⚓-->
+          <p>Welcome to the Photo Gallery application. What you are looking at now, Insha'Allah, is the culmunation of a whole semester's worth of effort, with no exageration. The entire PHP course at Illinois Central College, CMWEB, involved developing this application, weith each lab and assignment either directly contributing to the code to what would eventually become this multi-functional web applicaion or covered one or more of several variety of concepts that went into creating this application. Without further ado, let's get straight into it; select the <em>Jump to the Gallery</em> button to begin.</p>
+          <!--⚓-->
+          <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
+        </div>
+        <!--👓-3👓--> 
+        <!--🔖--> 
+      </section>
+      
+      <!--=====================
 	 📢 END OF INTRO 📢
 	=====================--> 
-  
-  <!--=============================
+      
+      <!--=============================
 	 📖 START OF MAIN CONTENT 📖
 	==============================-->
-  
-  <section> <!--🔖-->
-    <h2>Main Application</h2>
-    <p>This image gallery below dates all the way back to "<a href="/sites/cmweb120/labs/lab6/lab6.html">lab 6 of CMWEB 120</a>". What started out as nothing more than a hand coded HTML photo gallery is now a fully dynamic PHP application.</p>
-    <p>This application uses PHP code to grab the necessary file metadata from a MySQL database, from which it then creates a two-dimentional array that is used to populate the image gallery with content.</p>
-    <!--🔖--> 
-  </section>
-  </div>
-  <!--🍦-2-🍦-->
-  </div>
-  <!--🍨-1-🍨--> 
-</article>
-<!--====================
+      
+      <section> <!--🔖-->
+        <h2>Main Application</h2>
+        <p>This image gallery below dates all the way back to "<a href="/sites/cmweb120/labs/lab6/lab6.html">lab 6 of CMWEB 120</a>". What started out as nothing more than a hand coded HTML photo gallery is now a fully dynamic PHP application.</p>
+        <p>This application uses PHP code to grab the necessary file metadata from a MySQL database, from which it then creates a two-dimentional array that is used to populate the image gallery with content.</p>
+        <!--🔖--> 
+      </section>
+    </article>
+    <!--====================
 	 📃 END OF ARTICLE 📃
 	========================--> 
+  </div>
+  <!--🍦-2-🍦--> 
+</div>
+<!--🍨-1-🍨--> 
 <!--=================================
 	 📕 END OF CONTENT SEGMENT A 📕
 	=================================--> 
@@ -613,7 +613,7 @@ include 'layouts/footer.php';
 ?>
 </body>
 </html>
-<!--🌐 End of HTML Document 🌐--> 
+<!--🌐 End of HTML Document 🌐-->
 
 <!--
 Thanks for stopping by the back-stage!
@@ -637,37 +637,60 @@ LAB OBJECTIVE: To build a simple calculator based on predefined specs using PHP 
 
 This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
 
-📣 What’s New in v21
+📣 What’s New in v25
 ----------------------------
- - Version 21 is a major upgrade. Along with dozens of minor improvements and fixes, it is packed with several new features and enhancements! It's one of the biggest updates yet.
- - [CSS] several new styles of alert messages that ads to the variety and more wide range of scenarios.
- - [CSS] Feedback-form now uses flexbox.
- - [CSS] Brand new lime button. Great for uploads and/or sign-ups.
- - [CSS] Updates and quality of life improvements to the styling throughout.
- - [PHP] First customization features have been added. A new config file allows you to set the format of the copyright date.
- - [PHP] Multiple startup modes are now possible, providing users different experiences and content based on contexts and permissions.
- - [PHP][CSS] New UI to identify logged in state. Banner will display letting you know you are logged in.
- - Bug fixes and quality improvements.
- - Minor updates to documentation.
- - Updated emoji based markers and designators in the in-line documentation.
- - Minimum system requirements have been revised.
+ - 
 
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
+⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects. This DOES NOT pertain to the PATCH NOTES below, which may document changes of any type that are made after initial publication.
 
-📝 Patch Notes for 19.0
+
+📝 Patch Notes for 25.0
 --------------------------
-20.0 (Update 2)
-Patch 1.20.1227c
- - [PHP] Main document broken down into multiple php files and connected using php includes.
- - Updated document in-line comment to better accomidate php include statements.
- - Updates to the sidebar navigation
+25.0 (update 6)
+Patch 1.21.127f
+ - Clicking on the Featured Text on the top now takes user back to CMWEB241 homepage, Insha'Allah.
+ - Fixed an issue which caused the resulting HTML generated by the PHP interpreter would fail w3 validation.
+ - Updates to the documentation
+ - Quality-of-life updates to code indentations
 
-20.0 (Update 1)
-Patch 1.20.1217b
- - Fixed an issue where large number of documentation text as well as some HTML markups had several duplicates.
+25.0 (Update 5)
+Patch 1.21.117e
+ - Fixed an issue where some SVG images may appear overly large on high resolution displays or when the site is zoomed below 100%.
+ - Updated incorrect button text
+ - Updates to the sidebar
+ - Button to jump to the gallery
 
-21.0 (Gold)
-Patch 1.20.1216a
+25.0 (Update 4)
+Patch 1.21.117c
+ - Udates to main and footer nav-bars which enables the "Project" menu item.
+ - Updates to the footer nav-bar that updates the link for the "Labs" menu item.
+
+25.0 (Update 3)
+Patch 1.21.115d
+ - [PHP] Updates to the delete_photo.php to enable protection for pre-installed images. Attempting to delete these photos results in an error (insha'Allah). Users should still be able to delete photos uploaded by users to the gallery after the fact.
+ - [PHP] Cumulative bug fixes and improvements to the sign-in experience
+ - [PHP] Cumulative bug fixes for the Photo Gallery application
+ - Content updates, with a few additions and general improvements to existing text accross the board.
+ - Updated sidebar links
+ - Fixed an issue where certain graphics would become disproportionately large on high-resolution displays or when the site viewed at zoom levels significanly below 100%.
+ - Fixed an issue where the website logo was not properly alligned.
+
+25.0 (Update 2)
+Patch 1.21.112b
+ - Added a new human cut-out image (Image Credit: Microsoft)
+ - [PHP] Bug fixes
+ - [PHP] Cumulative bug fixes and improvements to the sign-in experience
+ - [PHP] Cumulative bug fixes for the Photo Gallery application
+
+25.0 (Update 1)
+Patch 1.21.129a
+ - Major updates to the in-line documentation. Emojie-based markers are now more complete and consistent.
+ - General documentation updates
+ - [PHP] Updates and improvements to in-line comments
+ - [PHP] Bug fixes and general improvements
+
+25.0 (Gold)
+Release 1.20.1228
  - Initial publication
 
 *See documentation on version numbers for more info.

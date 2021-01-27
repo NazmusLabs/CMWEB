@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+<!DOCTYPE html>
 <!--
 :::::::::::::::::::::::::::::::::::::::::::::::::::
      ⭐️ Welcome to the CMWEB Lab Source Code!
@@ -14,8 +15,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 21.0.20.1216 (Gold)
-Patch version: 1.20.1217a
+Version 21.0.20.1223 (Update 5)
+Patch version: 1.21.127f
 
 (See documentation below for changelog)
 
@@ -329,7 +330,6 @@ mysqli_close( $conn );
 <!--❓ End of PHP startup sequence ❓-->
 
 <!-- 🌐 START OF HTML DOCUMENT 🌐-->
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -402,225 +402,225 @@ Content in this section is restricted and requires elevated permissions to view.
 	 📕 START OF CONTENT SEGMENT A 📕
 	=================================--> 
 <!--🍨-1-🍨-->
-<div class="content-section-light">
-<!--🍦-2-🍦-->
-<div class="container" style="position: relative">
-<h1>Photo Gallery 4.0</h1>
-<!--Bismillah--> 
-<!--⚓-->
-<p id="Bismillah"> In the name of Allah, the Most Gracious, Most
-  Merciful. </p>
-<!--/Bismillah--> 
-<!--========================
+<div class="content-section-light"> 
+  <!--🍦-2-🍦-->
+  <div class="container" style="position: relative">
+    <h1>Photo Gallery 4.0</h1>
+    <!--Bismillah--> 
+    <!--⚓-->
+    <p id="Bismillah"> In the name of Allah, the Most Gracious, Most
+      Merciful. </p>
+    <!--/Bismillah--> 
+    <!--========================
 	 🧭 START OF SIDEBAR 🧭
 	========================-->
-<?php include 'layouts/sidebar.php' ?>
-<!--======================
+    <?php include 'layouts/sidebar.php' ?>
+    <!--======================
 	 🧭 END OF SIDEBAR 🧭
 	======================--> 
-<!--========================
+    <!--========================
 	 📃 START OF ARTICLE 📃
 	========================-->
-<article id="intro">
-  <section> <!--🔖--> 
-    <!--====================
+    <article id="intro">
+      <section> <!--🔖--> 
+        <!--====================
 	 📢 INTRODUCTION 📢
 	====================-->
-    <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
+        <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
 				 class="tripple-float" style="max-height: 300px; width: auto" > <!--📸Smile!--> 
-      <!--⚓-->
-      <p>Welcome to version 4 of the photo gallery! This version covers labs 10 through 12. These labs involve a lot of "under-the-hood" work to migrate the gallery's back-end infrastructure to a MySQL database. There are two components from version 3 that needed to be migrated for this version: the user authentication system and the displaying of images in the gallery.</p>
-      <!--⚓-->
-      <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
-    </div>
-    <!--=====================
+          <!--⚓-->
+          <p>Welcome to version 4 of the photo gallery! This version covers labs 10 through 12. These labs involve a lot of "under-the-hood" work to migrate the gallery's back-end infrastructure to a MySQL database. There are two components from version 3 that needed to be migrated for this version: the user authentication system and the displaying of images in the gallery.</p>
+          <!--⚓-->
+          <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
+        </div>
+        <!--=====================
 	 📢 END OF INTRO 📢
 	=====================--> 
-    <!--/🔖--> 
-  </section>
-  
-  <!--=============================
+        <!--/🔖--> 
+      </section>
+      
+      <!--=============================
 	 📖 START OF MAIN CONTENT 📖
 	==============================-->
-  <section> <!--🔖-->
-    <h2 id="concepts">New Concepts</h2>
-    <!--🚩--> <!--🚩-->
-    <p>We'll start by first highlighting the main objective for each of the labs this gallery covers. Later we will look at the individual features of this version of the gallery, insha’Allah.</p>
-    <section> <!--🔖-->
-      <h3 id="lab10">Lab 10</h3>
-      <!--🔗--> <!--🔗-->
-      <div class="note">Looking for lab 9? <a href="../lab7">Click here</a> </div>
-      <!--🔗--> <!--🔗-->
-      <p>With lab 10, we begin our effort to migrate the gallery to a database. We are using MySQL datase, where we created a table called "photographs". This table holds the names and metadata for all of the photos that are to be displayed in the gallery.</em></p>
-      <!--⚓-->
-      <p>We started by moving the existing, hard-coded, associative array (discussed here) of photo graphs to our photographs table. Recall that previously, our gallery application used made use of a <strong>two dimentional array</strong> where the <em>first</em> array holds individual photographs, with the <em>second</em> array containing the metadata for each of the images, including name and caption. Read more about two dimentional arrays here.</p>
-      <!--⚓-->
-      <p>Our photographs table essentially mirrors the two dimentional array, with the rows representing the first array and the columns representing the second array. Hence, columns, form the most part, hold the photo metadat--I say for the most part because the column also hold the photograph ID, which isn't strictly a metadata for the photograph in themselves.</p>
-      <!--⚓-->
-      <P>With version 3 and earlier, the array our gallery uses a two dimentional array that is hard-coded. And although with version 4 we are using a database table in the back-end, how the gallery itself operates fundimentally hasn't changed. We still have our two-dimentional array; only this time, we make a mysqli() query to first get the data from our photographs table and then generate the associative array at runtime. So, as far as the gallery is concerned, nothing has really changed: it still points to an array like before, except that this new array isn't hard-coded but dynamically generated</P>
-      <!--/🔖--> 
-    </section>
-    <section> <!--🔖-->
-      <h3>Labs 11 & 12</h3>
-      <!--🚩--> <!--🚩-->
-      <h4 id="lab11">Lab 11</h4>
-      <!--🚩--> <!--🚩-->
-      <p>We now move on to the user authentication for lab 11. Previously, we discussed how we used an http authentication to log the user in if they had the correct credentials. What we didnt explicitely say is that the information our application used to determine if the username and password entered by the user is stored in the source code of admin/admin.php (which handles all of the sign-in and signout process. It is very prudent that we make clear to <strong>NEVER, EVER, store passwords and email addresses in plain text formats!</strong> in production environments. And although storing sensitive data in a .php file is more secure than storing it in another text format, such as .txt, it is still not sufficient to prevent the information to be stolen by malicious individuals should a data breach occure. Sensitive information, especially passwords or personal id numbers such as social security numbers, should be stored in a database and <strong>encrypted using 256-sha.</strong></p>
-      <!--⚓-->
-      <p>As part of lab 11, we switch from using http authentication to using a standard html form to take user imput and pass it on to admin/admin.pho. We reworked admin.pho to now use the table in our MySQL database that contain multiple user account information, including the username, password, and their first and last names. We continue to use the session variable to keep an user signed in until they sign out or close the web browser. As part of lab 11, we also add a new session variable that contains the user's first and last names, which is shows up in the greetings text on the top site banner when an user is signed in. And as before, the site banner includes an option to sign out.</p>
-      <h4 id="lab12">Lab 12</h4>
-      <!--🚩--> <!--🚩-->
-      <p>Lab 12 focuses mainly on minor-improvements and poloshing work. No new features and functionality was added to this version of the gallery as part of this lab.</p>
-      <!--🔖--> 
-    </section>
-    <!--/🔖--> 
-  </section>
-  <section> <!--🔖-->
-    <h2>Features Overview</h2>
-    <!--🚩--> <!--🚩-->
-    <h3>New Features & additions</h3>
-    <!--🚩--> <!--🚩-->
-    <ul>
-      <!--📜--> <!--📜-->
-      <li>Sign in form is fully functional. Users can now enter their credentials directly on index.php and click sign-in.</li>
-      <li>Items in the gallery can be updated without needing to midify the source code. By adding or removing photographs on the server and their corresponding database entry, that change is immediately reflected in this version of the gallery. (Note, however, you may need to refresh the page to see the changes take effect.).</li>
-      <li>New startup modes added to index.php that allow users to enter a new mode called "Delete Mode". This mode, which can be accessed via the Admin Center menu, lists all the photographs in the gallery by their filenames. This mode isn't fully functional in this version and does not allow users to actually delete any photographs, as the the name of the mode otherwise would imply.</li>
-      <!--📜--> <!--📜-->
-    </ul>
-    <h3>Modifications to Existing Featurs</h3>
-    <!--🚩--> <!--🚩-->
-    <ul>
-      <!--📜--> <!--📜-->
-      <li>[PHP] Updates the website banner at the top, which is now greets the user's first and last name when they are logged in.</li>
-      <li>[CSS]Styling updayes</li>
-      <li>New security measures implented to prevent unauthorized access to restricted files, which now also includes access to the delete mode.</li>
-      <!--📜--> <!--📜-->
-    </ul>
-    <h3>Removed Featurs or Components</h3>
-    <!--🚩--> <!--🚩-->
-    <ul>
-      <!--📜--> <!--📜-->
-      <li>HTTP authentication has been removed in this version of the gallery. Users must use the sign-in form below the image gallery to sign in.</li>
-      <li>All code related to collecting user input via http authentication is removed from admin/index.php. All javascript redirection scripts and html code related to visual presentation have been moved to admin/admin.php. admin/index.php now only serves to redirect users to admin.pho.</li>
-      <!--📜--> <!--📜-->
-    </ul>
-    <h3>Bug fixes and minor improvements</h3>
-    <!--⚓-->
-    <p>Please view the HTML source code for this lab (Ctel+U on Windows) to see detailed list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
-    <!--🔖--> 
-  </section>
-  <section> <!--🔖-->
-    <h3>Features added in previous versions</h3>
-    <!--🚩--> <!--🚩-->
-    <section> <!--🔖-->
-      <h4>Version 3.0</h4>
-      <!--🚩--> <!--🚩-->
-      <h5>New Features & additions</h5>
-      <ul>
-        <!--📜--> <!--📜-->
-        <li>User login system using HTTP Authentication. You can read more about its implimentation here, insha'Allah (God Willing)</li>
-        <li>Brand new Admin Center UI, which is only displayed if the user is signed in.</li>
-        <li>[CSS] New styles added, including dark-theme varients of existing UI elements. These new dark theme is extensively used by the aforementioned Administation UI to give it a look in stark contrast to to the rest of the gallery. The idea is to easily differenciate between the regular portion of the gallery from the restricted, administration portion at a glance.</li>
-        <li>Activity logging is fully implimented. Successfull logins and failed login attempts are logged and can be viewed seperatrly from the Admin center. The administrator has the option to clear the activity log. The time and IP address from which the data was cleared is also logged.</li>
-        <li>PHP code to process  uploaded images selected by visitors and upload them to the server if it passes all validations</li>
-        <li>PHP Code to gracefully handle errors and failed validations while also providing informative error messages to the user and output error codes for the developer.</li>
-        <li>[PHP] Additional startup mode startup modes are added. They include the displying Admin Center UI, viewing activity log, which is displayed in place of the image gallery, and clearing the log data. These startup modes provide users different experiences and content based on contexts and permissions.</li>
-        <!--📜--> <!--📜-->
-      </ul>
-      <h5>Modifications to Existing Featurs</h5>
-      <!--🚩--> <!--🚩-->
-      <ul>
-        <!--📜--> <!--📜-->
-        <li>[PHP][CSS] Updates the website banner at the top, which is now displayed  with a light yellow accent color when the user is logged in.</li>
-        <li>[CSS]New styling optiond added</li>
-        <li>[CSS]Additinal improvements to styling of alert boxes as well as new categories of alert-box types added.</li>
-        <li>A sign in form is displayed in place of the photo upload UI when the user is not signed in.</li>
-        <li>New security measures implented to prevent unauthorized access to restricted files. You can read about what some of these measures are here.</li>
-        <!--📜--> <!--📜-->
-      </ul>
-      <h5>Removed Featurs or Components</h5>
-      <!--🚩--> <!--🚩-->
-      <ul>
-        <!--📜--> <!--📜-->
-        <li>photo_upload.php no longer generates debug data. Only the error code is sent to the alert box displaying friendly error message to the user in the event of an error</li>
-        <!--📜--> <!--📜-->
-      </ul>
-      <h5>Bug fixes and minor improvements</h5>
-      <!--🚩--> <!--🚩-->
-      <p>Please view the HTML source code for Lab 6 (Ctel+U on Windows) to see detailed list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
-      <!--/🔖--> 
-    </section>
-    <section> <!--🔖-->
-      <h4>Version 2.0</h4>
-      <!--🚩--> <!--🚩-->
-      <h5>New Features & additions</h5>
-      <!--🚩--> <!--🚩-->
-      <ul>
-        <!--📜--> <!--📜-->
-        <li>A new user interface for selecting and uploading images to the website</li>
-        <li>PHP code to process  uploaded images selected by visitors and upload them to the server if it passes all validations</li>
-        <li>PHP Code to gracefully handle errors and failed validations while also providing informative error messages to the user and output error codes for the developer.</li>
-        <li>[PHP] Multiple startup modes are now possible, providing users different experiences and content based on contexts and permissions.</li>
-        <li>Introducing Large Image Preview mode, which makes use of the aforementioned startup modes to either display a single, large, image, or the image gallery, based on context.</li>
-        <li>[PHP][CSS] New UI to identify logged in state. Banner will display letting you know you are logged in.</li>
-        <!--📜--> <!--📜-->
-      </ul>
-      <h5>Modifications to Existing Featurs</h5>
-      <!--🚩--> <!--🚩-->
-      <ul>
-        <!--📜--> <!--📜-->
-        <li>[CSS]New styling optiond added</li>
-        <li>[CSS]Improvements to styling of alert boxes as well as new categories of alert-box types added.</li>
-        <!--📜--> <!--📜-->
-      </ul>
-      <h5>Removed Featurs or Components</h5>
-      <!--🚩--> <!--🚩-->
-      <ul>
-        <!--📜--> <!--📜-->
-        <li>Gallery A from version 1.0 has been removed. Gallery B is now renamed to just "Photo Gallery".</li>
-        <!--📜--> <!--📜-->
-      </ul>
-      <h5>Bug fixes and minor improvements</h5>
-      <!--🚩--> <!--🚩-->
-      <p>Please view the HTML source code for Lab 5 (Ctel+U on Windows) to see a list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
-      <!--/🔖--> 
-    </section>
-    <section> <!--🔖-->
-      <h4>Version 1.0</h4>
-      <h5>New Features & Additions</h5>
-      <ul>
-        <!--📜--> <!--📜-->
-        <li>Now using CSS flexboxes (as opposed to floats) to layout gallery contents </li>
-        <li>The gallery now populates with content from a pre-defined, two-dimentional, array using PHP code instead of having its content hard-coded into the HTML, as was the case previously.</li>
-        <!--📜--> <!--📜-->
-      </ul>
-      <!--⚓-->
-      <p>While this is the first version of the gallery made for this course, it isn't the earliest revision. The very first appearance of this gallery was on my CMWEB 120 Lab 6 webpage, which you can see here. The purpose of that lab was to use HTML and CSS to create and style a photo gallery (in additon to work related to photo editing and color grading). And as such, each individual content of the gallery, from photos, captions, and hyperlinks are manually hard-coded in HTML.</p>
-      <!--⚓-->
-      <p>With version 1.0 of the Gallery made for this course I first took all of the code as is from the CMWEB120 lab and updated the text of the page with relavent content. Next, I made two significant modifications. The first is that I used the newer, more context-appropriate, css flexbox property instead of the css float property as I had previously done.</p>
-      <!--⚓-->
-      <p>The second change is that I transferred all of the manually written HTML for displaying the images, captions, and links into an associative array. Then, using PHP code, I had the gallery be automatically populated with content by iterating through the array using the foreach loop statement.</p>
-      <!--🔖--> 
-    </section>
-    <!--/🔖--> 
-  </section>
-  <section> <!--🔖-->
-    <h2>Main Application</h2>
-    <!--🚩--> <!--🚩-->
-    <p>Below is a gallery I originally created earlier as part of "<a href="/sites/cmweb120/labs/lab6/lab6.html">CMWEB 120 lab 6</a>" using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that generates the same gallery in a much more effecient manner.</p>
-    <!--⚓-->
-    <p>This application uses PHP code to grab the necessary file metadata from a MySQL database, from which it then creates a two-dimentional array that is used to populate the image gallery with content.</p>
-    <!--🔖--> 
-  </section>
-  </div>
-  <!--🍦-2-🍦-->
-  </div>
-  <!--🍨-1-🍨--> 
-</article>
-<!--====================
+      <section> <!--🔖-->
+        <h2 id="concepts">New Concepts</h2>
+        <!--🚩--> <!--🚩-->
+        <p>We'll start by first highlighting the main objective for each of the labs this gallery covers. Later we will look at the individual features of this version of the gallery, insha’Allah.</p>
+        <section> <!--🔖-->
+          <h3 id="lab10">Lab 10</h3>
+          <!--🔗--> <!--🔗-->
+          <div class="note">Looking for lab 9? <a href="../lab7">Click here</a> </div>
+          <!--🔗--> <!--🔗-->
+          <p>With lab 10, we begin our effort to migrate the gallery to a database. We are using MySQL datase, where we created a table called "photographs". This table holds the names and metadata for all of the photos that are to be displayed in the gallery.</em></p>
+          <!--⚓-->
+          <p>We started by moving the existing, hard-coded, associative array (discussed here) of photo graphs to our photographs table. Recall that previously, our gallery application used made use of a <strong>two dimentional array</strong> where the <em>first</em> array holds individual photographs, with the <em>second</em> array containing the metadata for each of the images, including name and caption. Read more about two dimentional arrays here.</p>
+          <!--⚓-->
+          <p>Our photographs table essentially mirrors the two dimentional array, with the rows representing the first array and the columns representing the second array. Hence, columns, form the most part, hold the photo metadat--I say for the most part because the column also hold the photograph ID, which isn't strictly a metadata for the photograph in themselves.</p>
+          <!--⚓-->
+          <P>With version 3 and earlier, the array our gallery uses a two dimentional array that is hard-coded. And although with version 4 we are using a database table in the back-end, how the gallery itself operates fundimentally hasn't changed. We still have our two-dimentional array; only this time, we make a mysqli() query to first get the data from our photographs table and then generate the associative array at runtime. So, as far as the gallery is concerned, nothing has really changed: it still points to an array like before, except that this new array isn't hard-coded but dynamically generated</P>
+          <!--/🔖--> 
+        </section>
+        <section> <!--🔖-->
+          <h3>Labs 11 & 12</h3>
+          <!--🚩--> <!--🚩-->
+          <h4 id="lab11">Lab 11</h4>
+          <!--🚩--> <!--🚩-->
+          <p>We now move on to the user authentication for lab 11. Previously, we discussed how we used an http authentication to log the user in if they had the correct credentials. What we didnt explicitely say is that the information our application used to determine if the username and password entered by the user is stored in the source code of admin/admin.php (which handles all of the sign-in and signout process. It is very prudent that we make clear to <strong>NEVER, EVER, store passwords and email addresses in plain text formats!</strong> in production environments. And although storing sensitive data in a .php file is more secure than storing it in another text format, such as .txt, it is still not sufficient to prevent the information to be stolen by malicious individuals should a data breach occure. Sensitive information, especially passwords or personal id numbers such as social security numbers, should be stored in a database and <strong>encrypted using 256-sha.</strong></p>
+          <!--⚓-->
+          <p>As part of lab 11, we switch from using http authentication to using a standard html form to take user imput and pass it on to admin/admin.pho. We reworked admin.pho to now use the table in our MySQL database that contain multiple user account information, including the username, password, and their first and last names. We continue to use the session variable to keep an user signed in until they sign out or close the web browser. As part of lab 11, we also add a new session variable that contains the user's first and last names, which is shows up in the greetings text on the top site banner when an user is signed in. And as before, the site banner includes an option to sign out.</p>
+          <h4 id="lab12">Lab 12</h4>
+          <!--🚩--> <!--🚩-->
+          <p>Lab 12 focuses mainly on minor-improvements and poloshing work. No new features and functionality was added to this version of the gallery as part of this lab.</p>
+          <!--🔖--> 
+        </section>
+        <!--/🔖--> 
+      </section>
+      <section> <!--🔖-->
+        <h2>Features Overview</h2>
+        <!--🚩--> <!--🚩-->
+        <h3>New Features & additions</h3>
+        <!--🚩--> <!--🚩-->
+        <ul>
+          <!--📜--> <!--📜-->
+          <li>Sign in form is fully functional. Users can now enter their credentials directly on index.php and click sign-in.</li>
+          <li>Items in the gallery can be updated without needing to midify the source code. By adding or removing photographs on the server and their corresponding database entry, that change is immediately reflected in this version of the gallery. (Note, however, you may need to refresh the page to see the changes take effect.).</li>
+          <li>New startup modes added to index.php that allow users to enter a new mode called "Delete Mode". This mode, which can be accessed via the Admin Center menu, lists all the photographs in the gallery by their filenames. This mode isn't fully functional in this version and does not allow users to actually delete any photographs, as the the name of the mode otherwise would imply.</li>
+          <!--📜--> <!--📜-->
+        </ul>
+        <h3>Modifications to Existing Featurs</h3>
+        <!--🚩--> <!--🚩-->
+        <ul>
+          <!--📜--> <!--📜-->
+          <li>[PHP] Updates the website banner at the top, which is now greets the user's first and last name when they are logged in.</li>
+          <li>[CSS]Styling updayes</li>
+          <li>New security measures implented to prevent unauthorized access to restricted files, which now also includes access to the delete mode.</li>
+          <!--📜--> <!--📜-->
+        </ul>
+        <h3>Removed Featurs or Components</h3>
+        <!--🚩--> <!--🚩-->
+        <ul>
+          <!--📜--> <!--📜-->
+          <li>HTTP authentication has been removed in this version of the gallery. Users must use the sign-in form below the image gallery to sign in.</li>
+          <li>All code related to collecting user input via http authentication is removed from admin/index.php. All javascript redirection scripts and html code related to visual presentation have been moved to admin/admin.php. admin/index.php now only serves to redirect users to admin.pho.</li>
+          <!--📜--> <!--📜-->
+        </ul>
+        <h3>Bug fixes and minor improvements</h3>
+        <!--⚓-->
+        <p>Please view the HTML source code for this lab (Ctel+U on Windows) to see detailed list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
+        <!--🔖--> 
+      </section>
+      <section> <!--🔖-->
+        <h3>Features added in previous versions</h3>
+        <!--🚩--> <!--🚩-->
+        <section> <!--🔖-->
+          <h4>Version 3.0</h4>
+          <!--🚩--> <!--🚩-->
+          <h5>New Features & additions</h5>
+          <ul>
+            <!--📜--> <!--📜-->
+            <li>User login system using HTTP Authentication. You can read more about its implimentation here, insha'Allah (God Willing)</li>
+            <li>Brand new Admin Center UI, which is only displayed if the user is signed in.</li>
+            <li>[CSS] New styles added, including dark-theme varients of existing UI elements. These new dark theme is extensively used by the aforementioned Administation UI to give it a look in stark contrast to to the rest of the gallery. The idea is to easily differenciate between the regular portion of the gallery from the restricted, administration portion at a glance.</li>
+            <li>Activity logging is fully implimented. Successfull logins and failed login attempts are logged and can be viewed seperatrly from the Admin center. The administrator has the option to clear the activity log. The time and IP address from which the data was cleared is also logged.</li>
+            <li>PHP code to process  uploaded images selected by visitors and upload them to the server if it passes all validations</li>
+            <li>PHP Code to gracefully handle errors and failed validations while also providing informative error messages to the user and output error codes for the developer.</li>
+            <li>[PHP] Additional startup mode startup modes are added. They include the displying Admin Center UI, viewing activity log, which is displayed in place of the image gallery, and clearing the log data. These startup modes provide users different experiences and content based on contexts and permissions.</li>
+            <!--📜--> <!--📜-->
+          </ul>
+          <h5>Modifications to Existing Featurs</h5>
+          <!--🚩--> <!--🚩-->
+          <ul>
+            <!--📜--> <!--📜-->
+            <li>[PHP][CSS] Updates the website banner at the top, which is now displayed  with a light yellow accent color when the user is logged in.</li>
+            <li>[CSS]New styling optiond added</li>
+            <li>[CSS]Additinal improvements to styling of alert boxes as well as new categories of alert-box types added.</li>
+            <li>A sign in form is displayed in place of the photo upload UI when the user is not signed in.</li>
+            <li>New security measures implented to prevent unauthorized access to restricted files. You can read about what some of these measures are here.</li>
+            <!--📜--> <!--📜-->
+          </ul>
+          <h5>Removed Featurs or Components</h5>
+          <!--🚩--> <!--🚩-->
+          <ul>
+            <!--📜--> <!--📜-->
+            <li>photo_upload.php no longer generates debug data. Only the error code is sent to the alert box displaying friendly error message to the user in the event of an error</li>
+            <!--📜--> <!--📜-->
+          </ul>
+          <h5>Bug fixes and minor improvements</h5>
+          <!--🚩--> <!--🚩-->
+          <p>Please view the HTML source code for Lab 6 (Ctel+U on Windows) to see detailed list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
+          <!--/🔖--> 
+        </section>
+        <section> <!--🔖-->
+          <h4>Version 2.0</h4>
+          <!--🚩--> <!--🚩-->
+          <h5>New Features & additions</h5>
+          <!--🚩--> <!--🚩-->
+          <ul>
+            <!--📜--> <!--📜-->
+            <li>A new user interface for selecting and uploading images to the website</li>
+            <li>PHP code to process  uploaded images selected by visitors and upload them to the server if it passes all validations</li>
+            <li>PHP Code to gracefully handle errors and failed validations while also providing informative error messages to the user and output error codes for the developer.</li>
+            <li>[PHP] Multiple startup modes are now possible, providing users different experiences and content based on contexts and permissions.</li>
+            <li>Introducing Large Image Preview mode, which makes use of the aforementioned startup modes to either display a single, large, image, or the image gallery, based on context.</li>
+            <li>[PHP][CSS] New UI to identify logged in state. Banner will display letting you know you are logged in.</li>
+            <!--📜--> <!--📜-->
+          </ul>
+          <h5>Modifications to Existing Featurs</h5>
+          <!--🚩--> <!--🚩-->
+          <ul>
+            <!--📜--> <!--📜-->
+            <li>[CSS]New styling optiond added</li>
+            <li>[CSS]Improvements to styling of alert boxes as well as new categories of alert-box types added.</li>
+            <!--📜--> <!--📜-->
+          </ul>
+          <h5>Removed Featurs or Components</h5>
+          <!--🚩--> <!--🚩-->
+          <ul>
+            <!--📜--> <!--📜-->
+            <li>Gallery A from version 1.0 has been removed. Gallery B is now renamed to just "Photo Gallery".</li>
+            <!--📜--> <!--📜-->
+          </ul>
+          <h5>Bug fixes and minor improvements</h5>
+          <!--🚩--> <!--🚩-->
+          <p>Please view the HTML source code for Lab 5 (Ctel+U on Windows) to see a list of bug fixes, minor improvements, and post-release patch notes along with other documentation at the bottom of the source code file!</p>
+          <!--/🔖--> 
+        </section>
+        <section> <!--🔖-->
+          <h4>Version 1.0</h4>
+          <h5>New Features & Additions</h5>
+          <ul>
+            <!--📜--> <!--📜-->
+            <li>Now using CSS flexboxes (as opposed to floats) to layout gallery contents </li>
+            <li>The gallery now populates with content from a pre-defined, two-dimentional, array using PHP code instead of having its content hard-coded into the HTML, as was the case previously.</li>
+            <!--📜--> <!--📜-->
+          </ul>
+          <!--⚓-->
+          <p>While this is the first version of the gallery made for this course, it isn't the earliest revision. The very first appearance of this gallery was on my CMWEB 120 Lab 6 webpage, which you can see here. The purpose of that lab was to use HTML and CSS to create and style a photo gallery (in additon to work related to photo editing and color grading). And as such, each individual content of the gallery, from photos, captions, and hyperlinks are manually hard-coded in HTML.</p>
+          <!--⚓-->
+          <p>With version 1.0 of the Gallery made for this course I first took all of the code as is from the CMWEB120 lab and updated the text of the page with relavent content. Next, I made two significant modifications. The first is that I used the newer, more context-appropriate, css flexbox property instead of the css float property as I had previously done.</p>
+          <!--⚓-->
+          <p>The second change is that I transferred all of the manually written HTML for displaying the images, captions, and links into an associative array. Then, using PHP code, I had the gallery be automatically populated with content by iterating through the array using the foreach loop statement.</p>
+          <!--🔖--> 
+        </section>
+        <!--/🔖--> 
+      </section>
+      <section> <!--🔖-->
+        <h2>Main Application</h2>
+        <!--🚩--> <!--🚩-->
+        <p>Below is a gallery I originally created earlier as part of "<a href="/sites/cmweb120/labs/lab6/lab6.html">CMWEB 120 lab 6</a>" using HTML and CSS. For this lab, I have ported over the gallery here, but this time, I switched out all of the manual HMTL markups for laying out the gallery and rebuilt it using PHP code that generates the same gallery in a much more effecient manner.</p>
+        <!--⚓-->
+        <p>This application uses PHP code to grab the necessary file metadata from a MySQL database, from which it then creates a two-dimentional array that is used to populate the image gallery with content.</p>
+        <!--🔖--> 
+      </section>
+    </article>
+    <!--====================
 	 📃 END OF ARTICLE 📃
 	========================--> 
+  </div>
+  <!--🍦-2-🍦--> 
+</div>
+<!--🍨-1-🍨--> 
 <!--=================================
 	 📕 END OF CONTENT SEGMENT A 📕
 	=================================--> 
@@ -806,8 +806,9 @@ Content in this section is restricted and requires elevated permissions to view.
 include 'inc/config.php';
 include 'layouts/footer.php';
 ?>
-<!--🌐 End of HTML Document 🌐--> 
-
+<!--🌐 End of HTML Document 🌐-->
+</body>
+</html>
 <!--
 Thanks for stopping by the back-stage!
 
@@ -830,37 +831,53 @@ LAB OBJECTIVE: To build a simple calculator based on predefined specs using PHP 
 
 This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
 
-📣 What’s New in v21
+📣 What’s New in v24
 ----------------------------
- - Version 21 is a major upgrade. Along with dozens of minor improvements and fixes, it is packed with several new features and enhancements! It's one of the biggest updates yet.
- - [CSS] several new styles of alert messages that ads to the variety and more wide range of scenarios.
- - [CSS] Feedback-form now uses flexbox.
- - [CSS] Brand new lime button. Great for uploads and/or sign-ups.
- - [CSS] Updates and quality of life improvements to the styling throughout.
- - [PHP] First customization features have been added. A new config file allows you to set the format of the copyright date.
- - [PHP] Multiple startup modes are now possible, providing users different experiences and content based on contexts and permissions.
- - [PHP][CSS] New UI to identify logged in state. Banner will display letting you know you are logged in.
- - Bug fixes and quality improvements.
- - Minor updates to documentation.
- - Updated emoji based markers and designators in the in-line documentation.
- - Minimum system requirements have been revised.
+ - 
 
-⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects.
+⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects. This DOES NOT pertain to the PATCH NOTES below, which may document changes of any type that are made after initial publication.
 
-📝 Patch Notes for 19.0
+
+📝 Patch Notes for 24.0
 --------------------------
-20.0 (Update 2)
-Patch 1.20.1227c
- - [PHP] Main document broken down into multiple php files and connected using php includes.
- - Updated document in-line comment to better accomidate php include statements.
- - Updates to the sidebar navigation
+24.0 (update 5)
+Patch 1.21.127f
+ - Fixed an issue which caused the resulting HTML generated by the PHP interpreter would fail w3 validation.
+ - Updates to the documentation
 
-20.0 (Update 1)
-Patch 1.20.1217b
- - Fixed an issue where large number of documentation text as well as some HTML markups had several duplicates.
+24.0 (Update 4)
+Patch 1.21.117e
+ - Fixed an issue where some SVG images may appear overly large on high resolution displays or when the site is zoomed below 100%.
+ - Updated incorrect button text
+ - Updates to the sidebar
+ - Button to jump to the gallery
 
-21.0 (Gold)
-Patch 1.20.1216a
+24.0 (Update 3)
+Patch 1.21.117c
+ - Udates to main and footer nav-bars which enables the "Project" menu item.
+ - Updates to the footer nav-bar that updates the link for the "Labs" menu item.
+
+24.0 (Update 2)
+Patch 1.21.115c
+ - [PHP] Backported some of the quality-of-life improvements from later versions of the Photo Gallery application.
+ - [PHP] Cumulative bug fixes and improvements to the sign-in experience
+ - [PHP] Cumulative bug fixes for the Photo Gallery application
+ - Content updates, with a few additions and general improvements to existing text accross the board.
+ - Updated sidebar links
+ - Fixed an issue where certain graphics would become disproportionately large on high-resolution displays or when the site viewed at zoom levels significanly below 100%.
+ - Fixed an issue where the website logo was not properly alligned.
+Patch 1.21.114b
+ - [PHP] Cumulative bug fixes and improvements to the sign-in experience
+ - [PHP] Cumulative bug fixes for the Photo Gallery application
+
+Patch 1.21.129a (Udate 1)
+ - Major updates to the in-line documentation. Emojie-based markers are now more complete and consistent.
+ - General documentation updates
+ - [PHP] Updates and improvements to in-line comments
+ - [PHP] Bug fixes and general improvements
+
+24.0 (Gold)
+Patch 1.20.1217a
  - Initial publication
 
 *See documentation on version numbers for more info.

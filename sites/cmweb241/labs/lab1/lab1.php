@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 :::::::::::::::::::::::::::::::::::::::::::::::::::
      ⭐️ Welcome to the CMWEB Lab Source Code!
@@ -11,8 +12,8 @@ System requirements, lab description, documentation, and license information ava
 ℹ About this HTML Document
 ---------------------------
 CMWEB Student Site Webpage
-Version 19.0.20.1209 (Update 2)
-Patch version: 1.20.1210b
+Version 19.0.20.1213 (Update 4)
+Patch version: 1.21.127d
 
 (See documentation below for changelog)
 
@@ -68,7 +69,6 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
 <!-- /❓ PHP ❓ -->
 
 <!-- 🌐 START OF HTML DOCUMENT 🌐-->
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -79,8 +79,8 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
 <meta name="instructor" content="Shari Tripp">
 <meta name="author" content="Nazmus Shakib Khandaker
       (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)">
-<meta name="version" content="19.0.20.1209 (Update 2)">
-<meta name="patch" content="1.20.1210b">
+<meta name="version" content="19.0.20.1213 (Update 4)">
+<meta name="patch" content="1.21.127d">
 <link rel="stylesheet" type="text/css" href="lab1.css">
 </head>
 
@@ -96,7 +96,7 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
     <!--Float 1 -->
     <div class="header-box"> 
       <!--Site Logo--> <a href="../../index.html" class="left-align"> <img src="../../assets/graphics/logo-header.png"
-            alt="NazmusLabs Logo" title="NazmusLabs Logo" class="resize-85-percent"> </a> 
+            alt="NazmusLabs Logo" title="NazmusLabs Logo" class="resize-85-percent" style="max-height: 125px; width: auto" > </a> 
       <!--/ Site Logo--> 
     </div>
     <!--/ Float 1--> 
@@ -128,8 +128,8 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
       <ul class="right-align">
         <!--🔗 Click!-->
         <li><a class="menu-button" href="../../index.html">Home</a></li>
-        <!--🔗🚫 Click!-->
-        <li class="menu-button-disabled">Projects</li>
+        <!--🔗 Click!-->
+        <li><a class="menu-button" href="/sites/cmweb241/projects/">Project</a></li>
         <!--🔗🚫 Click!-->
         <li class="menu-button-disabled">Labs</li>
         <!--🔗 Click!-->
@@ -195,6 +195,22 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
           <li><a href="../lab4/lab4.php"><small>CMWEB 241 Lab 4</small></a></li>
           <!--🔗 Click!-->
           <li><a href="../lab5/lab5.php"><small>CMWEB 241 Lab 5</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab6/"><small>CMWEB 241 Lab 6</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab7/"><small>CMWEB 241 Lab 7</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab8/"><small>CMWEB 241 Lab 8</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab9/"><small>CMWEB 241 Lab 9</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../labx/"><small>CMWEB 241 Lab 10</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab11/"><small>CMWEB 241 Lab 11</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="../lab12/"><small>CMWEB 241 Lab 12</small></a></li>
+          <!--🔗 Click!-->
+          <li><a href="/sites/cmweb241/labs/lab13/"><small>CMWEB 241 Lab 13 🍰</small></a></li>
         </ul>
         <!--/🔗 Menu Items-->
         <p> 
@@ -216,11 +232,11 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
         <!--📢 Content Intro 📢-->
         <div class="page-intro"> <img src="assets/graphics/puzzle.svg"
 				 alt="A puzzle piece"
-				 class="tripple-float" >
+				 class="tripple-float" style="max-height: 300px; width: auto" >
           <p>This first lab involves building a Cricket Chirp generator using PHP server-side scripting. This application calculates the temperature (in degrees Fahrenheit) from the number of cricket chirps observed in 14 seconds. The goal of this lab is to become familiar with the use of taking input from the user through HTML forms, using the data collected to perform some mathemetical operation, and displaying the output to the user by printing its value on the web page. The lab also touches on catching and gracefully handling common user errors.</p>
           <img src="assets/graphics/pine.svg"
 				 alt="leaves, pine cones, and bells"
-				 class="center-image" > </div>
+				 class="center-image" style="max-height: 500px; width: auto" > </div>
         <!--/📢 Content Intro 📢--> 
       </section>
       <!--🔖--> 
@@ -297,7 +313,7 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
       <!--Float 1-->
       <div class="double-float"> 
         <!--🔗 Click!--> <a class="button-ornate" href="../../index.html"> <span class="button-text-decoration">↵
-        CMWEB 120 Home</span> </a> </div>
+        CMWEB 241 Home</span> </a> </div>
       <!--/ Float 1--> 
       <!--Float 2-->
       <div class="double-float"> 
@@ -379,8 +395,10 @@ if ( filter_has_var( INPUT_POST, 'submit' ) ) {
 </div>
 <!--==============================
 	 📄 END OF FOOTER SECION B 📄
-	==============================--> 
-<!--🌐 End of HTML Document 🌐--> 
+	==============================-->
+</body>
+</html>
+<!--🌐 End of HTML Document 🌐-->
 <!--
 Thanks for stopping by the back-stage!
 
@@ -417,6 +435,17 @@ This student site was originally created for the CMWEB program at Illinois Centr
 
 📝 Patch Notes for 19.0
 --------------------------
+19.0 (update 4)
+Patch 1.21.127d
+ - Fixed an issue which caused the resulting HTML generated by the PHP interpreter would fail w3 validation.
+ - Fixed an issue where some SVG images may appear overly large on high resolution displays or when the site is zoomed below 100%.
+ - Updated incorrect button text
+ - Updates to the sidebar
+ - Fixed an issue where the website logo was not properly alligned.
+ - Fixes and updates to ducmentation.
+
+   ***
+
 19.0 (Update 3)
 Patch 1.20.1217c
  - Fixed an issue where large number of documentation text as well as some HTML markups had several duplicates.
