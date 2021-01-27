@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*Import file #5*/
+/* CSS > CLASSES > Layouts > Conditions */
+@media(max-width: 800px) {
+  /* ❔ The purpose of this is to accomidate smaller devices, large zoom size, or small screen space in general. At any time the web page goes below 600 pixels, floats are disabled or reduced to ensure maximum readability */
+  .header-box {
+    width: 100%;
+    float: none;
+  }
+  .page-intro {
+    width: 100%;
+    float: none;
+  }
+  .sidebar {
+    width: 100%;
+    float: none;
+  }
+  .double-float {
+    width: 100%;
+    float: none;
+  }
+  .tripple-float {
+    width: 100%;
+    float: none;
+  }
+  .gallery {
+    width: 100%;
+    float: none;
+  }
+  .menu-horizontal {
+    max-height: none;
+  }
+  .nav-bar {
+    max-height: none;
+  }
+}

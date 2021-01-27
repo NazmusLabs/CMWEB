@@ -42,9 +42,10 @@ $log_path_unauthorized = urlencode( "admin/unauthorized.txt" );
 $alert_class = $is_authorized ? 'alert-success-light' : 'alert-neutral-light';
 $command = $_GET[ 'command' ];
 $username = $_SESSION[ 'user' ];
+$input = $_GET['input'];
 
 //⌛Loading saved settings...
-REQUIRE 'inc/config.php';
+REQUIRE 'includes/config.php';
 
 //⌛Setting Privilages...
 if ( isset( $_SESSION[ 'usergroup' ] ) && $_SESSION[ 'usergroup' ] === 'administrator' ) {
@@ -67,67 +68,28 @@ $result = mysqli_query( $conn, $query );
 
 //⌛Pre-processing page content...
 if ( $status != '' ) {
-
-  if ( $status == 'success' ) {
-    $alert_class = 'alert-success-medium';
-    $alert = '✅ Success! The operation comleted successfully.';
-    $error_code = '';
-
-  } else {
-
-
-    switch ( $status ) {
-      case 'empty':
-        $alert = "<strong>File upload error:<br> </strong><em>\"Oops, you didn't select any images to upload. Select the \"browse\" button to choose an image and then click \"Upload\".\"</em>";
-        $error_code = 'ERROR: ' . $status;
-        $alert_class = 'alert-error';
-        break;
-      case 'fatal':
-        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"An error occured while trying to uploading this file. Try again later or try uploading a different file.\"</em>";
-        $alert_class = 'alert-error-light';
-        $error_code = 'ERROR: ' . $status;
-        break;
-      case 'ext':
-        $alert = "⚠️ <strong><strong>Sorry, there was a problem uploading your file:<br></strong></strong> <em>\"The file type you selected is not allowed. Please upload a PNG, jpeg (.jpg, .jpeg) or a GIF (.gif) file.\"</em>";
-        $alert_class = 'alert-error-light';
-        $error_code = 'ERROR: ' . $status;
-        break;
-      case 'size':
-        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"The file you selected is too large. Please upload an image that is 1MB or less.\"</em>";
-        $alert_class = 'alert-error-light';
-        $error_code = 'ERROR: ' . $status;
-        break;
-      case 'conflict':
-        $alert = "⚠️ <strong>Sorry, there was a problem uploading your file:<br></strong> <em>\"There's already a photo what that file name. Please rename the photo and try uploading again.\"</em>";
-        $alert_class = 'alert-error-light';
-        $error_code = 'ERROR: ' . $status;
-        break;
-      case 'credentials_invalid':
-        $alert = "<strong>Sorry, we couldn't sign you in:<br></strong> <em>\"The user name and/or password you entered did not match our records.\"</em>";
-        $alert_class = 'alert-error';
-        $error_code = 'ERROR: ' . $status;
-        break;
-      case 'elevation_required':
-        $alert = "<strong>Operation Canceled: Needs Elevated Privilages <br></strong> <em>You are not authorized to perform that action. Please sign in first.</em>";
-        $alert_class = 'alert-error';
-        $error_code = 'ERROR: ' . $status;
-        break;
-      case 'access_denied':
-        $alert = "<strong>Operation Canceled: Access Denied <br></strong> <em>You are not authorized to view that item. Please sign in first.</em>";
-        $alert_class = 'alert-error';
-        $error_code = 'ERROR: ' . $status;
-        break;
-      case 'access_granted':
-        $alert = "<strong>Sign-in Successful!<br></strong> <em>You are currently signed in as Administrator.</em>";
-        $alert_class = 'alert-success';
-        $error_code = '';
-        break;
-      default:
-        $alert = "⚠️ <strong>Something went wrong...<br> </strong><em>\"An error occured while trying to process your request. Please try again later.\"</em>";
-        $alert_class = 'alert-error-light';
-        $error_code = 'ERROR: ' . $status;
-    }
+  switch ( $status ) {
+    case 'empty':
+      $alert = 'You must first enter a value.';
+      $error_code = 'ERROR: ' . $status;
+      $alert_class = 'alert-error';
+      break;
+    case 'not_numeric':
+      $alert = 'Please enter a number.';
+      $alert_class = 'alert-error';
+      $error_code = 'ERROR: ' . $status;
+      break;
+    case 'out_of_bounds':
+      $alert = "Values less than 1 or greater than 2 won't work. Please try again.";
+      $alert_class = 'alert-error';
+      $error_code = 'ERROR: ' . $status;
+      break;
+    default:
+      $alert = "⚠️ <strong>Something went wrong...<br> </strong><em>\"An error occured while trying to process your request. Please try again later.\"</em>";
+      $alert_class = 'alert-error-light';
+      $error_code = 'ERROR: ' . $status;
   }
+
 } else {
   $alert = $is_authorized ? "✅ You are currenlty signed in and can upload images to the gallery, insha'Allah" : '⚠️ You are currently not signed in.';
 
@@ -147,54 +109,22 @@ This next code is processing dynamic UI related code. Depending on the status of
 /* Photo Gallery /*
 /*🥫---🥫        🥫---🥫*/
 
-//Checking for parameters...
-if ( isset( $_GET[ 'encoded_path' ] ) ) { //Page will strtup in "single image" mode, Insha'Allah
+//⌛Checking for parameters...
+if ( isset( $_GET[ 'encoded_path' ] ) && $_GET[ 'encoded_caption' ] != '' ) { //❔ Page will strtup in "single image" mode, Insha'Allah
 
   $path_decoded = urldecode( $_GET[ 'encoded_path' ] );
+  $caption_decoded = urldecode( $_GET[ 'encoded_caption' ] );
 
-  if ( isset( $_GET[ 'encoded_caption' ] ) ) {
-    $caption_decoded = urldecode( $_GET[ 'encoded_caption' ] );
+  $lily_heading = "Image Preview";
+  $lily_message = "This large view of the photo is generated from PHP code, based on the information provided to it through the URL.";
 
-    $lily_heading = "Image Preview";
-    $lily_message = "This large view of the photo is generated from PHP code, based on the information provided to it through the URL.";
+  $display_image = "<div class=\"fullsize-image\"><img src=\"$path_decoded\" alt=\"flowers\" style=\"width: 100%; hight: auto;\" ><div class=\"large-caption\"><p> $caption_decoded</p><br><div><a href=\"start.php?#app1\" class=\"button-ornate\"><span class=\"button-text-decoration\">Return to Gallery</span></a></div></div></div>";
 
-    $display_image = "<div class=\"fullsize-image\"><img src=\"$path_decoded\" alt=\"flowers\" style=\"width: 100%; hight: auto;\" ><div class=\"large-caption\"><p> $caption_decoded</p><br><div><a href=\"index.php?#app1\" class=\"button-ornate\"><span class=\"button-text-decoration\">Return to Gallery</span></a></div></div></div>";
-
-  } else {
-    //⌛loading log file
-    $log_path_decoded = urldecode( $_GET[ 'encoded_path' ] );
-
-    $lily_heading = 'Activity Log';
-    if ( $is_authorized ) {
-      $lily_message = 'Records of previous login attempts are displayed below, based on the selected filter.';
-
-      $file = fopen( $log_path_decoded, "r" )or exit( "File read error: <em>there was a problem opening the requested file</em>." );
-
-      $login_log = '<p style="color: yellow; font-family: Consolas;">';
-
-      /* 📖 Documentation
-      ---------------------
-      Loops through processing one character or line at a time―depending on the function―until it reaches end of file.*/
-      while ( !feof( $file ) ) {
-        //$new_mama_qq = $mama_qq . $mama_qq;
-        $login_log = $login_log . fgets( $file ) . "<br>"; //gets single line
-      }
-      //end of if statement
-      fclose( $file );
-      $login_log = $login_log . '</p>';
-    } else {
-      $sys_notif = 'You are anot authorized to access that. Please sign in first.';
-      $lily_message = '<em>You do not have permission to view this content</em>.';
-    }
-    $return_button = '<a href="index.php#app1" class="button-ornate">Return to Gallery</a> <a href="index.php#admin" class="button-ornate">Admin Center</a>' . " <a href=\"admin/admin.php?command=$command\" class=\"button-ornate-red\">Clear History</a>";
-
-  }
-
-} else { // Page will load in standard mode & display gallery, Insha'Allah.
+} else { //❔ Page will load in standard mode & display gallery, Insha'Allah.
 
   //⌛Getting things ready...
   $lily_heading = "Photo Gallery";
-  $lily_message = !$_GET[ 'delete' ] ? 'This photo gallery is generated using PHP code. Click on any of the images below to view a larger version of it.' : 'You are currently in delete mode. Select a photo to delete it.';
+  $lily_message = 'This photo gallery is generated using PHP code. Click on any of the images below to view a larger version of it.';
 
   //📸Smile!
   //⌛Fetching data from database & allocating images...
@@ -205,69 +135,9 @@ if ( isset( $_GET[ 'encoded_path' ] ) ) { //Page will strtup in "single image" m
 /*🥫---🥫        🥫---🥫*/
 /* End of Photo Gallery */
 
-/* User Forms /*
-/*🧁---🧁        🧁---🧁*/
-
-$daisy_message = $is_authorized ? "Welcome to the image upload center! Because you are signed in, you can now upload images to the site, Insha'Allah! Simply select the browse button to choose an image and then click Upload." : 'You must sign in before you can upload photos to the gallery. Please enter your username and password; then select "Sign In" to continue.';
-
-$daisy_form1 = "
-            <h1 style=\"text-align: center\"> Sign in </h1>
-            <!--📨 Form-->
-            <form class=\"feedback-form\" action=\"admin/admin.php\" method=\"POST\" style=\"max-width: 20em;\">
-              <!--💐 -4- 💐--> 
-              <div class=\"form-group\">
-                <label for=\"username\">Username</label>
-                <input type=\"text\" id=\"username\" name=\"username\" />
-                <!--❔ Preserves previously enter value--> 
-              </div> <!--💐 -4- 💐--> 
-              <!--🪁 -4- 🪁--> 
-              <div class=\"form-group\"> 
-                <label for=\"password\">Password</label>
-                <input type=\"password\" id=\"password\" name=\"password\" />
-              </div> <!--🪁 -4- 🪁--> 
-              <!--🍭 -4- 🍭--> 
-              <div>
-                <input class=\"button\" type=\"submit\" value=\"Sign in\" id=\"login\" name=\"login\" >
-                <input class=\"button\" type=\"reset\" value=\"Clear Form\" name=\"reset-button\" id=\"reset\" />
-              </div> <!--🍭 -4- 🍭--> 
-            </form> <!--/📨 Form-->
-          </div>
-          <br >
-          ";
-$daisy_form2 = '
-            <!--🌻 -4- 🌻--> 
-            <div> 
-                <h2>Upload Photos</h2>
-                <!--📨 Form-->
-                <form class="upload-form" action="admin/photo_upload.php" method="POST" enctype="multipart/form-data" >
-                  <!--🌺 -5- 🌺--> 
-                  <div class="button-wrap"> 
-                    <label class="button-lime" for="file">Browse Files...</label>
-                    <input type="file" name="file" id="file">
-                    <button class="button-wire" type="submit" name="submit">Upload</button>
-                  </div> <!--🌺 -5- 🌺--> 
-                </form> <!--/📨 Form--> 
-              </div> <!--🌻 -4- 🌻--> 
-              <br>';
-
-/*🧁---🧁        🧁---🧁*/
-/* End of User Forms */
-
 /* Administration Menu/*
 /*☕---☕        ☕---☕*/
-$admin_menu =
-  "
-    <h3>Administration Menu</h3>
-    <ul>
-    <!--📜--> <!--📜-->
-      <li><a href=\"index.php?encoded_path=$log_path_unauthorized&command=clear-unauthorized.txt#app1\">View Unauthorized sign-in attempts</a></li>
-      <li><a href=\"index.php?encoded_path=$log_path_authorized&command=clear-authorized.txt#app1\">View Authorized sign-in attempts</a></li>
-      <li><a href=\"#app2\">Upload photos</a></li>
-      <li><a href=\"admin/delete_photo.php\">Delete Photos</a></li>
-      <li><a href=\"index.php#app1\">Go to Photo Gallery</a></li>
-    <!--📜--> <!--📜-->
-    </ul>
-    ";
+
 /*☕---☕        ☕---☕*/
 /* End of Administration Menu */
 
@@ -291,7 +161,7 @@ mysqli_close( $conn );
       (nk308@lab.icc.edu, nazmus@outlook.com, @NazmusLabs)">
 <meta name="version" content="21.0.20.1216 (Gold)">
 <meta name="patch" content="1.20.1217a">
-<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
@@ -304,7 +174,7 @@ mysqli_close( $conn );
 	 🚥 START OF HEADER SECION 🚥
 	==============================-->
 
-<?php //include 'layouts/header.php' ?>
+<?php include 'includes/header.php' ?>
 
 <!--============================
 	 🚥 END OF HEADER SECION 🚥
@@ -315,36 +185,12 @@ mysqli_close( $conn );
 	===========================--> 
 <!--🍧-1-🍧-->
 <div id="featured">
-  <h1>NazmusLabs Photo Gallery</h1>
+  <h1>Special - CMWEB 241 - NazmusLabs</h1>
 </div>
 <!--🍧-1-🍧--> 
 <!--=========================
 	  🎀 END OF FEATURED 🎀
 	=========================--> 
-
-<!--=============================
-	 🔐 ADMINISTRATOR CENTER  🔐
-	=============================-->
-<div <?php echo $is_authorized ? 'id="admin"
-     class="container" style="margin-top: 1em"': '' ?> > <?php echo $is_authorized ? '<h2>Gallery Admin Center</h2>': '' ?> <?php echo $is_authorized ? "<p>Welcome to the Gallery Admin Center. This is your go-to place where you will find navigation links to all of the administration taks and tools available to you. You can review and delete logs, upload photos, and delete phots.</p>": '' ?> 
-  
-  <!--Administration Menu--> 
-  <!--☕---☕        ☕---☕-->
-  <div <?php echo $is_authorized ? 'class="alert-neutral-dark" style="padding: 2em; margin-bottom: 4em"': '' ?>> <?php echo $is_authorized ? $admin_menu : '' ?> 
-    <!--⚓--> 
-    <?php echo $is_authorized ? "<p>⚠️ <em>Please note that in <strong>this verion</strong> of the Photo Gallery doesn't have all of the admin features fully up and working. So items might not wrok and/or be intentionally disabled.</em></p>": '' ?> 
-    <!--
-💡 Developer Remarks
-=====================
-Content in this section is restricted and requires elevated permissions to view. Non elevated users may not see any HTML inside this div element.
---> 
-  </div>
-  <!--☕---☕        ☕---☕--> 
-  <!--Administration Menu--> 
-</div>
-<!--============================
-	  🔐 END OF ADMIN CENTER 🔐
-	============================--> 
 
 <!--=================================
 	 📕 START OF CONTENT SEGMENT A 📕
@@ -353,7 +199,7 @@ Content in this section is restricted and requires elevated permissions to view.
 <!--🍨-1-🍨-->
 <div class="container" style="position: relative">
 <!--🍦-2-🍦-->
-<h1>Welcome to My CMWEB 241 PHP Student Project!</h1>
+<h1>Semester Wrap-up Quiz (QUIZ241)</h1>
 <!--Bismillah--> 
 <!--⚓-->
 <p id="Bismillah"> In the name of Allah, the Most Gracious, Most Merciful. </p>
@@ -361,7 +207,7 @@ Content in this section is restricted and requires elevated permissions to view.
 <!--========================
 	 🧭 START OF SIDEBAR 🧭
 	========================-->
-<?php include 'layouts/sidebar.php' ?>
+<?php include 'includes/sidebar.php' ?>
 <!--======================
 	 🧭 END OF SIDEBAR 🧭
 	======================--> 
@@ -375,13 +221,13 @@ Content in this section is restricted and requires elevated permissions to view.
 	====================-->
   <section> <!--🔖--> 
     <!--👓-3👓-->
-    <div class="page-intro"> <img src="assets/graphics/circles.svg"
+    <div class="page-intro"> <img src="images/graphics/circles.svg"
 				 alt="Circles"
 				 class="tripple-float" style="max-height: 300px; width: auto" > <!--📸 Smile!--> 
       <!--⚓-->
-      <p>Welcome to the Photo Gallery application. What you are looking at now, Insha'Allah, is the culmunation of a whole semester's worth of effort, with no exageration. The entire PHP course at Illinois Central College, CMWEB, involved developing this application, weith each lab and assignment either directly contributing to the code to what would eventually become this multi-functional web applicaion or covered one or more of several variety of concepts that went into creating this application. Without further ado, let's get straight into it; select the <em>Jump to the Gallery</em> button to begin.</p>
+      <p>Welcome to the the QUIZ 241  Demo. This is a mod of the Photo Gallery application, that is a culmunation of a whole semester's worth of effort, with no exageration. The entire PHP course at Illinois Central College, CMWEB, involved developing this application, weith each lab and assignment either directly contributing to the code to what would eventually become this multi-functional web applicaion or covered one or more of several variety of concepts that went into creating this application. Without further ado, let's get straight into it; select the <em>Jump to the Demo</em> button to begin.</p>
       <!--⚓-->
-      <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#gallery"> <span class="button-text-decoration">Jump to the Gallery</span> </a></p>
+      <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#app2"> <span class="button-text-decoration">Jump to the Demo</span> </a></p>
     </div>
     <!--👓-3👓--> 
     <!--🔖--> 
@@ -430,56 +276,30 @@ Content in this section is restricted and requires elevated permissions to view.
     <div class="gallery-container" id="photo"> 
       <!--🎨 Image Gallery 🎨-->
       <?php
-      //Dsiplay photo gallery
-      if ( !$_GET[ 'delete' ] ) {
-        foreach ( $images as $daisy ) {
+      //❔ Dsiplay photo gallery
+      foreach ( $images as $daisy ) {
+        //⌛Pre-processing metadata...
+        $path = $img_path . $daisy[ "filename" ];
+        $alt = $daisy[ "caption" ];
+        $caption = $daisy[ "caption" ];
 
-          //⌛Pre-processing metadata...
-          $path = $img_path . $daisy[ "filename" ];
-          $alt = $daisy[ "caption" ];
-          $caption = $daisy[ "caption" ];
+        //⌛Encoding image metadata...
+        $path_encoded = urlencode( $path );
+        $caption_encoded = urlencode( $caption );
 
-          //⌛Encoding image metadata...
-          $path_encoded = urlencode( $path );
-          $caption_encoded = urlencode( $caption );
-
-          echo "
+        echo "
             <!--📸Smile!-->
-            <figure class=\"gallery\"><a href=\"index.php?encoded_path=$path_encoded&encoded_caption=$caption_encoded#gallery\"><img src=\"$path\" alt=\"$alt\" width=\"600\" height=\"400\"></a>
+            <figure class=\"gallery\"><a href=\"start.php?encoded_path=$path_encoded&encoded_caption=$caption_encoded#gallery\"><img src=\"$path\" alt=\"$alt\" width=\"600\" height=\"400\"></a>
             <figcaption class=\"caption\">$caption</figcaption>
             </figure>";
-        }
       }
 
-      if ( $_GET[ 'delete' ] && $is_authorized ) {
-        echo '<ul>';
-        foreach ( $images as $daisy ) {
-          //⌛Pre-processing metadata...
-          $filename = $daisy[ "filename" ];
-          $caption = $daisy[ "caption" ];
-
-          //⌛Encoding image metadata...
-          $filename_encoded = urlencode( $filename );
-          echo "<li><a href=\"admin/delete_photo.php?filename=$filename_encoded\" >" . $caption . ' (' . $filename . ') </a>';
-        }
-        echo '</ul>';
-      }
-
-      //Display single image (Large);
+      //❔ Display single image (Large);
       echo $display_image;
-
-      //Display log file(s);
-      echo $login_log;
 
       ?>
     </div>
     <!--🍬-1-🍬--> 
-    <br>
-    <?php
-    echo $return_button;
-
-    echo $_GET[ 'delete' ] ? "<a href=\"index.php?#app1\" class=\"button-ornate\">Return to Gallery</a>" : '';
-    ?>
     <br>
     <!--🎨 /Image Gallery 🎨--> 
     <!--🔖--> 
@@ -494,36 +314,56 @@ Content in this section is restricted and requires elevated permissions to view.
 <!--=======================
 	 🧁 APPLICATION II  🧁
 	=======================-->
-<div class="content-section-grey" id="app"> 
-  <!--🍚-1-🍚-->
-  <section> <!--🔖--> 
-    <!--🍟-2-🍟-->
-    <div class="container" id="app2">
-      <h2 style="color: #131A24; padding-top: 2em" >Image Upload Center</h2>
-      <!--⚓-->
-      <p><strong> <?php echo $daisy_message ?></strong> </p>
-      <!--❓ Alert Box ❓-->
-      <div class="<?php echo $alert_class; ?>" style="width: 70%"> <?php echo $alert; ?>
-        <div style="font-size: medium;"><?php echo $error_code; ?></div>
-      </div>
-      <!--❓ /Alert Box ❓--> 
+<div class="content-section-grey" id="app">
+<!--🍚-1-🍚-->
+<section> <!--🔖--> 
+  <!--🍟-2-🍟-->
+  <div class="container" id="app2">
+    <h2 style="color: #131A24; padding-top: 2em" >Demo Input Center</h2>
+    <!--⚓-->
+    <p><strong> For this demo application, please enter a value of 1 or 2 in the text box below, then select "GO".</strong> </p>
+    <!--❓ Alert Box ❓-->
+    <div class="<?php echo $alert_class; ?>" style="width: 70%"> <?php echo $alert; ?>
+      <div style="font-size: medium;"><?php echo $error_code; ?></div>
     </div>
-    <!--/🍟-2-🍟--> 
+    <!--❓ /Alert Box ❓--> 
+  </div>
+  <!--/🍟-2-🍟--> 
+  
+  <!--🌳 -2- 🌳-->
+  <div style="background-color: #EEEEF2;" >
+    <div class="container" >
+      <h2 style="color: #131A24" ><!--App 2--></h2>
+    </div>
     
-    <!--🌳 -2- 🌳-->
-    <div <?php echo $is_authorized ? 'style="background-color: #D6D6D6; padding-top: 1em; padding-bottom: 1em;"': 'style="background-color: #EEEEF2;"' ?> >
-      <div class="container" >
-        <h2 style="color: #131A24" ><!--App 2--></h2>
-      </div>
-      
-      <!--🌴-3-🌴-->
-      <div <?php echo $is_authorized ? 'class="upload-container" style="width: 50%"': '' ?> > <?php echo $is_authorized ? $daisy_form2: $daisy_form1;
-      ?> </div>
-      <!--🌴 -3- 🌴--> 
+    <!--🌴-3-🌴-->
+    <div>
+      <h1 style="text-align: center">Demo</h1>
+      <!--📨 Form-->
+      <form class="feedback-form" action="quiz.php" method="POST" style="max-width: 20em;">
+        <!--💐 -4- 💐-->
+        <div class="form-group">
+          <label for="input">Enter a Number</label>
+          <input type="text" id="input" name="input" value="<?php echo $input ?>" />
+          <!--❔ Preserves previously enter value--> 
+        </div>
+        <!--💐 -4- 💐--> 
+        <!--🍭 -4- 🍭-->
+        <div>
+          <input class="button" type="submit" value="GO" id="submit" name="submit" >
+          <input class="button" type="reset" value="Clear Form" name="reset-button" id="reset" />
+        </div>
+        <!--🍭 -4- 🍭-->
+      </form>
+      <!--/📨 Form--> 
     </div>
-    <!--🌳 -2- 🌳--> 
-    <!--🔖--> 
-  </section>
+    <br >
+  </div>
+  <!--🌴 -3- 🌴-->
+  </div>
+  <!--🌳 -2- 🌳--> 
+  <!--🔖--> 
+</section>
 </div>
 <!--/🍚-1-🍚--> 
 <!--======================
@@ -541,14 +381,14 @@ Content in this section is restricted and requires elevated permissions to view.
 	===========================-->
 <article> 
   <!--/🥨-1-🥨-->
-  <div   <?php echo $is_authorized ? 'class="content-section-light"': 'style="padding-bottom: 1.5em"' ?>> <!--B5B5B5-->
+  <div style="padding-bottom: 1.5em" >
     <div class="container"><br>
       <!--🍷-2-🍷-->
       <section> <!--🔖-->
         <h2>How to Get the Code</h2>
         <!--🚩--> <!--🚩--> 
-        <img style="float: left; max-width: 400px; height: auto; margin-right: 4em; margin-bottom: 4em" src="assets/graphics/kevin.png"
-				 alt="Kevin"
+        <img style="float: right; max-height: 1000px; width: auto" src="images/graphics/pine.svg"
+				 alt="leaves, pine cones, and bells"
 				 class="center-image" > <!--📸Smile!--> 
         <!--⚓-->
         <p>Because this course deals with PHP getting the code behind these labs won't be as simple as viewing the page source ("CTRL+U on Windows"). All of the PHP code is processed on the server, and the resulting output is an HTML webpage that is passed on to the client's web browser. As a result, the only thing the client can see by viewing the page source is the resulting HMTL and JavaScript code, with no PHP.</p>
@@ -591,7 +431,7 @@ Content in this section is restricted and requires elevated permissions to view.
       <h3>Thanks for visiting!</h3>
       <!--📸Smile!--> <!--📸Smile!--> 
       <em><small>Featured image credit:
-      Photo by <a href="https://unsplash.com/@rmvisuals" target="_blank">Renaldo Matamoro </a> on <a href="https://unsplash.com/photos/nrQ3V0A4bxk" target="_blank">Unsplash</a>.</small></em> 
+      Photo by <a href="https://unsplash.com/@rmvisuals" target="_blank">Renaldo Matamoro </a> on <a href="https://unsplash.com/photos/nrQ3V0A4bxk" target="_blank">Unsplash</a>..</small></em> 
       <!--📸Smile!--> <!--📸Smile!--> 
     </aside>
     <!--🔔-1-🔔--> 
@@ -609,10 +449,9 @@ Content in this section is restricted and requires elevated permissions to view.
 	================================-->
 
 <?php
-include 'layouts/footer.php';
+include 'includes/footer.php';
 ?>
-</body>
-</html>
+
 <!--🌐 End of HTML Document 🌐--> 
 
 <!--
