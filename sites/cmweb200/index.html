@@ -68,15 +68,15 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
   <div class="container-wide"> 
     <!--Float 1 -->
     <div class="header-box"> 
-      <!--Site Logo--> <a href="/sites/cmweb241/" class="left-align"> <img src="/sites/cmweb200/assets/graphics/logo-header.png"
+      <!--Site Logo--> <a href="/" class="left-align"> <img src="/sites/cmweb200/assets/graphics/logo-header.png"
             alt="NazmusLabs Logo" title="NazmusLabs Logo" class="resize-85-percent" style="max-height: 125px; width: auto" > <!--📸Smile!--> </a> 
       <!--/ Site Logo--> 
     </div>
     <!--/ Float 1--> 
     <!--Float 2-->
     <div class="header-box">
-      <h5>“Be who you are and say what you feel...</h5>
-      <p><small>...because those who mind don't matter, and those who matter don't mind.” ― Bernard M. Baruch </small></p>
+      <h5>“The [one] who does not read...</h5>
+      <p><small>...no advantage over the [one] who cannot read.” ― Mark Twain</small></p>
     </div>
     <!--/ Float 2--> 
   </div>
@@ -95,13 +95,16 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
     <nav class="container-nav"> 
       <!--🔗 Nav-bar Menu Items-->
       <ul class="right-align">
+        <!--🔗🚫 Click!-->
+        <li class="menu-button-disabled" style="cursor: default">Home</li>
+        <!--🔗 Click!-- >
+        <li><a class="menu-button" href="/sites/cmweb200/">Home</a></li>
         <!--🔗 Click!-->
-        <li><a class="menu-button" href="/sites/cmweb241/">Home</a></li>
+        <li><a class="menu-button" href="/sites/cmweb200/#app1">Project</a></li>
         <!--🔗 Click!-->
-        <li><a class="menu-button" href="/sites/cmweb241/projects/">Project</a></li>
-        <li><a class="menu-button" href="/sites/cmweb241/#labs">Labs</a></li>
+        <li><a class="menu-button" href="/sites/cmweb200/#app1">Labs</a></li>
         <!--🔗 Click!-->
-        <li><a class="menu-button" href="/sites/cmweb241/">About</a></li>
+        <li><a class="menu-button" href="/sites/cmweb200/">About</a></li>
         <!--Seperator-->
         <li class="menu-button-disabled">|</li>
         <!--🔗 Click!-->
@@ -154,33 +157,33 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
       <div class="gcse-search"></div>
       <--/🔍 Search Box [DISABLED CODE]--> 
       <!--👆🏻 Sidebar Menu-->
-      <nav class="menu-vertical" style="margin-right: 0">
+      <nav class="menu-vertical" style="margin-right: 0" role="navigation">
         <h2>Labs Explorer</h2>
         <!--🔗 Menu Items-->
         <ul>
           <!--📜--> <!--📜--> 
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241/labs/lab1"><small>Lab 1 - Chirp Calculator</small></a></li>
+          <li><a href="/sites/cmweb200/labs/lab1"><small>CMWEB 200 Lab 1</small></a></li>
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241/labs/lab2"><small>Lab 2 - Sign-in Forms</small></a></li>
+          <li><a href="/sites/cmweb200/labs/lab2"><small>CMWEB 200 Lab 2</small></a></li>
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241/labs/lab3"><small>Lab 3 - Dynamic Gallery</small></a></li>
+          <li><a href="/sites/cmweb200/labs/lab3"><small>CMWEB 200 Lab 3</small></a></li>
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241/labs/lab5"><small>Lab 5 - Photo Gallery 2.0</small></a></li>
+          <li><a href="/sites/cmweb200/labs/lab5"><small>CMWEB 200 Lab 5</small></a></li>
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241/labs/lab6"><small>Lab 6 - Photo Gallery 3.0</small></a></li>
+          <li><a href="/sites/cmweb200/labs/lab6"><small>CMWEB 200 Lab 6</small></a></li>
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241/labs/labx"><small>Lab 10 - Photo Gallery 4.0</small></a></li>
+          <li><a href="/sites/cmweb200/labs/labx"><small>CMWEB 200 Lab 10</small></a></li>
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241/labs/lab_final"><small>Lab 13 - Photo Gallery 5.0 🍰</small></a></li>
-          <!--🔗🚫 Click!-->
+          <li><a href="/sites/cmweb200/labs/lab_final"><small>CMWEB 200 Final Lab 🍰</small></a></li>
+          <!--🔗🚫 Click!-- >
           <li><small><a title="Click to reset this lab" style="color: black; text-decoration: none; cursor:default;" href="../layouts/index.php">CMWEB 241 Project ✔</a></small></li>
           <!--📜--> <!--📜-->
         </ul>
         <!--/🔗 Menu Items-->
         <p> 
-          <!--🔗 Click!--> <a class="button-ornate" href="/sites/cmweb241"> <span class="button-text-decoration">↵
-          Course Home</span> </a> </p>
+          <!--🔗 Click!--> <a class="button-ornate" href="/"> <span class="button-text-decoration">↵
+          Site Home</span> </a> </p>
       </nav>
       <!--/👆🏻 Sidebar Menu--> 
     </div>
@@ -191,21 +194,22 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
     <!--========================
 	 📃 START OF ARTICLE 📃
 	========================-->
-    <article id="intro"> 
+    <article id="article1" role="article"> 
       <!--====================
 	 📢 INTRODUCTION 📢
 	====================-->
       <section> <!--🔖--> 
         <!--👓-3👓-->
-        <div class="page-intro"> <img src="assets/graphics/circles.svg"
+        <div class="page-intro" id="intro"> <img src="assets/graphics/circles.svg"
 				 alt="Circles"
 				 class="tripple-float" style="max-height: 300px; width: auto" > <!--📸 Smile!--> 
           <!--⚓-->
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita modi, voluptas mollitia, eveniet magni quia ut, in repellendus deserunt assumenda, aspernatur molestias delectus ullam dicta recusandae culpa nostrum repudiandae eos! </p>
           <!--⚓-->
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ut, labore repellendus deleniti laborum, reprehenderit magnam sed. Eos debitis, doloremque quam labore nostrum, similique officia expedita ipsam non, voluptas sapiente! Without further ado, let's get straight into it; select the <em>Jump to the Demo</em> button to begin.</p>
-          <!--⚓-->
-          <p style="text-align: center"><!--🔗 Click!--> <a class="button-ornate" href="#app2"> <span class="button-text-decoration">Jump to the Demo</span> </a></p>
+          <!--🔗 Click!-- >
+          <p style="text-align: center"><a class="button-ornate" href="#app2"> <span class="button-text-decoration">Jump to the Demo</span></a></p>
+          <!--🔗 Click!--> 
         </div>
         <!--👓-3👓--> 
         <!--🔖--> 
@@ -223,6 +227,7 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
         <!--💬 Tips Bubble-->
         <div style="float: left" class="fred page-intro">
           <h2>Site Navigation</h2>
+          <!--⚓-->
           <p>Links to labs and projects for this course can be found below. The <em>Explorer</em> panel provides links to other courses and related pages.</p>
         </div>
         <div class="clearfix"></div>
@@ -232,14 +237,13 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
         <!--🔖--> 
       </section>
     </article>
+    <!--====================
+	 📃 END OF ARTICLE 📃
+	========================--> 
   </div>
   <!--🍦-2-🍦--> 
 </div>
 <!--🍨-1-🍨--> 
-
-<!--====================
-	 📃 END OF ARTICLE 📃
-	========================--> 
 <!--=================================
 	 📕 END OF CONTENT SEGMENT A 📕
 	=================================--> 
@@ -252,31 +256,38 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
 	 🍰 APPLICATION I 🍰
 	=====================--> 
 <!--🍫-1-🍫-->
-<div class="content-section-navy" id="app">
+<div class="content-section-navy" id="app" role="grid">
   <section id="app1" class="container-wide"> <!--🔖-->
-    <h3 id="gallery">Labs &amp; Projects</h3>
+    <h3 id="gallery">CMWEB 200 Labs &amp; Projects (New Navigation; Work In Progress)</h3>
     <!--🚩--> <!--🚩-->
     <p style="padding-bottom: 1em" >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <!--⚓-->
+    <p class="alert-warning-light" style="background-color: #F9EDB7" role="alert">⚠️ This site is currently in active development, and this section is not yet fully functional. Please use the legacy navigation links below for the time being. Thank you!</p>
     <!--🍬-2-🍬-->
     <div class="gallery-container" id="photo"> 
       <!--🎨 Image Gallery 🎨--> 
       <!--📸 Smile!-->
-      <figure class="gallery"><a href="assets/images/car.jpg" target="_blank"><img src="assets/images/car.jpg" alt="Antique car" width="600" height="400" ></a>
-        <figcaption class="caption"><h2 style="text-decoration: none; color: black">Labs</h2></figcaption>
+      <figure class="gallery"><a><img src="assets/images/car.jpg" alt="Antique car" width="600" height="400" ></a>
+        <figcaption class="caption">
+          <h2 style="text-decoration: none; color: black">Labs</h2>
+        </figcaption>
       </figure>
       <!--📸 Smile!-->
-      <figure class="gallery"><a href="assets/images/city.jpg" target="_blank" ><img src="assets/images/city.jpg" alt="Cityscape" width="600" height="400" ></a>
-        <figcaption class="caption"><h2 style="text-decoration: none; color: black">Projects</h2></figcaption>
+      <figure class="gallery"><a><img src="assets/images/city.jpg" alt="Cityscape" width="600" height="400" ></a>
+        <figcaption class="caption">
+          <h2 style="text-decoration: none; color: black">Projects</h2>
+        </figcaption>
       </figure>
       <!--📸 Smile!-->
-      <figure class="gallery"><a href="assets/images/featured.jpg" target="_blank"><img src="assets/images/featured.jpg" alt="Trees in sunset" width="600" height="400" ></a>
-        <figcaption class="caption"><h2  style="text-decoration: none; color: black">Extras</h2></figcaption>
+      <figure class="gallery"><a><img src="assets/images/featured.jpg" alt="Trees in sunset" width="600" height="400" ></a>
+        <figcaption class="caption">
+          <h2  style="text-decoration: none; color: black">Extras</h2>
+        </figcaption>
       </figure>
       <!--🎨 /Image Gallery 🎨--> 
     </div>
     <!--🍬-1-🍬--> 
     <br>
-    
     <!--🔖--> 
   </section>
 </div>
@@ -298,7 +309,7 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
     <!--⚓-- >
     <p><strong> For this demo application, please enter a value of 1 or 2 in the text box below, then select "GO".</strong> </p>
     <!--❓ Alert Box ❓-- >
-    <div class="alert-neutral-light" style="width: 70%"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    <div class="alert-neutral-light" style="width: 70%" role="alert"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       <div style="font-size: medium;">Error: momo</div>
     </div>
     <!--❓ /Alert Box ❓-- > 
@@ -312,7 +323,7 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
     </div>
     
     <!--🌴-3-🌴-- >
-    <div>
+    <div role="form">
       <h1 style="text-align: center">Demo</h1>
       <!--📨 Form-- >
       <form class="feedback-form" action="quiz.php" method="POST" style="max-width: 20em;">
@@ -354,11 +365,64 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
 <!--===========================
 	 📃 START OF ARTICLE II 📃
 	===========================-->
-<article> 
+<article id="article2" role="complementary"> 
   <!--/🥨-1-🥨-->
-  <div class="content-section-light" >
+  <div class="content-section-light" > 
+    <!--🍷-2-🍷-->
     <div class="container"><br>
-      <!--🍷-2-🍷-->
+      <section> <!--🔖-->
+        <h2>CMWEB 200 Labs and Projects (Legacy Navigation)</h2>
+        <div id="labs" class="double-float">
+          <h3>Labs</h3>
+          <ul>
+            <!--📜--> <!--📜--> 
+            <!--🔗 Click!-->
+            <li><a href="labs/lab1/"><small>Lab 1 - Chirping Crickets</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab2/"><small>Lab 2 - Sign-in Forms</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab3/"><small>Lab 3 - Dynamic Gallery</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab4/"><small>Lab 4 - Includes</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab5/"><small>Lab 5 - Photo Upload</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab6/"><small>Lab 6 - Photo Gallery 3.0</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab7/"><small>Lab 7 - Brainstorming</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab8/"><small>Lab 8 - Sessions</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab9/"><small>Lab 9 - MySQL</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/labx/"><small>Lab 10 - Photo Gallery 4.0</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab11/."><small>Lab 11 - Insert Title Here</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab12/"><small>Lab 12 - Insert Title Here</small></a></li>
+            <!--🔗 Click!-->
+            <li><a href="labs/lab13/"><small>Lab 13 - Photo Gallery 5.0</small></a></li>
+            <!--📜--> <!--📜-->
+          </ul>
+        </div>
+        <div class="double-float">
+          <h3>Projects</h3>
+          <ul>
+            <!--📜--> <!--📜-->
+            <li><a href="#">Project 1</a></li>
+            <li><a href="#">Project 2</a></li>
+          </ul>
+          <!--📜--> <!--📜-->
+          <h3>Extras</h3>
+          <ul>
+            <!--📜--> <!--📜-->
+            <li><a href="#">No Content</a></li>
+            <!--📜--> <!--📜-->
+          </ul>
+        </div>
+        <br class="clearfix">
+        <!--🔖--> 
+      </section>
       <section> <!--🔖-->
         <h2>How to Get the Code</h2>
         <!--🚩--> <!--🚩--> 
@@ -370,7 +434,7 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
         <!--⚓-->
         <p>Fortunately, there is a way around this. I have placed all of the PHP source code for this student site for anyone to view, download, and modify. They are hosted on my CMWEB GitHub repository, which you can view from the link below.</p>
         <!--⚓-->
-        <p><a href="https://github.com/NazmusLabs/CMWEB/tree/master/sites/cmweb241" target="_blank">View the php source codes for this course on GitHub</a></p>
+        <p><a href="https://github.com/NazmusLabs/CMWEB/tree/master/sites/cmweb200" target="_blank">View the php source codes for this course on GitHub</a></p>
         <!--🔖--> 
       </section>
     </div>
@@ -431,11 +495,11 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
   <!--🧶-2-🧶-->
   <div class="container-wide"> 
     <!--🧢-3-🧢-->
-    <nav class="menu-horizontal" style="position: relative;"> 
+    <nav class="menu-horizontal" style="position: relative;" role="navigation"> 
       <!--🪡-4-🪡-->
       <div class="double-float" > <!--🎈--> 
-        <!--🔗 Click!--> <a class="button-ornate" href="/sites/cmweb241"> <span class="button-text-decoration">↵
-        CMWEB 241 Home</span> </a> </div>
+        <!--🔗 Click!--> <a class="button-ornate" href="/"> <span class="button-text-decoration">↵
+        Site Home</span> </a> </div>
       <!--🪡-4-🪡--> 
       
       <!--🧵-4-🧵-->
@@ -443,11 +507,11 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
         <!--📜--> <!--📜-->
         <ul style="position: absolute; right: 1em">
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241/projects/">Project</a></li>
+          <li><a href="/sites/cmweb200/projects/">Project</a></li>
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241#labs">Labs</a></li>
+          <li><a href="/sites/cmweb200#labs">Labs</a></li>
           <!--🔗 Click!-->
-          <li><a href="/sites/cmweb241">About</a></li>
+          <li><a href="/sites/cmweb200">About</a></li>
           <li>|</li>
           <!--🔗 Click!-->
           <li><a href="https://github.com/NazmusLabs/CMWEB" target="_blank">GitHub</a></li>
@@ -542,13 +606,17 @@ System requirements:  Chromium based web browser (Google Chrome, Microsoft Edge,
 
 📖 Introduction - NazmusLabs Help
 ----------------------------------
-LAB OBJECTIVE: To build a simple calculator based on predefined specs using PHP server-side scripting.
+LAB OBJECTIVE: N/A
 
 This student site was originally created for the CMWEB program at Illinois Central College. CMWEB is officially certified by the "Web Professional Academy".
 
 📣 What’s New in v21
 ----------------------------
  - Integrated all of the patches for (6 updates) version 25.0 (CMWEB 241 Lab 13).
+ - [PHP] Removed all php codes. These codes are temporarily retired until (or unless) they are needed again in a future project, Insha'Allah.
+ - [PHP] Certin dynamic content aned visual styles have been disabled and hardcoded to their default values as result of removal of PHP code. (E.g. The "Get the code" section, which could switch between the light (default) and dark modes now always displays in its default white backgroiund and dark txt style.)
+ - Added roles to various tags accross the page to improve accessibility.
+ - Fixes to domentations and emoji-based markers
 
 ⚠ Note: These changelogs DO NOT include content specefic to this particular lab or project. Items mentioned in the changelog are those that are a part of the document's core layout and CSS sutibale for being carried forward to future CMWEB labs and projects. This DOES NOT pertain to the PATCH NOTES below, which may document changes of any type that are made after initial publication.
 

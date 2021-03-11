@@ -48,7 +48,14 @@ Well, I'm glad you did; make yourself at home and explore at your leasure!
 <meta name="version" content="25.0.20.127 (Gold)">
 <meta name="patch" content="2.20.127">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<script> src="/pollweb1/jquery.js" type="text/javascript" </script>
+<script>
+function hello()
+{
+    var userName = prompt('Hello, what\'s your name?');
+    //document.body.innerHTML = 'Hello, ' + userName + '!';
+    window.document.write('Hello, ' + userName + '!');
+}
+</script>
 </head>
 
 <body>

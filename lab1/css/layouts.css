@@ -1,0 +1,164 @@
+@charset "utf-8";
+/*Import file #3*/
+/* 🎨 CSS > 📜 CLASSES > 📐 Layouts > 📦 Containers */
+.content-section-grey {
+  background-color: #b5b5b5;
+  color: #252526;
+  padding: 0px 0px;
+}
+.content-section-grey h1, .content-section-grey h2, .content-section-grey h3, .content-section-grey h4, .content-section-grey h5, .content-section-grey ht6 {
+  color: #252526;
+  padding: 20px 0;
+  line-height: 1.3em;
+}
+.content-section-grey p {
+  padding: 0px 0px 40px 0px;
+}
+.content-section-grey a:link, .content-section-grey a:visited, .content-section-grey a:hover {
+  color: #094E64;
+  /*color: #252526;*/
+}
+/*
+.content-section-grey a:visited {
+  color: #252526
+}
+*/
+.content-section-light {
+  background-color: #eeeef2;
+  color: #252526;
+  padding: 40px 0px;
+}
+.content-section-light h1, .content-section-light h2, .content-section-light h3, .content-section-light h4, .content-section-light h5, .content-section-light h6 {
+  color: #252526;
+  padding: 20px 0;
+  line-height: 1.3em;
+}
+.content-section-light p {
+  padding: 0px 0px 40px 0px;
+}
+.content-section-light a:link, .content-section-light a:visited {
+  color: firebrick;
+}
+.content-section-navy {
+  background-color: #141A25;
+  color: white;
+  font-size: 28px;
+}
+.content-section-navy h1, .content-section-navy h2, .content-section-navy h3, .content-section-navy h4, .content-section-navy h5, .content-section-navy h6 {
+  color: #78C4DC;
+  padding: 20px 0;
+  line-height: 1.3em;
+}
+.content-section-navy a:link, .content-section-navy a:visited {
+  color: lightskyblue;
+}
+#featured {
+  background-image: url("../assets/images/featured.jpg");
+  min-height: 250px;
+  margin: 0;
+  box-sizing: border-box;
+  /*❔ Parallax scrolling effect*/
+  background-attachment: fixed;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+#featured h1 {
+  color: #FFFFFF;
+  font-size: 72px;
+  text-shadow: 1px 1px 3px #292929;
+  line-height: 1.6em;
+  padding-top: 50px;
+}
+.redirect {
+  color: dimgrey;
+  padding: 0 0 .5em .5em;
+}
+.note {
+  background-color: lightgrey;
+  border: dotted;
+  margin: 0 1.5em .5em 0;
+  padding: 5px;
+  font-size: medium;
+  line-height: normal;
+}
+.container {
+  margin: auto;
+  width: 80%;
+}
+.container-wide {
+  margin: auto;
+  width: 90%;
+  padding: 1.6em;
+  overflow: hidden; /*❔ Prevent unwanted scrollbar from appearing*/
+}
+.container-mini { /*📦*/
+  margin: auto;
+  width: 30%;
+  padding: 40px;
+  overflow: hidden;
+}
+/* CSS > 📜 CLASSES > 📐 Layouts > 🎈 Floats > */
+.clearfix {
+  clear: both; /*❔ The purpose of this is to remove any existing float configurations beyond the given point in the HTML document this class is used. Note: this does not stop one from creating new floats at alater point in the document.*/
+}
+.header-box { /*🚥*/
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  max-height: 5em;
+}
+.header-box h1, .header-box h2, .header-box h3, .header-box h4, .header-box h5, .header-box h6, p {
+  padding: 3px 0;
+}
+.sidebar {
+  float: right;
+  width: 35%;
+  box-sizing: border-box;
+  margin: 0 0 1em 1em;
+}
+.page-intro { /* ❔ This should sit directly on the left of the "Sidebar" */
+  /*width: 70%; disabled*/
+  box-sizing: border-box;
+  padding: 1em;
+  /*overflow: hidden;*/
+}
+.double-float { /*🎈*/
+  width: 50%;
+  float: left;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.tripple-float { /*🎈*/
+  width: 33.33%;
+  float: left;
+  padding: 0 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.image-wrap-left { /*🎈*/
+  float: left;
+  width: 33.33%;
+  height: auto;
+}
+.image-wrap-right { /*🎈*/
+  float: right;
+  width: 33.33%;
+  height: auto;
+}
+.upload-container {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 60%;
+  background-color: #E2E2E9;
+  color: #212A3F;
+  border-color: #C5C5D1;
+  border-style: solid;
+  border-bottom-width: 1px;
+  padding: 2.5em;
+}
